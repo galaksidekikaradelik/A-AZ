@@ -1,0 +1,57 @@
+/* =========================================================
+   INTERACTIONS — grain texture + scroll reveal + magnetic buttons
+   Add this file's import once, alongside tokens.css.
+   ========================================================= */
+
+/* ---- film grain, fixed over the whole viewport, very low opacity ---- */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  pointer-events: none;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  background-size: 180px 180px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grain-overlay {
+    opacity: 0.035;
+  }
+}
+
+/* ---- scroll reveal: one moment per section, not per card ---- */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ---- magnetic buttons need a quick, responsive transform transition ---- */
+.festival-btn,
+.festival-cta-button {
+  transition: transform 0.15s ease-out, background var(--transition-fast),
+    border-color var(--transition-fast), color var(--transition-fast);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .festival-btn,
+  .festival-cta-button {
+    transition: background var(--transition-fast), border-color var(--transition-fast);
+  }
+}

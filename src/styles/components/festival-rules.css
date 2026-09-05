@@ -1,0 +1,125 @@
+.festival-rules {
+  padding: 130px 5%;
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+
+.festival-rules-container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.festival-rules-header {
+  max-width: 680px;
+  margin-bottom: 60px;
+}
+
+.festival-rules-header .mono-tag {
+  display: block;
+  margin-bottom: 22px;
+}
+
+.festival-rules-header h2 {
+  margin-bottom: 22px;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(38px, 5vw, 62px);
+  line-height: 1.05;
+}
+
+.festival-rules-header p {
+  max-width: 540px;
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--color-text-dim);
+}
+
+.rules-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--color-border);
+  border: 1px solid var(--color-border);
+}
+
+.rule-card {
+  background: var(--color-surface);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.rule-number {
+  color: var(--color-text-faint);
+}
+
+.rule-card h3 {
+  margin-top: 34px;
+  margin-bottom: 22px;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 1.1;
+}
+
+.rule-card ul {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rule-card li {
+  position: relative;
+  padding-left: 20px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--color-text-dim);
+}
+
+.rule-card li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--color-human);
+}
+
+.rule-card p {
+  max-width: 520px;
+  font-size: 15.5px;
+  line-height: 1.8;
+  color: var(--color-text-dim);
+}
+
+.rule-card--highlight {
+  background: var(--color-surface);
+}
+
+.rule-card--highlight h3 {
+  color: var(--color-human);
+}
+
+@media (max-width: 800px) {
+  .festival-rules {
+    padding: 90px 6%;
+  }
+
+  .rules-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 500px) {
+  .rule-card {
+    padding: 30px;
+  }
+
+  .rule-card h3 {
+    margin-top: 26px;
+    font-size: 24px;
+  }
+}

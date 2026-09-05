@@ -1,0 +1,20 @@
+@import "./base/variables.css";
+@import "./base/reset.css";
+
+@import "./components/navbar.css";
+@import "./components/film-section.css";
+@import "./components/news-section.css";
+@import "./components/partners-section.css";
+@import "./components/footer.css";
+@import "./components/festival-hero.css";
+@import "./components/festival-about.css";
+@import "./components/festival-categories.css";
+@import "./components/festival-rules.css";
+@import "./components/festival-awards.css";
+@import "./components/festival-cta.css";
+
+@import "./pages/home.css";
+
+
+@import 'base/light-theme.css';
+

@@ -1,0 +1,130 @@
+.festival-categories {
+  padding: 130px 5%;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+
+.festival-categories-container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.festival-categories-header {
+  max-width: 700px;
+  margin-bottom: 60px;
+}
+
+.festival-categories-header .mono-tag {
+  display: block;
+  margin-bottom: 22px;
+}
+
+.festival-categories-header h2 {
+  margin-bottom: 22px;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(38px, 5vw, 62px);
+  line-height: 1.05;
+}
+
+.festival-categories-header p {
+  max-width: 540px;
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--color-text-dim);
+}
+
+.festival-category-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--color-border);
+  border: 1px solid var(--color-border);
+}
+
+.festival-category-card {
+  position: relative;
+  background: var(--color-bg);
+  padding: 44px;
+  border-left: 3px solid transparent;
+  display: flex;
+  flex-direction: column;
+  transition: background var(--transition-normal), border-color var(--transition-normal);
+}
+
+.festival-category-card--human {
+  border-left-color: var(--color-human);
+}
+
+.festival-category-card--human:hover {
+  background: var(--color-human-soft);
+}
+
+.festival-category-card--ai {
+  border-left-color: var(--color-ai);
+}
+
+.festival-category-card--ai:hover {
+  background: var(--color-ai-soft);
+}
+
+.category-tag {
+  align-self: flex-start;
+}
+
+.festival-category-card--human .category-tag {
+  color: var(--color-human);
+}
+
+.festival-category-card--ai .category-tag {
+  color: var(--color-ai);
+}
+
+.category-mark {
+  margin-top: 40px;
+}
+
+.festival-category-card--human .category-mark {
+  color: var(--color-human);
+}
+
+.festival-category-card--ai .category-mark {
+  color: var(--color-ai);
+}
+
+.festival-category-card h3 {
+  margin-top: 26px;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(26px, 3vw, 36px);
+}
+
+.category-subtitle {
+  display: block;
+  margin-top: 10px;
+  font-size: 13.5px;
+  color: var(--color-text-faint);
+}
+
+.festival-category-card p {
+  max-width: 440px;
+  margin-top: 22px;
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--color-text-dim);
+}
+
+@media (max-width: 800px) {
+  .festival-categories {
+    padding: 90px 6%;
+  }
+
+  .festival-category-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .festival-category-card {
+    padding: 34px;
+  }
+}
