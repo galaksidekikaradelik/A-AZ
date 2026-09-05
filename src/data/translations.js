@@ -31,6 +31,60 @@ export const translations = {
       more: "Daha çoxuna bax",
     },
 
+    about: {
+      label: "AIAZ HAQQINDA",
+      title: "Haqqımızda",
+
+      intro: [
+        "AIAZ Beynəlxalq Qısa Filmlər Festivalı Qafqazda süni intellekt və kinonun kəsişməsinə həsr olunmuş ilk festivaldır. 2025-ci ildə yaradılmış və Bakıda keçirilən bu festival, texnologiya ilə yaradıcılığı bir araya gətirən unikal bir platformadır.",
+        "AIAZ həm Artificial Intelligence Azerbaijan (Azərbaycan Süni İntellekti), həm də festivalın süni intellekt əsaslı jüri sisteminin adıdır. Bu, insan yaradıcılığı ilə maşın düşüncəsinin simbiyozunu ifadə edir.",
+      ],
+
+      directionsIntro: "Festival iki əsas istiqamətdə keçirilir:",
+      directions: [
+        {
+          title: "Süni intellektlə yaradılmış filmlər",
+          description:
+            "kino tənqidçiləri, rejissorlar və sənət mütəxəssislərindən ibarət insan jüri tərəfindən qiymətləndirilir.",
+        },
+        {
+          title: "Ənənəvi, insan tərəfindən çəkilmiş filmlər",
+          description:
+            "xüsusi təlimlənmiş, Azərbaycan kinosuna dərin bələdliyi olan AIAZ süni intellekti tərəfindən dəyərləndirilir.",
+        },
+      ],
+
+      quote:
+        "🎥 AIAZ bir festivaldan daha çoxdur — bu, sənət və texnologiyanın canlı dialoqudur. Yaradıcılıq, eksperiment və süni intellektin estetik zövqü ilə formalaşan festival yeni dövrün kinobaxışını formalaşdırır.",
+
+      eventsIntro: "Festivalda:",
+      events: [
+        "Qısa filmlərin nümayişi",
+        "Süni intellektlə aparılan canlı müsahibələr və təqdimatlar",
+        "Beynəlxalq ustad dərsləri və diskussiyalar",
+      ],
+      eventsNote: "Onlayn və oflayn tədbirlər keçiriləcək.",
+
+      speech:
+        "🎤 Festivalın açılış nitqi AIAZ tərəfindən təqdim olunur və süni intellekt kinoşünaslarla canlı dialoqa girir.",
+
+      closing:
+        "AIAZ – gələcəyin kinofestivalı bu gündən başlayır. İnsan, maşın və hekayə bir arada.",
+
+      teamTitle: "Komanda üzvləri",
+      // TODO: real team member names/roles/photos will replace these placeholders
+      team: [
+        { name: "Ad Soyad", role: "Vəzifə" },
+        { name: "Ad Soyad", role: "Vəzifə" },
+        { name: "Ad Soyad", role: "Vəzifə" },
+      ],
+    },
+
+    gallery: {
+      label: "AIAZ MEDIA",
+      title: "Qalereya",
+    },
+
     partners: {
       label: "AIAZ",
       title: "Tərəfdaşlar",
@@ -79,6 +133,61 @@ export const translations = {
       title: "News",
       read: "Read →",
       more: "View more",
+    },
+
+    about: {
+      label: "ABOUT AIAZ",
+      title: "About Us",
+
+      // TODO: English translation of the About Us copy is pending — Azerbaijani text kept here as a placeholder for now
+      intro: [
+        "AIAZ Beynəlxalq Qısa Filmlər Festivalı Qafqazda süni intellekt və kinonun kəsişməsinə həsr olunmuş ilk festivaldır. 2025-ci ildə yaradılmış və Bakıda keçirilən bu festival, texnologiya ilə yaradıcılığı bir araya gətirən unikal bir platformadır.",
+        "AIAZ həm Artificial Intelligence Azerbaijan (Azərbaycan Süni İntellekti), həm də festivalın süni intellekt əsaslı jüri sisteminin adıdır. Bu, insan yaradıcılığı ilə maşın düşüncəsinin simbiyozunu ifadə edir.",
+      ],
+
+      directionsIntro: "Festival iki əsas istiqamətdə keçirilir:",
+      directions: [
+        {
+          title: "Süni intellektlə yaradılmış filmlər",
+          description:
+            "kino tənqidçiləri, rejissorlar və sənət mütəxəssislərindən ibarət insan jüri tərəfindən qiymətləndirilir.",
+        },
+        {
+          title: "Ənənəvi, insan tərəfindən çəkilmiş filmlər",
+          description:
+            "xüsusi təlimlənmiş, Azərbaycan kinosuna dərin bələdliyi olan AIAZ süni intellekti tərəfindən dəyərləndirilir.",
+        },
+      ],
+
+      quote:
+        "🎥 AIAZ bir festivaldan daha çoxdur — bu, sənət və texnologiyanın canlı dialoqudur. Yaradıcılıq, eksperiment və süni intellektin estetik zövqü ilə formalaşan festival yeni dövrün kinobaxışını formalaşdırır.",
+
+      eventsIntro: "Festivalda:",
+      events: [
+        "Qısa filmlərin nümayişi",
+        "Süni intellektlə aparılan canlı müsahibələr və təqdimatlar",
+        "Beynəlxalq ustad dərsləri və diskussiyalar",
+      ],
+      eventsNote: "Onlayn və oflayn tədbirlər keçiriləcək.",
+
+      speech:
+        "🎤 Festivalın açılış nitqi AIAZ tərəfindən təqdim olunur və süni intellekt kinoşünaslarla canlı dialoqa girir.",
+
+      closing:
+        "AIAZ – gələcəyin kinofestivalı bu gündən başlayır. İnsan, maşın və hekayə bir arada.",
+
+      teamTitle: "Team Members",
+      // TODO: real team member names/roles/photos will replace these placeholders
+      team: [
+        { name: "Full Name", role: "Role" },
+        { name: "Full Name", role: "Role" },
+        { name: "Full Name", role: "Role" },
+      ],
+    },
+
+    gallery: {
+      label: "AIAZ MEDIA",
+      title: "Gallery",
     },
 
     partners: {

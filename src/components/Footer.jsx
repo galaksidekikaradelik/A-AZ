@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../data/translations";
 import {
@@ -75,21 +76,21 @@ function Footer() {
             {t.footer.links}
           </h3>
 
-          <a href="#home">
+          <Link to="/">
             {t.footer.home}
-          </a>
+          </Link>
 
-          <a href="#news">
+          <Link to="/news">
             {t.footer.news}
-          </a>
+          </Link>
 
-          <a href="/festival">
+          <Link to="/festival">
             {t.footer.festival}
-          </a>
+          </Link>
 
-          <a href="#gallery">
+          <Link to="/gallery">
             {t.footer.gallery}
-          </a>
+          </Link>
 
           <a href="#film">
             {t.footer.film}

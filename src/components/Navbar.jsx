@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Moon, Sun, Menu, X, Globe } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 
@@ -26,30 +27,30 @@ function Navbar() {
     <nav className="navbar">
       <div className="navbar-container">
 
-        <a href="/" className="navbar-logo">
+        <Link to="/" className="navbar-logo">
           <img src="src\assets\logo.webp" alt="" />
-        </a>
+        </Link>
 
         <div className={`navbar-links ${menuOpen ? "active" : ""}`}>
-          <a href="/" onClick={() => setMenuOpen(false)}>
+          <Link to="/" onClick={() => setMenuOpen(false)}>
             {language === "AZ" ? "Ana səhifə" : "Home"}
-          </a>
+          </Link>
 
-          <a href="/festival" onClick={() => setMenuOpen(false)}>
+          <Link to="/festival" onClick={() => setMenuOpen(false)}>
             {language === "AZ" ? "Festival" : "Festival"}
-          </a>
+          </Link>
 
-          <a href="#about" onClick={() => setMenuOpen(false)}>
+          <Link to="/about" onClick={() => setMenuOpen(false)}>
             {language === "AZ" ? "Haqqımızda" : "About"}
-          </a>
+          </Link>
 
-          <a href="#news" onClick={() => setMenuOpen(false)}>
+          <Link to="/news" onClick={() => setMenuOpen(false)}>
             {language === "AZ" ? "Xəbərlər" : "News"}
-          </a>
+          </Link>
 
-          <a href="#gallery" onClick={() => setMenuOpen(false)}>
+          <Link to="/gallery" onClick={() => setMenuOpen(false)}>
             {language === "AZ" ? "Qalereya" : "Gallery"}
-          </a>
+          </Link>
         </div>
 
         <div className="navbar-actions">

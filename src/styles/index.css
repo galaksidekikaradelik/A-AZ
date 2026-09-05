@@ -14,7 +14,11 @@
 @import "./components/festival-cta.css";
 
 @import "./pages/home.css";
+@import "./pages/page-header.css";
+@import "./pages/news.css";
+@import "./pages/about.css";
+@import "./pages/team.css";
+@import "./pages/gallery.css";
 
 
 @import 'base/light-theme.css';
-
