@@ -1,3 +1,132 @@
+.festival-hero {
+  min-height: 100vh;
+  padding: 90px 5% 100px;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-sprockets {
+  max-width: 1400px;
+  margin: 0 auto 70px;
+  overflow: hidden;
+}
+
+.reel-tag {
+  display: inline-block;
+  margin-bottom: 28px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--color-border-strong);
+}
+
+.festival-hero-container {
+  max-width: 1400px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(52px, 7vw, 96px);
+  line-height: 0.98;
+  letter-spacing: -0.01em;
+  margin-bottom: 32px;
+
+  opacity: 0;
+  transform: translateY(18px);
+  animation: hero-rise 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) 0.15s forwards;
+}
+
+.festival-hero-content p {
+  max-width: 480px;
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--color-text-dim);
+
+  opacity: 0;
+  animation: hero-rise 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) 0.35s forwards;
+}
+
+.festival-buttons {
+  display: flex;
+  gap: 14px;
+  margin-top: 40px;
+
+  opacity: 0;
+  animation: hero-rise 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) 0.5s forwards;
+}
+
+@keyframes hero-rise {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.festival-btn {
+  padding: 15px 28px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 15px;
+  text-decoration: none;
+  transition: transform var(--transition-fast), background var(--transition-fast);
+}
+
+.festival-btn.primary {
+  background: var(--color-human);
+  color: var(--color-dark);
+}
+
+.festival-btn.primary:hover {
+  background: color-mix(in srgb, var(--color-human) 82%, white);
+}
+
+.festival-btn.secondary {
+  border: 1px solid var(--color-border-strong);
+  color: var(--color-text);
+}
+
+.festival-btn.secondary:hover {
+  border-color: var(--color-text-dim);
+}
+
+.festival-btn:active {
+  transform: scale(0.98);
+}
+
+/* ---- hero visual: see HeroFaceVisual.css for the face/eye styling ---- */
+.festival-hero-visual {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  .festival-hero-container {
+    grid-template-columns: 1fr;
+  }
+
+  .festival-hero-content {
+    text-align: left;
+  }
+}
+
+@media (max-width: 500px) {
+  .hero-title {
+    letter-spacing: -0.005em;
+  }
+
+  .hero-sprockets span:nth-child(n + 15) {
+    display: none;
+  }
+}
+
 .festival-rules {
   padding: 130px 5%;
   background: var(--color-surface);

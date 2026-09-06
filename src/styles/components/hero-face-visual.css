@@ -1,0 +1,61 @@
+.hero-face {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  border: 1px solid var(--color-border-strong);
+  overflow: hidden;
+
+  opacity: 0;
+  transform: scale(0.97);
+  animation: hero-face-in 1s cubic-bezier(0.22, 0.61, 0.36, 1)
+    0.25s forwards;
+}
+
+@keyframes hero-face-in {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.hero-face-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  user-select: none;
+  pointer-events: none;
+}
+
+.hero-face {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.hero-robot-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-face {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+
+  .hero-face-pupil {
+    transition: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-face {
+    max-width: 340px;
+  }
+}

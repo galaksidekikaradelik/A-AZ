@@ -2,24 +2,36 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 import FestivalHero from "../components/FestivalHero";
-import FestivalAbout from "../components/FestivalAbout";
 import FestivalCategories from "../components/FestivalCategories";
 import FestivalRules from "../components/FestivalRules";
 import FestivalAwards from "../components/FestivalAwards";
-import FestivalCTA from "../components/FestivalCTA";
+import FestivalEffects from "../components/FestivalEffects";
 
 function Festival() {
   return (
     <>
       <Navbar />
 
-      <main>
+      <main className="festival-page">
+        <div
+          className="festival-cursor-glow"
+          aria-hidden="true"
+        />
+
+        <div
+          className="festival-scanlines"
+          aria-hidden="true"
+        />
+
+        <FestivalEffects />
         <FestivalHero />
-        <FestivalAbout />
+
         <FestivalCategories />
+
         <FestivalRules />
+
         <FestivalAwards />
-        <FestivalCTA />
+
       </main>
 
       <Footer />

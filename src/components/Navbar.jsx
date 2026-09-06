@@ -4,7 +4,10 @@ import { Moon, Sun, Menu, X, Globe } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 
 function Navbar() {
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem("theme") || "dark";
+  });
+
   const [menuOpen, setMenuOpen] = useState(false);
   const [languageOpen, setLanguageOpen] = useState(false);
 
@@ -12,10 +15,13 @@ function Navbar() {
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
   }, [theme]);
 
   const toggleTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
+    setTheme((currentTheme) =>
+      currentTheme === "dark" ? "light" : "dark"
+    );
   };
 
   const changeLanguage = (newLanguage) => {
@@ -28,7 +34,7 @@ function Navbar() {
       <div className="navbar-container">
 
         <Link to="/" className="navbar-logo">
-          <img src="src\assets\logo.webp" alt="" />
+          <img src="/src/assets/logo.webp" alt="" />
         </Link>
 
         <div className={`navbar-links ${menuOpen ? "active" : ""}`}>
@@ -37,7 +43,7 @@ function Navbar() {
           </Link>
 
           <Link to="/festival" onClick={() => setMenuOpen(false)}>
-            {language === "AZ" ? "Festival" : "Festival"}
+            Festival
           </Link>
 
           <Link to="/about" onClick={() => setMenuOpen(false)}>
