@@ -88,7 +88,7 @@ function Footer() {
             {t.footer.festival}
           </Link>
 
-          <Link to="/gallery">
+          <Link to="/media">
             {t.footer.gallery}
           </Link>
 

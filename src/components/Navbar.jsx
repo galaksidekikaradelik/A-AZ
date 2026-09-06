@@ -54,8 +54,8 @@ function Navbar() {
             {language === "AZ" ? "Xəbərlər" : "News"}
           </Link>
 
-          <Link to="/gallery" onClick={() => setMenuOpen(false)}>
-            {language === "AZ" ? "Qalereya" : "Gallery"}
+          <Link to="/media" onClick={() => setMenuOpen(false)}>
+            Media
           </Link>
         </div>
 

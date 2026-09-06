@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Festival from "./pages/Festival";
 import News from "./pages/News";
+import NewsDetail from "./pages/NewsDetail";
 import AboutUs from "./pages/AboutUs";
 import Gallery from "./pages/Gallery";
 
@@ -22,8 +23,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/festival" element={<Festival />} />
         <Route path="/news" element={<News />} />
+        <Route path="/news/:id" element={<NewsDetail />} />
         <Route path="/about" element={<AboutUs />} />
-        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/media" element={<Gallery />} />
       </Routes>
     </BrowserRouter>
   );

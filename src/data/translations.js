@@ -4,7 +4,7 @@ export const translations = {
       home: "Ana səhifə",
       news: "Xəbərlər",
       festival: "Festival haqqında",
-      gallery: "Qalereya",
+      gallery: "Media",
     },
 
     hero: {
@@ -29,6 +29,8 @@ export const translations = {
       title: "Xəbərlər",
       read: "Oxu →",
       more: "Daha çoxuna bax",
+      back: "Xəbərlərə qayıt",
+      notFound: "Xəbər tapılmadı",
     },
 
     about: {
@@ -82,7 +84,8 @@ export const translations = {
 
     gallery: {
       label: "AIAZ MEDIA",
-      title: "Qalereya",
+      title: "Media",
+      videosTitle: "Videolar",
     },
 
     partners: {
@@ -98,7 +101,7 @@ export const translations = {
       home: "Ana səhifə",
       news: "Xəbərlər",
       festival: "Festival haqqında",
-      gallery: "Qalereya",
+      gallery: "Media",
       film: "Film Tərtib Et",
     },
   },
@@ -108,7 +111,7 @@ export const translations = {
       home: "Home",
       news: "News",
       festival: "About Festival",
-      gallery: "Gallery",
+      gallery: "Media",
     },
 
     hero: {
@@ -133,6 +136,8 @@ export const translations = {
       title: "News",
       read: "Read →",
       more: "View more",
+      back: "Back to News",
+      notFound: "Article not found",
     },
 
     about: {
@@ -187,7 +192,8 @@ export const translations = {
 
     gallery: {
       label: "AIAZ MEDIA",
-      title: "Gallery",
+      title: "Media",
+      videosTitle: "Videos",
     },
 
     partners: {
@@ -203,7 +209,7 @@ export const translations = {
       home: "Home",
       news: "News",
       festival: "About Festival",
-      gallery: "Gallery",
+      gallery: "Media",
       film: "Create a Film",
     },
   },

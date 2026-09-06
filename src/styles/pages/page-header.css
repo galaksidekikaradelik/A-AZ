@@ -2,14 +2,16 @@
   padding: 160px 5% 60px;
   background: var(--color-bg);
   color: var(--color-text);
+  font-family: var(--font-body);
 }
 
 .page-header h1 {
   margin: 10px 0 0;
   font-family: var(--font-display);
-  font-size: clamp(48px, 7vw, 90px);
-  line-height: 0.95;
-  letter-spacing: -3px;
+  font-weight: 500;
+  font-size: clamp(52px, 7vw, 96px);
+  line-height: 0.98;
+  letter-spacing: -0.02em;
 }
 
 @media (max-width: 600px) {
