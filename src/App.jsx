@@ -6,6 +6,7 @@ import News from "./pages/News";
 import NewsDetail from "./pages/NewsDetail";
 import AboutUs from "./pages/AboutUs";
 import Gallery from "./pages/Gallery";
+import MediaYear from "./pages/MediaYear";
 
 import GrainOverlay from "./components/GrainOverlay";
 import FilmStripEdges from "./components/FilmStripEdges";
@@ -25,7 +26,9 @@ function App() {
         <Route path="/news" element={<News />} />
         <Route path="/news/:id" element={<NewsDetail />} />
         <Route path="/about" element={<AboutUs />} />
+
         <Route path="/media" element={<Gallery />} />
+        <Route path="/media/:year" element={<MediaYear />} />
       </Routes>
     </BrowserRouter>
   );

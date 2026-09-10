@@ -35,18 +35,6 @@ function FestivalHero() {
       }
 
       frame = requestAnimationFrame(() => {
-        /*
-          Hero daxilində mouse koordinatları:
-
-          sol  = -1
-          orta =  0
-          sağ  = +1
-
-          yuxarı = -1
-          orta   =  0
-          aşağı  = +1
-        */
-
         const x =
           ((e.clientX - rect.left) / rect.width) * 2 - 1;
 

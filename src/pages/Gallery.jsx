@@ -7,44 +7,65 @@ import Footer from "../components/Footer";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../data/translations";
 
-// TODO: replace with the real gallery/media assets later
-const images = Array.from({ length: 12 }, (_, i) => {
-  const num = i + 1;
-  return new URL(`../assets/${num}.jpg`, import.meta.url).href;
-});
+// =========================================================
+// MEDIA ASSETS
+// =========================================================
 
-// TODO: real video links/titles will replace these placeholders
-const videos = [
+const mediaFiles = import.meta.glob(
+  "../assets/*/{foto,video}/*.{jpg,jpeg,png,webp,mp4,webm,mov}",
   {
-    category: { AZ: "Keçən ilin qalibi", EN: "Last year's winner" },
-    title: { AZ: "Qısa film adı", EN: "Short film title" },
-    url: "#",
-  },
-  {
-    category: { AZ: "Xüsusi mükafat", EN: "Special award" },
-    title: { AZ: "Qısa film adı", EN: "Short film title" },
-    url: "#",
-  },
-  {
-    category: { AZ: "Festival highlight", EN: "Festival highlight" },
-    title: { AZ: "AIAZ 2025 xülasə videosu", EN: "AIAZ 2025 recap video" },
-    url: "#",
-  },
-];
+    eager: true,
+    query: "?url",
+    import: "default",
+  }
+);
+
+const getYearMedia = (year, type) => {
+  return Object.entries(mediaFiles)
+    .filter(([path]) => path.includes(`../assets/${year}/${type}/`))
+    .map(([, src]) => src);
+};
+
+const years = [2025, 2026].sort((a, b) => b - a);
+
+// =========================================================
+// COMPONENT
+// =========================================================
 
 function Gallery() {
   const { language } = useLanguage();
   const t = translations[language];
 
+  const [activeYear, setActiveYear] = useState(years[0]); // ən yeni il (2026) əvvəlcədən aktiv
   const [activeIndex, setActiveIndex] = useState(null);
+  const [activeImages, setActiveImages] = useState([]);
 
-  const closeLightbox = () => setActiveIndex(null);
+  const photos = getYearMedia(activeYear, "foto");
+  const videos = getYearMedia(activeYear, "video");
 
-  const showPrev = () =>
-    setActiveIndex((i) => (i === 0 ? images.length - 1 : i - 1));
+  // =======================================================
+  // LIGHTBOX
+  // =======================================================
 
-  const showNext = () =>
-    setActiveIndex((i) => (i === images.length - 1 ? 0 : i + 1));
+  const openLightbox = (images, index) => {
+    setActiveImages(images);
+    setActiveIndex(index);
+  };
+
+  const closeLightbox = () => {
+    setActiveIndex(null);
+    setActiveImages([]);
+  };
+
+  const showPrev = () => {
+    setActiveIndex((i) => (i === 0 ? activeImages.length - 1 : i - 1));
+  };
+
+  const showNext = () => {
+    setActiveIndex((i) =>
+      i === activeImages.length - 1 ? 0 : i + 1
+    );
+  };
 
   useEffect(() => {
     if (activeIndex === null) return;
@@ -56,14 +77,21 @@ function Gallery() {
     };
 
     window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [activeIndex]);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [activeIndex, activeImages]);
 
   return (
     <>
       <Navbar />
 
       <main>
+        {/* =================================================
+            PAGE HEADER
+            ================================================= */}
+
         <section className="page-header">
           <div className="section-container">
             <span className="section-label">{t.gallery.label}</span>
@@ -71,50 +99,102 @@ function Gallery() {
           </div>
         </section>
 
+        {/* =================================================
+            YEAR TABS
+            ================================================= */}
+
         <section className="gallery-page">
           <div className="section-container">
-            <div className="gallery-grid">
-              {images.map((src, i) => (
+            <div className="media-tabs" role="tablist">
+              {years.map((year) => (
                 <button
-                  className="gallery-item"
-                  key={i}
-                  onClick={() => setActiveIndex(i)}
-                  aria-label={`Open image ${i + 1}`}
+                  key={year}
+                  role="tab"
+                  aria-selected={activeYear === year}
+                  className={`media-tab ${
+                    activeYear === year ? "is-active" : ""
+                  }`}
+                  onClick={() => setActiveYear(year)}
                 >
-                  <img src={src} alt={`Gallery ${i + 1}`} />
+                  AIAZ {year}
                 </button>
               ))}
             </div>
-          </div>
-        </section>
 
-        <section className="videos-section">
-          <div className="section-container">
-            <h2>{t.gallery.videosTitle}</h2>
+            {/* =============================================
+                TAB CONTENT
+                ============================================= */}
 
-            <div className="videos-grid">
-              {videos.map((video, i) => (
-                <a
-                  className="video-card"
-                  href={video.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  key={i}
-                >
-                  <PlayCircle size={22} />
+            <div className="media-tab-content" key={activeYear}>
+              {photos.length > 0 && (
+                <div className="media-content-section">
+                  <h2 className="media-section-title">
+                    {language === "AZ" ? "Fotolar" : "Photos"}
+                  </h2>
 
-                  <div className="video-card-text">
-                    <span className="video-category">
-                      {video.category[language]}
-                    </span>
-                    <h3>{video.title[language]}</h3>
+                  <div className="gallery-grid">
+                    {photos.map((src, i) => (
+                      <button
+                        className="gallery-item"
+                        key={src}
+                        onClick={() => openLightbox(photos, i)}
+                        aria-label={`Open image ${i + 1}`}
+                      >
+                        <img src={src} alt={`AIAZ ${activeYear} ${i + 1}`} />
+                      </button>
+                    ))}
                   </div>
-                </a>
-              ))}
+                </div>
+              )}
+
+              {videos.length > 0 && (
+                <div className="media-content-section">
+                  <h2 className="media-section-title">
+                    {language === "AZ" ? "Videolar" : "Videos"}
+                  </h2>
+
+                  <div className="videos-grid">
+                    {videos.map((src, i) => {
+                      const fileName = src.split("/").pop().split("?")[0];
+
+                      return (
+                        <a
+                          className="video-card"
+                          href={src}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          key={src}
+                        >
+                          <PlayCircle size={24} />
+
+                          <div className="video-card-text">
+                            <span className="video-category">
+                              AIAZ {activeYear}
+                            </span>
+                            <h3>{fileName || `Video ${i + 1}`}</h3>
+                          </div>
+                        </a>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+
+              {photos.length === 0 && videos.length === 0 && (
+                <p className="media-empty">
+                  {language === "AZ"
+                    ? "Bu il üçün media yoxdur."
+                    : "There is no media for this year."}
+                </p>
+              )}
             </div>
           </div>
         </section>
       </main>
+
+      {/* ===================================================
+          LIGHTBOX
+          =================================================== */}
 
       {activeIndex !== null && (
         <div className="lightbox" onClick={closeLightbox}>
@@ -138,7 +218,7 @@ function Gallery() {
           </button>
 
           <img
-            src={images[activeIndex]}
+            src={activeImages[activeIndex]}
             alt={`Gallery ${activeIndex + 1}`}
             onClick={(e) => e.stopPropagation()}
           />

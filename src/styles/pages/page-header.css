@@ -7,7 +7,7 @@
 
 .page-header h1 {
   margin: 10px 0 0;
-  font-family: var(--font-display);
+  font-family: var(--font-main);
   font-weight: 500;
   font-size: clamp(52px, 7vw, 96px);
   line-height: 0.98;

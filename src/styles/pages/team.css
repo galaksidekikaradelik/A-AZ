@@ -7,7 +7,7 @@
 
 .team-section h2 {
   margin: 0 0 40px;
-  font-family: var(--font-display);
+  font-family: var(--font-main);
   font-weight: 500;
   font-size: clamp(38px, 5vw, 62px);
   line-height: 1.05;
@@ -34,7 +34,7 @@
 
 .team-card h3 {
   margin: 0 0 6px;
-  font-family: var(--font-display);
+  font-family: var(--font-main);
   font-weight: 500;
   font-size: 20px;
 }

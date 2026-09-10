@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import { Moon, Sun, Menu, X, Globe } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 
+import logoLight from "../assets/aiazlogomain.png";
+import logoDark from "../assets/aiazlogoag.png";
+
 function Navbar() {
   const [theme, setTheme] = useState(() => {
     return localStorage.getItem("theme") || "dark";
@@ -34,7 +37,10 @@ function Navbar() {
       <div className="navbar-container">
 
         <Link to="/" className="navbar-logo">
-          <img src="/src/assets/logo.webp" alt="" />
+          <img
+            src={theme === "dark" ? logoDark : logoLight}
+            alt="AIAZ"
+          />
         </Link>
 
         <div className={`navbar-links ${menuOpen ? "active" : ""}`}>

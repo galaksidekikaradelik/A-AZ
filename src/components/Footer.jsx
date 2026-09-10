@@ -27,7 +27,10 @@ function Footer() {
 
         <div className="footer-column">
             <h3>{t.footer.contact}</h3>
-
+            
+            <p>
+              
+            </p>
             <div className="footer-socials">
                 <a
                 href="https://facebook.com/"
