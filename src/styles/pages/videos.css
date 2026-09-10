@@ -71,3 +71,26 @@
     padding: 24px;
   }
 }
+
+/* =========================================================
+   PLACEHOLDER VIDEO CARDS (no real video uploaded yet)
+   ========================================================= */
+
+.video-card.is-placeholder {
+  cursor: default;
+  background: transparent;
+  border: 1px dashed var(--color-border-strong);
+  opacity: 0.55;
+}
+
+.video-card.is-placeholder:hover {
+  background: transparent;
+}
+
+.video-card.is-placeholder svg {
+  color: var(--color-text-dim);
+}
+
+.video-card.is-placeholder .video-category {
+  color: var(--color-text-dim);
+}

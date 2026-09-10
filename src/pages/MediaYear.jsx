@@ -14,23 +14,21 @@ import Footer from "../components/Footer";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../data/translations";
 
-const photoFiles = import.meta.glob(
-  "../assets/*/foto/*.{jpg,jpeg,png,webp}",
-  {
-    eager: true,
-    query: "?url",
-    import: "default",
-  }
-);
+const photoFiles = import.meta.glob("../assets/*/foto/*.{jpg,jpeg,png,webp}", {
+  eager: true,
+  query: "?url",
+  import: "default",
+});
 
-const videoFiles = import.meta.glob(
-  "../assets/*/video/*.{mp4,webm,mov}",
-  {
-    eager: true,
-    query: "?url",
-    import: "default",
-  }
-);
+const videoFiles = import.meta.glob("../assets/*/video/*.{mp4,webm,mov}", {
+  eager: true,
+  query: "?url",
+  import: "default",
+});
+
+// TODO: real winner videos will replace these placeholder cards once
+// files are added to src/assets/<year>/video/
+const placeholderVideoCount = 3;
 
 function MediaYear() {
   const { year } = useParams();
@@ -50,18 +48,16 @@ function MediaYear() {
       name: path.split("/").pop(),
     }));
 
+  const hasRealVideos = videos.length > 0;
+
   const closeLightbox = () => setActiveIndex(null);
 
   const showPrev = () => {
-    setActiveIndex((i) =>
-      i === 0 ? images.length - 1 : i - 1
-    );
+    setActiveIndex((i) => (i === 0 ? images.length - 1 : i - 1));
   };
 
   const showNext = () => {
-    setActiveIndex((i) =>
-      i === images.length - 1 ? 0 : i + 1
-    );
+    setActiveIndex((i) => (i === images.length - 1 ? 0 : i + 1));
   };
 
   useEffect(() => {
@@ -112,10 +108,7 @@ function MediaYear() {
                     onClick={() => setActiveIndex(i)}
                     aria-label={`Open image ${i + 1}`}
                   >
-                    <img
-                      src={src}
-                      alt={`AIAZ ${year} ${i + 1}`}
-                    />
+                    <img src={src} alt={`AIAZ ${year} ${i + 1}`} />
                   </button>
                 ))}
               </div>
@@ -129,35 +122,49 @@ function MediaYear() {
           </div>
         </section>
 
-        {videos.length > 0 && (
-          <section className="videos-section">
-            <div className="section-container">
-              <h2>{t.gallery.videosTitle}</h2>
+        <section className="videos-section">
+          <div className="section-container">
+            <h2>{t.gallery.videosTitle}</h2>
 
-              <div className="videos-grid">
-                {videos.map((video) => (
-                  <a
-                    className="video-card"
-                    href={video.src}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    key={video.src}
-                  >
-                    <PlayCircle size={22} />
+            <div className="videos-grid">
+              {hasRealVideos
+                ? videos.map((video) => (
+                    <a
+                      className="video-card"
+                      href={video.src}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      key={video.src}
+                    >
+                      <PlayCircle size={22} />
 
-                    <div className="video-card-text">
-                      <span className="video-category">
-                        AIAZ {year}
-                      </span>
+                      <div className="video-card-text">
+                        <span className="video-category">AIAZ {year}</span>
+                        <h3>{video.name}</h3>
+                      </div>
+                    </a>
+                  ))
+                : Array.from({ length: placeholderVideoCount }).map(
+                    (_, i) => (
+                      <div className="video-card is-placeholder" key={i}>
+                        <PlayCircle size={22} />
 
-                      <h3>{video.name}</h3>
-                    </div>
-                  </a>
-                ))}
-              </div>
+                        <div className="video-card-text">
+                          <span className="video-category">
+                            {language === "AZ" ? "Tezliklə" : "Coming soon"}
+                          </span>
+                          <h3>
+                            {language === "AZ"
+                              ? "Qalib videosu"
+                              : "Winner video"}
+                          </h3>
+                        </div>
+                      </div>
+                    )
+                  )}
             </div>
-          </section>
-        )}
+          </div>
+        </section>
       </main>
 
       {activeIndex !== null && (

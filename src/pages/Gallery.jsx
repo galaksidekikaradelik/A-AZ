@@ -28,6 +28,10 @@ const getYearMedia = (year, type) => {
 
 const years = [2025, 2026].sort((a, b) => b - a);
 
+// TODO: real winner videos will replace these placeholder cards once
+// files are added to src/assets/<year>/video/
+const placeholderVideoCount = 3;
+
 // =========================================================
 // COMPONENT
 // =========================================================
@@ -36,12 +40,13 @@ function Gallery() {
   const { language } = useLanguage();
   const t = translations[language];
 
-  const [activeYear, setActiveYear] = useState(years[0]); // ən yeni il (2026) əvvəlcədən aktiv
+  const [activeYear, setActiveYear] = useState(years[0]);
   const [activeIndex, setActiveIndex] = useState(null);
   const [activeImages, setActiveImages] = useState([]);
 
   const photos = getYearMedia(activeYear, "foto");
   const videos = getYearMedia(activeYear, "video");
+  const hasRealVideos = videos.length > 0;
 
   // =======================================================
   // LIGHTBOX
@@ -62,9 +67,7 @@ function Gallery() {
   };
 
   const showNext = () => {
-    setActiveIndex((i) =>
-      i === activeImages.length - 1 ? 0 : i + 1
-    );
+    setActiveIndex((i) => (i === activeImages.length - 1 ? 0 : i + 1));
   };
 
   useEffect(() => {
@@ -88,20 +91,12 @@ function Gallery() {
       <Navbar />
 
       <main>
-        {/* =================================================
-            PAGE HEADER
-            ================================================= */}
-
         <section className="page-header">
           <div className="section-container">
             <span className="section-label">{t.gallery.label}</span>
             <h1>{t.gallery.title}</h1>
           </div>
         </section>
-
-        {/* =================================================
-            YEAR TABS
-            ================================================= */}
 
         <section className="gallery-page">
           <div className="section-container">
@@ -120,10 +115,6 @@ function Gallery() {
                 </button>
               ))}
             </div>
-
-            {/* =============================================
-                TAB CONTENT
-                ============================================= */}
 
             <div className="media-tab-content" key={activeYear}>
               {photos.length > 0 && (
@@ -147,54 +138,67 @@ function Gallery() {
                 </div>
               )}
 
-              {videos.length > 0 && (
-                <div className="media-content-section">
-                  <h2 className="media-section-title">
-                    {language === "AZ" ? "Videolar" : "Videos"}
-                  </h2>
+              <div className="media-content-section">
+                <h2 className="media-section-title">
+                  {language === "AZ" ? "Videolar" : "Videos"}
+                </h2>
 
-                  <div className="videos-grid">
-                    {videos.map((src, i) => {
-                      const fileName = src.split("/").pop().split("?")[0];
+                <div className="videos-grid">
+                  {hasRealVideos
+                    ? videos.map((src, i) => {
+                        const fileName = src.split("/").pop().split("?")[0];
 
-                      return (
-                        <a
-                          className="video-card"
-                          href={src}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          key={src}
-                        >
-                          <PlayCircle size={24} />
+                        return (
+                          <a
+                            className="video-card"
+                            href={src}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            key={src}
+                          >
+                            <PlayCircle size={24} />
 
-                          <div className="video-card-text">
-                            <span className="video-category">
-                              AIAZ {activeYear}
-                            </span>
-                            <h3>{fileName || `Video ${i + 1}`}</h3>
+                            <div className="video-card-text">
+                              <span className="video-category">
+                                AIAZ {activeYear}
+                              </span>
+                              <h3>{fileName || `Video ${i + 1}`}</h3>
+                            </div>
+                          </a>
+                        );
+                      })
+                    : Array.from({ length: placeholderVideoCount }).map(
+                        (_, i) => (
+                          <div className="video-card is-placeholder" key={i}>
+                            <PlayCircle size={24} />
+
+                            <div className="video-card-text">
+                              <span className="video-category">
+                                {language === "AZ" ? "Tezliklə" : "Coming soon"}
+                              </span>
+                              <h3>
+                                {language === "AZ"
+                                  ? "Qalib videosu"
+                                  : "Winner video"}
+                              </h3>
+                            </div>
                           </div>
-                        </a>
-                      );
-                    })}
-                  </div>
+                        )
+                      )}
                 </div>
-              )}
+              </div>
 
-              {photos.length === 0 && videos.length === 0 && (
+              {photos.length === 0 && !hasRealVideos && (
                 <p className="media-empty">
                   {language === "AZ"
-                    ? "Bu il üçün media yoxdur."
-                    : "There is no media for this year."}
+                    ? "Bu il üçün media hazırlanır."
+                    : "Media for this year is being prepared."}
                 </p>
               )}
             </div>
           </div>
         </section>
       </main>
-
-      {/* ===================================================
-          LIGHTBOX
-          =================================================== */}
 
       {activeIndex !== null && (
         <div className="lightbox" onClick={closeLightbox}>
