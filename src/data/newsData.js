@@ -3,7 +3,6 @@ import news2 from "../assets/news2.jpg";
 import news3 from "../assets/news3.jpg";
 import news4 from "../assets/news4.jpg";
 
-// TODO: real content will replace this placeholder list later
 export const newsItems = [
   {
     id: 1,

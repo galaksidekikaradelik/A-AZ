@@ -3,7 +3,7 @@
   padding: 90px 5% 100px;
   background: var(--color-bg);
   color: var(--color-text);
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   position: relative;
   overflow: hidden;
   isolation: isolate;
@@ -25,19 +25,11 @@
   }
 }
 
-/* =========================================================
-   SPROCKETS
-   ========================================================= */
-
 .hero-sprockets {
   max-width: 1400px;
   margin: 0 auto 70px;
   overflow: hidden;
 }
-
-/* =========================================================
-   HERO CONTAINER
-   ========================================================= */
 
 .festival-hero-container {
   max-width: 1200px;
@@ -50,10 +42,6 @@
   text-align: center;
 }
 
-/* =========================================================
-   HERO CONTENT
-   ========================================================= */
-
 .festival-hero-content {
   width: 100%;
 
@@ -65,7 +53,7 @@
 }
 
 .hero-title {
-  font-family: var(--font-main);
+  font-family: var(--font-display);
   font-weight: 500;
 
   font-size: clamp(52px, 7vw, 96px);
@@ -104,10 +92,6 @@
     forwards;
 }
 
-/* =========================================================
-   BUTTONS
-   ========================================================= */
-
 .festival-buttons {
   display: flex;
   justify-content: center;
@@ -135,7 +119,7 @@
 .festival-btn {
   padding: 15px 28px;
 
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   font-weight: 500;
   font-size: 15px;
 
@@ -172,10 +156,6 @@
 .festival-btn:active {
   transform: scale(0.98);
 }
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
 
 @media (max-width: 700px) {
   .festival-hero {
@@ -222,10 +202,6 @@
     display: none;
   }
 }
-
-/* =========================================================
-   REDUCED MOTION
-   ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
   .hero-title,

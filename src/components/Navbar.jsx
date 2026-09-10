@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { Moon, Sun, Menu, X, Globe } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 
 import logoLight from "../assets/aiazlogomain.png";
 import logoDark from "../assets/aiazlogoag.png";
+import { Film } from "lucide-react";
 
 function Navbar() {
   const [theme, setTheme] = useState(() => {
@@ -32,6 +33,9 @@ function Navbar() {
     setLanguageOpen(false);
   };
 
+  const navLinkClass = ({ isActive }) =>
+    isActive ? "active" : undefined;
+
   return (
     <nav className="navbar">
       <div className="navbar-container">
@@ -44,29 +48,58 @@ function Navbar() {
         </Link>
 
         <div className={`navbar-links ${menuOpen ? "active" : ""}`}>
-          <Link to="/" onClick={() => setMenuOpen(false)}>
+          <NavLink
+            to="/"
+            end
+            className={navLinkClass}
+            onClick={() => setMenuOpen(false)}
+          >
             {language === "AZ" ? "Ana səhifə" : "Home"}
-          </Link>
+          </NavLink>
 
-          <Link to="/festival" onClick={() => setMenuOpen(false)}>
+          <NavLink
+            to="/festival"
+            className={navLinkClass}
+            onClick={() => setMenuOpen(false)}
+          >
             Festival
-          </Link>
+          </NavLink>
 
-          <Link to="/about" onClick={() => setMenuOpen(false)}>
+          <NavLink
+            to="/about"
+            className={navLinkClass}
+            onClick={() => setMenuOpen(false)}
+          >
             {language === "AZ" ? "Haqqımızda" : "About"}
-          </Link>
+          </NavLink>
 
-          <Link to="/news" onClick={() => setMenuOpen(false)}>
+          <NavLink
+            to="/news"
+            className={navLinkClass}
+            onClick={() => setMenuOpen(false)}
+          >
             {language === "AZ" ? "Xəbərlər" : "News"}
-          </Link>
+          </NavLink>
 
-          <Link to="/media" onClick={() => setMenuOpen(false)}>
+          <NavLink
+            to="/media"
+            className={navLinkClass}
+            onClick={() => setMenuOpen(false)}
+          >
             Media
-          </Link>
+          </NavLink>
         </div>
 
         <div className="navbar-actions">
-
+          <a
+            href="https://filmfreeway.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="filmfreeway-link"
+            aria-label="FilmFreeway"
+          >
+            <span>FilmFreeway</span>
+          </a>
           <button
             className={`theme-toggle ${theme}`}
             onClick={toggleTheme}

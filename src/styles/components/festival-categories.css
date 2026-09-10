@@ -2,7 +2,7 @@
   padding: 130px 5%;
   background: var(--color-bg);
   color: var(--color-text);
-  font-family: var(--font-body);
+  font-family: var(--font-display);
 }
 
 .festival-categories-container {
@@ -22,7 +22,7 @@
 
 .festival-categories-header h2 {
   margin-bottom: 22px;
-  font-family: var(--font-main);
+  font-family: var(--font-display);
   font-weight: 500;
   font-size: clamp(38px, 5vw, 62px);
   line-height: 1.05;
@@ -95,7 +95,7 @@
 
 .festival-category-card h3 {
   margin-top: 26px;
-  font-family: var(--font-main);
+  font-family: var(--font-display);
   font-weight: 500;
   font-size: clamp(26px, 3vw, 36px);
 }

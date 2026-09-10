@@ -1,9 +1,6 @@
 import { useRef } from "react";
 
-/**
- * Wraps a link/button so it gently shifts toward the cursor as it approaches,
- * and eases back on leave. Skips the effect under prefers-reduced-motion.
- */
+
 function MagneticButton({ children, className, href, target, rel, strength = 0.3 }) {
   const ref = useRef(null);
 

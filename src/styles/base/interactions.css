@@ -1,9 +1,3 @@
-/* =========================================================
-   INTERACTIONS — grain texture + scroll reveal + magnetic buttons
-   Add this file's import once, alongside tokens.css.
-   ========================================================= */
-
-/* ---- film grain, fixed over the whole viewport, very low opacity ---- */
 .grain-overlay {
   position: fixed;
   inset: 0;
@@ -21,7 +15,6 @@
   }
 }
 
-/* ---- scroll reveal: one moment per section, not per card ---- */
 .reveal {
   opacity: 0;
   transform: translateY(24px);
@@ -42,7 +35,6 @@
   }
 }
 
-/* ---- magnetic buttons need a quick, responsive transform transition ---- */
 .festival-btn,
 .festival-cta-button {
   transition: transform 0.15s ease-out, background var(--transition-fast),

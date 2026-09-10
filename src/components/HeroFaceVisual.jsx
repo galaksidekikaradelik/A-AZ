@@ -4,13 +4,10 @@ import cyborgPupil from "../assets/pupil-sprite.png";
 import humanPupil from "../assets/human-eye-sprite.png";
 import robotEyeCore from "../assets/robot-eye-sprite.png";
 
-// Native pixel dimensions of the background image
 const NATIVE_W = 720;
 const NATIVE_H = 809;
 
-// Each eye: center position + sprite size (all measured at native scale)
-// and its own max travel distance in px, since the three eyes are very
-// different sizes and shouldn't all move the same amount.
+
 const EYES = [
   {
     name: "cyborg",
@@ -45,12 +42,6 @@ function HeroFaceVisual({ mouseX = 0, mouseY = 0 }) {
   const wrapperRef = useRef(null);
   const [width, setWidth] = useState(NATIVE_W);
 
-  // Measure the wrapper's actual rendered WIDTH and derive height ourselves.
-  // This keeps the face image at its correct aspect ratio no matter what the
-  // parent flex/grid layout tries to do to this element's height (e.g. a
-  // flex row with align-items: stretch would otherwise stretch the image
-  // vertically while the eye sprites keep their own natural ratio, causing
-  // a visible size mismatch between the face and the eyes).
   useEffect(() => {
     const el = wrapperRef.current;
     if (!el) return;

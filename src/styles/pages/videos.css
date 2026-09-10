@@ -2,12 +2,12 @@
   padding: 0 5% 140px;
   background: var(--color-bg);
   color: var(--color-text);
-  font-family: var(--font-body);
+  font-family: var(--font-display);
 }
 
 .videos-section h2 {
   margin: 0 0 40px;
-  font-family: var(--font-main);
+  font-family: var(--font-display);
   font-weight: 500;
   font-size: clamp(38px, 5vw, 62px);
   line-height: 1.05;
@@ -54,7 +54,7 @@
 }
 
 .video-card h3 {
-  font-family: var(--font-main);
+  font-family: var(--font-display);
   font-weight: 500;
   font-size: 19px;
   line-height: 1.3;

@@ -3,7 +3,7 @@
   padding: 90px 5% 100px;
   background: var(--color-bg);
   color: var(--color-text);
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   position: relative;
   overflow: hidden;
 }
@@ -32,7 +32,7 @@
 }
 
 .hero-title {
-  font-family: var(--font-main);
+  font-family: var(--font-display);
   font-weight: 500;
   font-size: clamp(52px, 7vw, 96px);
   line-height: 0.98;
@@ -72,7 +72,7 @@
 
 .festival-btn {
   padding: 15px 28px;
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   font-weight: 500;
   font-size: 15px;
   text-decoration: none;
@@ -101,7 +101,6 @@
   transform: scale(0.98);
 }
 
-/* ---- hero visual: see HeroFaceVisual.css for the face/eye styling ---- */
 .festival-hero-visual {
   display: flex;
   justify-content: center;
@@ -131,7 +130,7 @@
   padding: 130px 5%;
   background: var(--color-surface);
   color: var(--color-text);
-  font-family: var(--font-body);
+  font-family: var(--font-display);
 }
 
 .festival-rules-container {
@@ -151,7 +150,7 @@
 
 .festival-rules-header h2 {
   margin-bottom: 22px;
-  font-family: var(--font-main);
+  font-family: var(--font-display);
   font-weight: 500;
   font-size: clamp(38px, 5vw, 62px);
   line-height: 1.05;
@@ -186,7 +185,7 @@
 .rule-card h3 {
   margin-top: 34px;
   margin-bottom: 22px;
-  font-family: var(--font-main);
+  font-family: var(--font-display);
   font-weight: 500;
   font-size: 28px;
   line-height: 1.1;

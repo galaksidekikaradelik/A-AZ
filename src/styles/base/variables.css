@@ -3,6 +3,7 @@
   --color-purple-dark: #51033F;
   --color-purple: #AB61D1;
   --color-blue: #1266BA;
+  --color-purple-dark-hover: #8c0a6e;
 
   --color-bg: #070031;
   --color-text: #FFFFFF;
@@ -41,8 +42,8 @@
   --color-text-dim: rgba(255, 255, 255, 0.65);
   --color-text-faint: rgba(255, 255, 255, 0.4);
 
-  --font-main: 'Inter', sans-serif;
-  --font-main: 'Fraunces', Georgia, serif;
+  --font-body: 'Poppins', Arial, Helvetica, sans-serif;
+  --font-display: 'Poppins', Georgia, serif;
   --font-mono: 'JetBrains Mono', 'SF Mono', monospace;
 }
 

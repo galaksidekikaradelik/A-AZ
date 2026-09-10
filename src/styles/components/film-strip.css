@@ -1,14 +1,3 @@
-/* =========================================================
-   FILM STRIP EDGES — site-wide ambient identity element
-   Not "old film reel" black — a faint, glowing frame pattern
-   in the site's own purple, sitting at the very edge of the
-   viewport. Fixed, non-interactive, invisible to layout.
-
-   Tune these two variables to taste — --filmstrip-opacity is
-   the "how visible" dial, closer to 0 = closer to your
-   original "95% transparent" spec.
-   ========================================================= */
-
 .film-strip {
   --filmstrip-opacity: 0.18;
   --filmstrip-width: 22px;
@@ -30,10 +19,6 @@
   mask-position: center top;
   -webkit-mask-size: 34px 96px;
   mask-size: 22px 70px;
-
-  /* one "frame" tile: a rounded rectangle outline, repeated vertically.
-     mask-image uses alpha only, so background-color above supplies
-     the real, theme-aware brand color. */
   -webkit-mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='34' height='96'><rect x='9' y='14' width='16' height='40' rx='5' fill='none' stroke='white' stroke-width='2'/></svg>");
   mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='34' height='96'><rect x='9' y='14' width='16' height='40' rx='5' fill='none' stroke='white' stroke-width='2'/></svg>");
 }
@@ -46,7 +31,7 @@
   right: 0;
 }
 
-/* hide on narrow viewports so it never competes with content on mobile */
+
 @media (max-width: 860px) {
   .film-strip {
     display: none;

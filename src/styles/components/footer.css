@@ -58,10 +58,6 @@
   transform: translateX(5px);
 }
 
-/* =========================
-   COPYRIGHT
-========================= */
-
 .footer-bottom {
   width: 100%;
   max-width: 1400px;
@@ -75,10 +71,6 @@
   letter-spacing: 0.5px;
   opacity: 0.5;
 }
-
-/* =========================
-   RESPONSIVE
-========================= */
 
 @media (max-width: 800px) {
   .footer {

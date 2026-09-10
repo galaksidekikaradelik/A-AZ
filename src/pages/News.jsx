@@ -18,7 +18,6 @@ function News() {
       <main>
         <section className="page-header">
           <div className="section-container">
-            <span className="section-label">{t.news.label}</span>
             <h1>{t.news.title}</h1>
           </div>
         </section>

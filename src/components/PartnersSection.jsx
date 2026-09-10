@@ -19,10 +19,6 @@ function PartnersSection() {
       <div className="section-container">
 
         <div className="section-header">
-          <span className="section-label">
-            {t.partners.label}
-          </span>
-
           <h2>
             {t.partners.title}
           </h2>

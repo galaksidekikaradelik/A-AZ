@@ -2,15 +2,13 @@ import { useEffect, useRef } from "react";
 import bgImage from "../assets/human-ai-bg.png";
 import pupilImage from "../assets/pupil-sprite.png";
 
-// Native pixel dimensions of the background image
 const NATIVE_W = 720;
 const NATIVE_H = 809;
 
-// Pupil geometry measured on the native image
 const PUPIL_CENTER_X_RATIO = 361.65 / NATIVE_W;
 const PUPIL_CENTER_Y_RATIO = 355.28 / NATIVE_H;
-const SPRITE_SIZE = 58; // px at native scale
-const MAX_MOVE = 11; // px the pupil can shift at native scale
+const SPRITE_SIZE = 58; 
+const MAX_MOVE = 11; 
 const IDLE_DELAY_MS = 2500;
 
 export default function EyeTracker() {

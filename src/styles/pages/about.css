@@ -2,7 +2,7 @@
   padding: 40px 5% 100px;
   background: var(--color-bg);
   color: var(--color-text);
-  font-family: var(--font-body);
+  font-family: var(--font-display);
 }
 
 .about-page-content {
@@ -18,7 +18,7 @@
 
 .about-page-content h2 {
   margin: 50px 0 20px;
-  font-family: var(--font-main);
+  font-family: var(--font-display);
   font-weight: 500;
   font-size: clamp(38px, 5vw, 62px);
   line-height: 1.05;

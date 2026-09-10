@@ -59,10 +59,6 @@ function NewsSection() {
       <div className="section-container">
 
         <div className="section-header">
-          <span className="section-label">
-            {t.news.label}
-          </span>
-
           <h2>
             {t.news.title}
           </h2>

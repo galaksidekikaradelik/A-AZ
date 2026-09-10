@@ -42,15 +42,12 @@ function Home() {
       const trigger = ScrollTrigger.create({
         trigger: ".hero",
         start: "top top",
-        // Sabit "+=8000" yerinə ekran hündürlüyünə nisbi dəyər.
-        // Multiplikatoru (6) videonun uzunluğuna görə tənzimləyin:
-        // daha uzun/çox kadrlı video üçün böyüdün, qısa video üçün azaldın.
         end: () => "+=" + window.innerHeight * 2,
         pin: true,
         scrub: true,
 
         onUpdate: (self) => {
-          const endHold = 0.08; // son 8%-də son kadrda qal
+          const endHold = 0.08; 
 
           if (self.progress >= 1 - endHold) {
             targetTime = video.duration - 0.05;
@@ -61,8 +58,6 @@ function Home() {
         },
       });
 
-      // Pəncərə ölçüsü dəyişəndə (məs. mobil rotasiya, DevTools açılıb-bağlanması)
-      // "end" dəyərini yenidən hesablamaq üçün ScrollTrigger-ə xəbər ver.
       const handleResize = () => ScrollTrigger.refresh();
       window.addEventListener("resize", handleResize);
 

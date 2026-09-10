@@ -93,7 +93,6 @@ function Gallery() {
       <main>
         <section className="page-header">
           <div className="section-container">
-            <span className="section-label">{t.gallery.label}</span>
             <h1>{t.gallery.title}</h1>
           </div>
         </section>

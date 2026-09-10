@@ -11,6 +11,7 @@
   border-bottom: 1px solid var(--border-color);
 
   backdrop-filter: blur(12px);
+  font-family: var(--font-display);
   -webkit-backdrop-filter: blur(12px);
 }
 
@@ -23,15 +24,11 @@
   justify-content: space-between;
 }
 
-/* LOGO */
-
 .navbar-logo{
     max-width: 80px;
     height: auto;
     display: block;
 }
-
-/* LINKS */
 
 .navbar-links {
   display: flex;
@@ -40,11 +37,27 @@
 }
 
 .navbar-links a {
+  position: relative;
   color: var(--text-color);
   text-decoration: none;
   font-size: 14px;
   font-weight: 500;
+  padding-bottom: 4px;
   transition: color 0.25s ease, opacity 0.25s ease;
+}
+
+.navbar-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 2px;
+  border-radius: 2px;
+  background:  var(--color-purple);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
 }
 
 .navbar-links a:hover {
@@ -52,15 +65,26 @@
   opacity: 1;
 }
 
-/* ACTIONS */
+.navbar-links a:hover::after {
+  transform: scaleX(1);
+  opacity: 0.5;
+}
+
+.navbar-links a.active {
+  color: var(--color-purple);
+  font-weight: 700;
+}
+
+.navbar-links a.active::after {
+  transform: scaleX(1);
+  opacity: 1;
+}
 
 .navbar-actions {
   display: flex;
   align-items: center;
   gap: 20px;
 }
-
-/* THEME TOGGLE */
 
 .theme-toggle {
   width: 52px;
@@ -95,8 +119,6 @@
   justify-content: center;
   transition: transform 0.3s ease;
 }
-
-/* LANGUAGE */
 
 .language-switcher {
   position: relative;
@@ -175,8 +197,6 @@
   color: var(--color-purple);
 }
 
-/* MOBILE BUTTON */
-
 .mobile-menu-button {
   display: none;
   border: none;
@@ -189,7 +209,41 @@
   color: var(--color-purple);
 }
 
-/* MOBILE */
+.filmfreeway-link {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 13px;
+
+  border-radius: 20px;
+  background: var(--color-purple-dark);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+
+  transition: all 0.3s ease;
+}
+
+.filmfreeway-link img {
+  width: 21px;
+  height: 21px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.filmfreeway-link:hover {
+  background: var(--color-purple);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-1px);
+}
+
+.filmfreeway-link:hover img {
+  transform: scale(1.08);
+}
 
 @media (max-width: 768px) {
   .navbar {

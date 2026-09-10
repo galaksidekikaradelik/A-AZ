@@ -9,6 +9,8 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 
+import FilmFreewayIcon from "./FilmFreewayIcon";
+
 function Footer() {
   const { language } = useLanguage();
   const t = translations[language];
@@ -32,8 +34,9 @@ function Footer() {
               
             </p>
             <div className="footer-socials">
+               
                 <a
-                href="https://facebook.com/"
+                href="https://www.facebook.com/aiazff"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
@@ -42,7 +45,7 @@ function Footer() {
                 </a>
 
                 <a
-                href="mailto:info@aiaz.az"
+                href="mailto:aiazfilmfestival@gmail.com"
                 aria-label="Email"
                 >
                 <FaEnvelope />
@@ -56,7 +59,7 @@ function Footer() {
                 </a>
 
                 <a
-                href="https://instagram.com/"
+                href="https://www.instagram.com/aiazfilmfestival/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
@@ -65,12 +68,21 @@ function Footer() {
                 </a>
 
                 <a
-                href="https://youtube.com/"
+                href="https://www.youtube.com/@A%C4%B0AZFilmFestival"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="YouTube"
                 >
                 <FaYoutube />
+                </a>
+
+                <a
+                  href="https://filmfreeway.com/aiazff"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="FilmFreeway"
+                >
+                  <FilmFreewayIcon size={20} />
                 </a>
             </div>
             </div>

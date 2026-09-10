@@ -15,7 +15,6 @@ function AboutUs() {
       <main>
         <section className="page-header">
           <div className="section-container">
-            <span className="section-label">{t.about.label}</span>
             <h1>{t.about.title}</h1>
           </div>
         </section>

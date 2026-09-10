@@ -45,13 +45,9 @@
     color 0.3s ease;
 }
 
-/* Hover zamanı animasiya dayanır */
-
 .partners-marquee:hover .partners-track {
   animation-play-state: paused;
 }
-
-/* Hover olunan logo */
 
 .partner-logo:hover {
   filter: grayscale(0%);

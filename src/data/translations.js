@@ -74,7 +74,6 @@ export const translations = {
         "AIAZ – gələcəyin kinofestivalı bu gündən başlayır. İnsan, maşın və hekayə bir arada.",
 
       teamTitle: "Komanda üzvləri",
-      // TODO: real team member names/roles/photos will replace these placeholders
       team: [
         { name: "Ad Soyad", role: "Vəzifə" },
         { name: "Ad Soyad", role: "Vəzifə" },
@@ -144,7 +143,6 @@ export const translations = {
       label: "ABOUT AIAZ",
       title: "About Us",
 
-      // TODO: English translation of the About Us copy is pending — Azerbaijani text kept here as a placeholder for now
       intro: [
         "AIAZ Beynəlxalq Qısa Filmlər Festivalı Qafqazda süni intellekt və kinonun kəsişməsinə həsr olunmuş ilk festivaldır. 2025-ci ildə yaradılmış və Bakıda keçirilən bu festival, texnologiya ilə yaradıcılığı bir araya gətirən unikal bir platformadır.",
         "AIAZ həm Artificial Intelligence Azerbaijan (Azərbaycan Süni İntellekti), həm də festivalın süni intellekt əsaslı jüri sisteminin adıdır. Bu, insan yaradıcılığı ilə maşın düşüncəsinin simbiyozunu ifadə edir.",
@@ -182,7 +180,6 @@ export const translations = {
         "AIAZ – gələcəyin kinofestivalı bu gündən başlayır. İnsan, maşın və hekayə bir arada.",
 
       teamTitle: "Team Members",
-      // TODO: real team member names/roles/photos will replace these placeholders
       team: [
         { name: "Full Name", role: "Role" },
         { name: "Full Name", role: "Role" },
