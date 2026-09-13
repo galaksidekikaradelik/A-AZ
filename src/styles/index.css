@@ -20,6 +20,6 @@
 @import "./pages/about.css";
 @import "./pages/team.css";
 @import "./pages/gallery.css";
-@import "./pages/videos.css";
 
 
+@import 'base/light-theme.css';

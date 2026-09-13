@@ -1,56 +1,125 @@
 .about-page {
-  padding: 40px 5% 100px;
+  padding: 20px 0 100px;
   background: var(--color-bg);
   color: var(--color-text);
-  font-family: var(--font-display);
+  font-family: var(--font-body);
 }
 
 .about-page-content {
-  max-width: 780px;
+  max-width: 820px;
 }
 
 .about-page-content p {
-  margin-bottom: 26px;
+  margin-bottom: 24px;
   font-size: 17px;
   line-height: 1.85;
   color: var(--color-text-dim);
 }
 
 .about-page-content h2 {
-  margin: 50px 0 20px;
+  margin: 48px 0 22px;
   font-family: var(--font-display);
-  font-weight: 500;
-  font-size: clamp(38px, 5vw, 62px);
-  line-height: 1.05;
+  font-size: clamp(26px, 3.5vw, 36px);
   color: var(--color-text);
 }
 
-.about-directions,
-.about-events {
-  margin: 0 0 26px;
-  padding-left: 22px;
+/* =========================================================
+   DIRECTIONS (rounded card pair)
+   ========================================================= */
+
+.about-directions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin: 0 0 32px;
+  padding: 0;
+  list-style: none;
 }
 
-.about-directions li,
+.about-directions li {
+  padding: 28px;
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  font-size: 15.5px;
+  line-height: 1.75;
+  color: var(--color-text-dim);
+
+  transition: border-color var(--transition-fast),
+    transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.about-directions li:hover {
+  border-color: var(--color-purple);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-sm);
+}
+
+.about-directions strong {
+  display: block;
+  margin-bottom: 10px;
+  font-family: var(--font-display);
+  font-size: 17px;
+  color: var(--color-purple);
+}
+
+/* =========================================================
+   EVENTS LIST
+   ========================================================= */
+
+.about-events {
+  margin: 0 0 24px;
+  padding-left: 4px;
+  list-style: none;
+}
+
 .about-events li {
+  position: relative;
   margin-bottom: 14px;
+  padding-left: 24px;
   font-size: 17px;
   line-height: 1.75;
   color: var(--color-text-dim);
 }
 
-.about-directions strong {
-  color: var(--color-text);
+.about-events li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-purple);
 }
 
+/* =========================================================
+   QUOTE
+   ========================================================= */
+
 .about-quote {
-  padding: 24px 28px;
-  border-left: 2px solid var(--color-purple);
-  background: var(--color-surface);
+  padding: 26px 30px;
+  margin-bottom: 32px !important;
+  border-radius: var(--radius-md);
+  background: linear-gradient(
+    135deg,
+    var(--color-human-soft),
+    var(--color-ai-soft)
+  );
+  border: 1px solid var(--color-border);
   font-size: 17px !important;
+  color: var(--color-text) !important;
 }
 
 .about-closing {
-  font-weight: 600;
+  font-family: var(--font-display);
+  font-size: 20px !important;
+  font-weight: 500;
   color: var(--color-text) !important;
+}
+
+@media (max-width: 700px) {
+  .about-directions {
+    grid-template-columns: 1fr;
+  }
 }

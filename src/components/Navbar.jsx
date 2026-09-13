@@ -74,6 +74,14 @@ function Navbar() {
           </NavLink>
 
           <NavLink
+            to="/jury"
+            className={navLinkClass}
+            onClick={() => setMenuOpen(false)}
+          >
+            {language === "AZ" ? "Jüri" : "Jury"}
+          </NavLink>
+
+          <NavLink
             to="/news"
             className={navLinkClass}
             onClick={() => setMenuOpen(false)}

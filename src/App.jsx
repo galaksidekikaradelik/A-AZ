@@ -5,6 +5,7 @@ import Festival from "./pages/Festival";
 import News from "./pages/News";
 import NewsDetail from "./pages/NewsDetail";
 import AboutUs from "./pages/AboutUs";
+import Jury from "./pages/Jury";
 import Gallery from "./pages/Gallery";
 import MediaYear from "./pages/MediaYear";
 
@@ -26,6 +27,7 @@ function App() {
         <Route path="/news" element={<News />} />
         <Route path="/news/:id" element={<NewsDetail />} />
         <Route path="/about" element={<AboutUs />} />
+        <Route path="/jury" element={<Jury />} />
 
         <Route path="/media" element={<Gallery />} />
         <Route path="/media/:year" element={<MediaYear />} />
