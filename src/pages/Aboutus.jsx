@@ -54,15 +54,14 @@ function AboutUs() {
               ))}
             </ul>
 
-            <p className="about-quote">{t.about.quote}</p>
-
             <h2>{t.about.eventsIntro}</h2>
 
             <ul className="about-events">
               {t.about.events.map((item, i) => (
                 <li key={i}>{item}</li>
               ))}
-            </ul>
+            </ul>  {/*demeli burda festival hissesi silinir onun yerine agenda qoyulacaq, mediadaki kimi 2025-2026 ve s. kimi
+            bele pdf kimi qoyulsun amma... */}
 
             <p>{t.about.eventsNote}</p>
 
@@ -101,3 +100,4 @@ function AboutUs() {
 }
 
 export default AboutUs;
+

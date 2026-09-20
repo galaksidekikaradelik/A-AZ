@@ -5,7 +5,6 @@
     var(--color-purple-dark) 0%,
     var(--color-bg) 100%
   );
-  border-bottom: 1px solid var(--color-border);
 }
 
 .section-container {

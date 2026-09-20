@@ -65,10 +65,7 @@ export const translations = {
         "Süni intellektlə aparılan canlı müsahibələr və təqdimatlar",
         "Beynəlxalq ustad dərsləri və diskussiyalar",
       ],
-      eventsNote: "Onlayn və oflayn tədbirlər keçiriləcək.",
 
-      speech:
-        "🎤 Festivalın açılış nitqi AIAZ tərəfindən təqdim olunur və süni intellekt kinoşünaslarla canlı dialoqa girir.",
 
       closing:
         "AIAZ – gələcəyin kinofestivalı bu gündən başlayır. İnsan, maşın və hekayə bir arada.",
@@ -85,14 +82,24 @@ export const translations = {
     },
 
     jury: {
-      label: "AIAZ JÜRİ",
-      title: "Jüri",
-      // TODO: real jury member names/roles/photos will replace these placeholders
-      members: [
-        { name: "Ad Soyad", role: "Jüri üzvü" },
-        { name: "Ad Soyad", role: "Jüri üzvü" },
-        { name: "Ad Soyad", role: "Jüri üzvü" },
-      ],
+      label: "Münsiflər",
+      title: "Münsiflər heyəti",
+      international: {
+        title: "Beynəlxalq müsabiqə",
+        members: [
+          { name: "Ad Soyad", role: "Vəzifə" },
+          { name: "Ad Soyad", role: "Vəzifə" },
+          { name: "Ad Soyad", role: "Vəzifə" },
+        ],
+      },
+      local: {
+        title: "Yerli müsabiqə",
+        members: [
+          { name: "Ad Soyad", role: "Vəzifə" },
+          { name: "Ad Soyad", role: "Vəzifə" },
+          { name: "Ad Soyad", role: "Vəzifə" },
+        ],
+      },
     },
 
     gallery: {

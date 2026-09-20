@@ -93,23 +93,7 @@
   background: var(--color-purple);
 }
 
-/* =========================================================
-   QUOTE
-   ========================================================= */
 
-.about-quote {
-  padding: 26px 30px;
-  margin-bottom: 32px !important;
-  border-radius: var(--radius-md);
-  background: linear-gradient(
-    135deg,
-    var(--color-human-soft),
-    var(--color-ai-soft)
-  );
-  border: 1px solid var(--color-border);
-  font-size: 17px !important;
-  color: var(--color-text) !important;
-}
 
 .about-closing {
   font-family: var(--font-display);
