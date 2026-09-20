@@ -3,6 +3,7 @@ import { PlayCircle, X, ChevronLeft, ChevronRight } from "lucide-react";
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import Winners from "../components/Winners";
 
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../data/translations";
@@ -25,8 +26,6 @@ const getYearMedia = (year, type) => {
 
 const years = [2025, 2026].sort((a, b) => b - a);
 
-const placeholderVideoCount = 3;
-
 function Gallery() {
   const { language } = useLanguage();
   const t = translations[language];
@@ -36,8 +35,7 @@ function Gallery() {
   const [activeImages, setActiveImages] = useState([]);
 
   const photos = getYearMedia(activeYear, "foto");
-  const videos = getYearMedia(activeYear, "video");
-  const hasRealVideos = videos.length > 0;
+  const hasWinners = activeYear === 2025;
 
 
   const openLightbox = (images, index) => {
@@ -125,57 +123,34 @@ function Gallery() {
                 </div>
               )}
 
-              <div className="media-content-section">
-                <h2 className="media-section-title">
-                  {language === "AZ" ? "Videolar" : "Videos"}
-                </h2>
+              {hasWinners ? (
+                <Winners />
+              ) : (
+                <div className="media-content-section">
+                  <h2 className="media-section-title">
+                    {language === "AZ" ? "Videolar" : "Videos"}
+                  </h2>
 
-                <div className="videos-grid">
-                  {hasRealVideos
-                    ? videos.map((src, i) => {
-                        const fileName = src.split("/").pop().split("?")[0];
+                  <div className="videos-grid">
+                    <div className="video-card is-placeholder">
+                      <PlayCircle size={24} />
 
-                        return (
-                          <a
-                            className="video-card"
-                            href={src}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            key={src}
-                          >
-                            <PlayCircle size={24} />
-
-                            <div className="video-card-text">
-                              <span className="video-category">
-                                AIAZ {activeYear}
-                              </span>
-                              <h3>{fileName || `Video ${i + 1}`}</h3>
-                            </div>
-                          </a>
-                        );
-                      })
-                    : Array.from({ length: placeholderVideoCount }).map(
-                        (_, i) => (
-                          <div className="video-card is-placeholder" key={i}>
-                            <PlayCircle size={24} />
-
-                            <div className="video-card-text">
-                              <span className="video-category">
-                                {language === "AZ" ? "Tezliklə" : "Coming soon"}
-                              </span>
-                              <h3>
-                                {language === "AZ"
-                                  ? "Qalib videosu"
-                                  : "Winner video"}
-                              </h3>
-                            </div>
-                          </div>
-                        )
-                      )}
+                      <div className="video-card-text">
+                        <span className="video-category">
+                          {language === "AZ" ? "Tezliklə" : "Coming soon"}
+                        </span>
+                        <h3>
+                          {language === "AZ"
+                            ? "Qalib videosu"
+                            : "Winner video"}
+                        </h3>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
+              )}
 
-              {photos.length === 0 && !hasRealVideos && (
+              {photos.length === 0 && !hasWinners && (
                 <p className="media-empty">
                   {language === "AZ"
                     ? "Bu il üçün media hazırlanır."

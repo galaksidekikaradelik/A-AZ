@@ -1,0 +1,52 @@
+[
+  {
+    "id": "khatai",
+    "title": "KHATAI",
+    "director": "Rəvan Muradov",
+    "directorEn": "Ravan Muradov",
+    "award": "Ən yaxşı yerli süni intellektlə hazırlanmış qısametrajlı film",
+    "awardEn": "Best National AI-generated Short Film",
+    "poster": "khatai.png",
+    "video": null
+  },
+  {
+    "id": "one-way",
+    "title": "ONE WAY",
+    "director": "İqor Xarlamov",
+    "directorEn": "Egor Kharlamov",
+    "award": "Ən yaxşı beynəlxalq süni intellektlə hazırlanmış qısametrajlı film",
+    "awardEn": "Best International AI-generated Short Film",
+    "poster": "one-way.png",
+    "video": null
+  },
+  {
+    "id": "motherland",
+    "title": "MOTHERLAND",
+    "director": "Ayşə Hacıyeva",
+    "directorEn": "Aisha Hajiyeva",
+    "award": "Festivalın xüsusi mükafatı",
+    "awardEn": "The Festival's Special Award",
+    "poster": "motherland.png",
+    "video": null
+  },
+  {
+    "id": "mirror",
+    "title": "MIRROR: The Other Side of Humanity",
+    "director": "Ruslan İbrahimli",
+    "directorEn": "Ruslan Ibrahimli",
+    "award": "Ekoloji təsir",
+    "awardEn": "Environmental Impact",
+    "poster": "mirror.png",
+    "video": null
+  },
+  {
+    "id": "climate-crisis",
+    "title": "CLIMATE CRISIS",
+    "director": "Peter Vadocz",
+    "directorEn": "Peter Vadocz",
+    "award": "Ekoloji təsir",
+    "awardEn": "Environmental Impact",
+    "poster": "climate-crisis.png",
+    "video": null
+  }
+]

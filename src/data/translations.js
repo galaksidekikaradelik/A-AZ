@@ -107,6 +107,12 @@ export const translations = {
       videosTitle: "Videolar",
     },
 
+    winners: {
+      label: "AIAZ QALİBLƏRİ",
+      title: "Qaliblər",
+      watch: "Videoya bax",
+    },
+
     partners: {
       label: "AIAZ",
       title: "Tərəfdaşlar",
@@ -223,6 +229,12 @@ export const translations = {
       label: "AIAZ MEDIA",
       title: "Media",
       videosTitle: "Videos",
+    },
+
+    winners: {
+      label: "AIAZ WINNERS",
+      title: "Winners",
+      watch: "Watch video",
     },
 
     partners: {

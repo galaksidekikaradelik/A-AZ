@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import {
-  PlayCircle,
   X,
   ChevronLeft,
   ChevronRight,
@@ -10,6 +9,7 @@ import { Link, useParams } from "react-router-dom";
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import Winners from "../components/Winners";
 
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../data/translations";
@@ -19,15 +19,6 @@ const photoFiles = import.meta.glob("../assets/*/foto/*.{jpg,jpeg,png,webp}", {
   query: "?url",
   import: "default",
 });
-
-const videoFiles = import.meta.glob("../assets/*/video/*.{mp4,webm,mov}", {
-  eager: true,
-  query: "?url",
-  import: "default",
-});
-
-
-const placeholderVideoCount = 3;
 
 function MediaYear() {
   const { year } = useParams();
@@ -40,14 +31,7 @@ function MediaYear() {
     .filter(([path]) => path.includes(`../assets/${year}/foto/`))
     .map(([, src]) => src);
 
-  const videos = Object.entries(videoFiles)
-    .filter(([path]) => path.includes(`../assets/${year}/video/`))
-    .map(([path, src]) => ({
-      src,
-      name: path.split("/").pop(),
-    }));
-
-  const hasRealVideos = videos.length > 0;
+  const hasWinners = year === "2025";
 
   const closeLightbox = () => setActiveIndex(null);
 
@@ -121,49 +105,13 @@ function MediaYear() {
           </div>
         </section>
 
-        <section className="videos-section">
-          <div className="section-container">
-            <h2>{t.gallery.videosTitle}</h2>
-
-            <div className="videos-grid">
-              {hasRealVideos
-                ? videos.map((video) => (
-                    <a
-                      className="video-card"
-                      href={video.src}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      key={video.src}
-                    >
-                      <PlayCircle size={22} />
-
-                      <div className="video-card-text">
-                        <span className="video-category">AIAZ {year}</span>
-                        <h3>{video.name}</h3>
-                      </div>
-                    </a>
-                  ))
-                : Array.from({ length: placeholderVideoCount }).map(
-                    (_, i) => (
-                      <div className="video-card is-placeholder" key={i}>
-                        <PlayCircle size={22} />
-
-                        <div className="video-card-text">
-                          <span className="video-category">
-                            {language === "AZ" ? "Tezliklə" : "Coming soon"}
-                          </span>
-                          <h3>
-                            {language === "AZ"
-                              ? "Qalib videosu"
-                              : "Winner video"}
-                          </h3>
-                        </div>
-                      </div>
-                    )
-                  )}
+        {hasWinners && (
+          <section className="videos-section">
+            <div className="section-container">
+              <Winners />
             </div>
-          </div>
-        </section>
+          </section>
+        )}
       </main>
 
       {activeIndex !== null && (
