@@ -23,10 +23,6 @@
   color: var(--color-text);
 }
 
-/* =========================================================
-   DIRECTIONS (rounded card pair)
-   ========================================================= */
-
 .about-directions {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -63,9 +59,6 @@
   color: var(--color-purple);
 }
 
-/* =========================================================
-   EVENTS LIST
-   ========================================================= */
 
 .about-events {
   margin: 0 0 24px;

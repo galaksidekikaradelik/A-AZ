@@ -7,9 +7,6 @@ import Footer from "../components/Footer";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../data/translations";
 
-// =========================================================
-// MEDIA ASSETS
-// =========================================================
 
 const mediaFiles = import.meta.glob(
   "../assets/*/{foto,video}/*.{jpg,jpeg,png,webp,mp4,webm,mov}",
@@ -28,13 +25,7 @@ const getYearMedia = (year, type) => {
 
 const years = [2025, 2026].sort((a, b) => b - a);
 
-// TODO: real winner videos will replace these placeholder cards once
-// files are added to src/assets/<year>/video/
 const placeholderVideoCount = 3;
-
-// =========================================================
-// COMPONENT
-// =========================================================
 
 function Gallery() {
   const { language } = useLanguage();
@@ -48,9 +39,6 @@ function Gallery() {
   const videos = getYearMedia(activeYear, "video");
   const hasRealVideos = videos.length > 0;
 
-  // =======================================================
-  // LIGHTBOX
-  // =======================================================
 
   const openLightbox = (images, index) => {
     setActiveImages(images);

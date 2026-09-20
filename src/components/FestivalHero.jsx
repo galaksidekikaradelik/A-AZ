@@ -4,7 +4,6 @@ import HeroRobotVisual from "./HeroRobotVisual";
 function FestivalHero() {
   return (
     <section className="festival-hero">
-      {/* Decorative sprockets */}
       <div
         className="sprocket-row hero-sprockets"
         aria-hidden="true"
@@ -18,10 +17,6 @@ function FestivalHero() {
       </div>
 
       <div className="festival-hero-container">
-
-        {/* =================================================
-            LEFT — TEXT
-        ================================================= */}
 
         <div className="festival-hero-content">
 
@@ -59,11 +54,6 @@ function FestivalHero() {
 
           </div>
         </div>
-
-        {/* =================================================
-            RIGHT — ROBOT
-            (siçan izləməsi artıq komponentin özündədir)
-        ================================================= */}
 
         <div
           className="festival-hero-visual"

@@ -4,8 +4,6 @@ import Footer from "../components/Footer";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../data/translations";
 
-// Loads whatever photo files already exist in src/assets/team/ —
-// missing files simply fall back to the placeholder, nothing breaks.
 const teamPhotoFiles = import.meta.glob("../assets/team/*.{jpg,jpeg,png,webp}", {
   eager: true,
   query: "?url",

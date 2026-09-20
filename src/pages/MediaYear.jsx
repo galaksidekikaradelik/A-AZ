@@ -26,8 +26,7 @@ const videoFiles = import.meta.glob("../assets/*/video/*.{mp4,webm,mov}", {
   import: "default",
 });
 
-// TODO: real winner videos will replace these placeholder cards once
-// files are added to src/assets/<year>/video/
+
 const placeholderVideoCount = 3;
 
 function MediaYear() {

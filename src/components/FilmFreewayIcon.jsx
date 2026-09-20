@@ -8,7 +8,6 @@ function FilmFreewayIcon({ size = 24 }) {
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
     >
-      {/* FilmFreeway F mark */}
       <path
         d="M4 2.5H18.5L20 5.5H8.5V10H17V13H8.5V21.5H4V2.5Z"
         fill="currentColor"

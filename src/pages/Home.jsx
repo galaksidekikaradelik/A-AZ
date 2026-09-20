@@ -17,13 +17,17 @@ function Home() {
 
   useEffect(() => {
     const video = videoRef.current;
+    if (!video) return;
+
+    let cleanup;
 
     const initVideoScroll = () => {
       let targetTime = 0;
       let currentTime = 0;
       let raf;
 
-      const animate = () => {
+      // VIDEO: scroll-a görə hamar irəli/geri
+      const animateVideo = () => {
         currentTime += (targetTime - currentTime) * 0.08;
 
         if (Math.abs(targetTime - currentTime) < 0.001) {
@@ -34,11 +38,30 @@ function Home() {
           video.currentTime = currentTime;
         }
 
-        raf = requestAnimationFrame(animate);
+        raf = requestAnimationFrame(animateVideo);
       };
 
-      animate();
+      animateVideo();
 
+      // HERO TEXT: hər sətir ayrı-ayrı gəlir
+      const lines = gsap.utils.toArray(".hero-line");
+
+      gsap.set(lines, {
+        x: -120,
+        opacity: 0,
+      });
+
+      const textAnimation = gsap.timeline({ paused: true });
+
+      textAnimation.to(lines, {
+        x: 0,
+        opacity: 1,
+        duration: 1,
+        stagger: 0.8, // hər sətir əvvəlkindən sonra başlayır
+        ease: "power2.out",
+      });
+
+      // HERO SCROLL
       const trigger = ScrollTrigger.create({
         trigger: ".hero",
         start: "top top",
@@ -47,35 +70,57 @@ function Home() {
         scrub: true,
 
         onUpdate: (self) => {
-          const endHold = 0.08; 
+          const progress = self.progress;
 
-          if (self.progress >= 1 - endHold) {
+          // VIDEO
+          const endHold = 0.08;
+
+          if (progress >= 1 - endHold) {
             targetTime = video.duration - 0.05;
           } else {
-            targetTime =
-              (self.progress / (1 - endHold)) * video.duration;
+            targetTime = (progress / (1 - endHold)) * video.duration;
           }
+
+          // TEXT
+          // Sətirlər scroll-un 5%-dən 60%-nə qədər ardıcıl gəlir
+          const textStart = 0.05;
+          const textEnd = 0.6;
+
+          let textProgress = (progress - textStart) / (textEnd - textStart);
+
+          textProgress = Math.max(0, Math.min(1, textProgress));
+
+          textAnimation.progress(textProgress);
         },
       });
 
-      const handleResize = () => ScrollTrigger.refresh();
+      const handleResize = () => {
+        ScrollTrigger.refresh();
+      };
+
       window.addEventListener("resize", handleResize);
 
       return () => {
         cancelAnimationFrame(raf);
         trigger.kill();
+        textAnimation.kill();
         window.removeEventListener("resize", handleResize);
       };
     };
 
+    const init = () => {
+      cleanup = initVideoScroll();
+    };
+
     if (video.readyState >= 1) {
-      return initVideoScroll();
+      init();
+    } else {
+      video.addEventListener("loadedmetadata", init, { once: true });
     }
 
-    video.addEventListener("loadedmetadata", initVideoScroll);
-
     return () => {
-      video.removeEventListener("loadedmetadata", initVideoScroll);
+      video.removeEventListener("loadedmetadata", init);
+      cleanup?.();
     };
   }, []);
 
@@ -97,7 +142,14 @@ function Home() {
 
           <div className="hero-overlay" />
 
-          
+          <div className="hero-content">
+            <h1 className="hero-title">
+              <span className="hero-line">Süni zəka</span>
+              <span className="hero-line">və kinonun</span>
+              <span className="hero-line">kəsişdiyi</span>
+              <span className="hero-line">məkan</span>
+            </h1>
+          </div>
         </section>
 
         <FilmSection />

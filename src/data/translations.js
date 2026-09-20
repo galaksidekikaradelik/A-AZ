@@ -71,7 +71,6 @@ export const translations = {
         "AIAZ – gələcəyin kinofestivalı bu gündən başlayır. İnsan, maşın və hekayə bir arada.",
 
       teamTitle: "Komanda üzvləri",
-      // TODO: add real photos to src/assets/team/ (see "photo" filenames below)
       team: [
         { name: "Malayka Mammadova", role: "Partnership Manager", photo: "Malayka Mammadova - Partnership manager.png" },
         { name: "Michael Abdulov", role: "Art Director", photo: "Michael Abdulov - Art director.png" },
@@ -164,7 +163,6 @@ export const translations = {
       label: "ABOUT AIAZ",
       title: "About Us",
 
-      // TODO: English translation of the About Us copy is pending — Azerbaijani text kept here as a placeholder for now
       intro: [
         "AIAZ Beynəlxalq Qısa Filmlər Festivalı Qafqazda süni intellekt və kinonun kəsişməsinə həsr olunmuş ilk festivaldır. 2025-ci ildə yaradılmış və Bakıda keçirilən bu festival, texnologiya ilə yaradıcılığı bir araya gətirən unikal bir platformadır.",
         "AIAZ həm Artificial Intelligence Azerbaijan (Azərbaycan Süni İntellekti), həm də festivalın süni intellekt əsaslı jüri sisteminin adıdır. Bu, insan yaradıcılığı ilə maşın düşüncəsinin simbiyozunu ifadə edir.",
@@ -202,7 +200,6 @@ export const translations = {
         "AIAZ – gələcəyin kinofestivalı bu gündən başlayır. İnsan, maşın və hekayə bir arada.",
 
       teamTitle: "Team Members",
-      // TODO: add real photos to src/assets/team/ (see "photo" filenames below)
       team: [
         { name: "Malayka Mammadova", role: "Partnership Manager", photo: "Malayka Mammadova - Partnership manager.png" },
         { name: "Michael Abdulov", role: "Art Director", photo: "Michael Abdulov - Art director.png" },
@@ -215,7 +212,6 @@ export const translations = {
     jury: {
       label: "AIAZ JURY",
       title: "Jury",
-      // TODO: real jury member names/roles/photos will replace these placeholders
       members: [
         { name: "Full Name", role: "Jury Member" },
         { name: "Full Name", role: "Jury Member" },

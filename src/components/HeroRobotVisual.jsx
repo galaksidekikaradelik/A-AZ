@@ -4,23 +4,18 @@ import bodyGlowImg from "../assets/robot-body-glow.png";
 import headImg from "../assets/robot-head.png";
 import headGlowImg from "../assets/robot-head-glow.png";
 
-/* ------------------------------------------------------------------
-   Şəkil koordinatları (piksel). Bütün qatlar eyni "kətan"dan kəsilib,
-   ona görə başın yeri bədənə nisbətən dəqiq sabitdir.
-------------------------------------------------------------------- */
 const NATIVE_W = 692;
 const NATIVE_H = 1510;
 
 const HEAD = {
-  x: 243, // başın kətandakı sol kənarı
+  x: 243, 
   y: 0,
   w: 209,
   h: 244,
-  pivotX: 104, // başın boyunla birləşdiyi nöqtə (fırlanma mərkəzi)
+  pivotX: 104, 
   pivotY: 216,
 };
 
-// başın mərkəzi (siçanın "baxış" istiqaməti buradan hesablanır)
 const HEAD_CENTER_X = HEAD.x + HEAD.w / 2;
 const HEAD_CENTER_Y = 120;
 
@@ -56,7 +51,6 @@ function HeroRobotVisual() {
       "(prefers-reduced-motion: reduce)"
     ).matches;
 
-    // siçanın son mövqeyi (null = səhifədə siçan yoxdur)
     const pointer = { x: null, y: null };
     // hamarlaşdırılmış cari vəziyyət
     const cur = { hx: 0, hy: 0, bx: 0, by: 0, idle: 1 };
@@ -82,7 +76,6 @@ function HeroRobotVisual() {
         `rotateY(${hx * 26}deg) ` +
         `rotateX(${-hy * 15}deg)`;
 
-      // neon hissələrin nəfəs alması, siçana baxdıqca daha parlaq
       const pulse = Math.sin(t * 1.7);
       if (bodyGlow) {
         bodyGlow.style.opacity = String(
@@ -96,7 +89,6 @@ function HeroRobotVisual() {
       }
     };
 
-    // hərəkət azaldılıbsa: sabit poza, animasiya döngüsü yoxdur
     if (reduceMotion) {
       const rect = stage.getBoundingClientRect();
       apply(rect.width, 0, 0, 0, 0, 0, 0.3);
@@ -126,7 +118,6 @@ function HeroRobotVisual() {
         );
       }
 
-      // baş sürətli, bədən ağır izləyir. Kadr sürətindən asılı deyil.
       const kHead = 1 - Math.exp(-dt * 7);
       const kBody = 1 - Math.exp(-dt * 3.5);
       const kIdle = 1 - Math.exp(-dt * 1.5);
@@ -137,7 +128,6 @@ function HeroRobotVisual() {
       cur.by += (ty - cur.by) * kBody;
       cur.idle += ((pointer.x === null ? 1 : 0) - cur.idle) * kIdle;
 
-      // siçan yoxdursa baş yavaşca ətrafa baxır
       const hx = cur.hx + cur.idle * 0.32 * Math.sin(t * 0.5);
       const hy = cur.hy + cur.idle * 0.1 * Math.sin(t * 0.37 + 1);
 
@@ -167,7 +157,6 @@ function HeroRobotVisual() {
     document.documentElement.addEventListener("mouseleave", onLeave);
     window.addEventListener("blur", onLeave);
 
-    // ekrandan çıxanda döngünü dayandır
     const io = new IntersectionObserver(
       ([entry]) => {
         visible = entry.isIntersecting;
@@ -198,11 +187,9 @@ function HeroRobotVisual() {
         position: "relative",
         margin: "0 auto",
         aspectRatio: `${NATIVE_W} / ${NATIVE_H}`,
-        // hündürlük ekranın 78%-i ilə məhdudlaşır, en isə ondan çıxarılır
         width: `min(100%, calc(min(78vh, 780px) * ${NATIVE_W / NATIVE_H}))`,
       }}
     >
-      {/* BƏDƏN */}
       <div
         ref={bodyRef}
         style={{
@@ -220,7 +207,6 @@ function HeroRobotVisual() {
           style={{ ...layer, opacity: 0.6 }}
         />
 
-        {/* BAŞ: boyun nöqtəsi ətrafında fırlanır */}
         <div
           ref={headRef}
           style={{
