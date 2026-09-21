@@ -1,23 +1,32 @@
 import news1 from "../assets/news1.jpg";
 import news2 from "../assets/news2.jpg";
 import news3 from "../assets/news3.jpg";
-import news4 from "../assets/news4.jpg";
 
 export const newsItems = [
   {
     id: 1,
     title: {
-      AZ: "AIAZ Film Festival 2026 elan edildi",
+      AZ: "AZƏRBAYCANIN İLK SÜNİ İNTELLEKTLƏ ÇƏKİLMİŞ FİLMLƏR FESTİVALI",
       EN: "AIAZ Film Festival 2026 Announced",
     },
-    excerpt: {
-      AZ: "Bu xəbərin tam mətni sonra əlavə olunacaq.",
+        excerpt: {
+      AZ: "Bu il kino aləmində yeni bir başlanğıcın təməli qoyulur – “AIAZ” Beynəlxalq Qısa Filmlər Festivalı ilk dəfə keçirilir. Festivalın məqsədi həm ənənəvi üsullarla çəkilmiş, həm də süni intellekt (AI) texnologiyaları ilə hazırlanmış qısa filmləri bir araya gətirməkdir.",
       EN: "Full article text will be added here later.",
     },
     content: {
       AZ: [
-        "Bu xəbərin tam mətni sonra əlavə olunacaq.",
-        "İkinci abzas da sonra əlavə olunacaq.",
+        "Bu il kino aləmində yeni bir başlanğıcın təməli qoyulur – “AIAZ” Beynəlxalq Qısa Filmlər Festivalı ilk dəfə keçirilir. Festivalın məqsədi həm ənənəvi üsullarla çəkilmiş, həm də süni intellekt (AI) texnologiyaları ilə hazırlanmış qısa filmləri bir araya gətirərək tamaşaçılara və mütəxəssislərə yeni yaradıcılıq nəfəsi təqdim etməkdir.",
+        "AIAZ öz debüt ilində milli məzmunda yeni dalğa yaratmağı hədəfləyir. Festivalın əsas məqsədi yeni və yerli süni intellekt sənətçilərini dünyaya çıxarmaq, onların işlərini beynəlxalq auditoriyaya təqdim etməkdir. AIAZ yalnız festival olaraq deyil, həm də süni intellekti yaradıcılıqla birləşdirən platforma və yaradıcılıq emalatxanası kimi nəzərdə tutulur.",
+        "Müraciətlərin son qəbul tarixi – oktyabr ayının 15-dir. İştirakçılar filmlərini yalnız FilmFreeway platforması üzərindən təqdim edə bilərlər.",
+        "Festivalın kateqoriyaları",
+        "• Süni intellekt (AI) ilə hazırlanmış filmlər",
+        "• Ənənəvi üsullarla çəkilmiş filmlər",
+        "Hər iki istiqamətdə filmlər “Milli” və “Beynəlxalq” bölmələrdə qiymətləndiriləcək.",
+        "İştirak şərtləri",
+        "• Festivalda iştirak tamamilə pulsuzdur.",
+        "• Yaş və janr məhdudiyyəti yoxdur.",
+        "Festivalın təsisçisi Murad Şükürlü, direktoru Sahil Məmmədov, art direktoru Mirvüqar Abdulov, kreativ direktoru Məleykə Məmmədovadır.",
+        "“AIAZ” Beynəlxalq Qısa Filmlər Festivalı – qısa filmlərin səsini dünya auditoriyasına çatdırmaq üçün yeni bir platformadır.",
       ],
       EN: [
         "Full article text will be added here later.",
@@ -72,28 +81,5 @@ export const newsItems = [
     },
     date: "20.08.2026",
     image: news3,
-  },
-  {
-    id: 4,
-    title: {
-      AZ: "Festivalın proqramı və əsas istiqamətləri",
-      EN: "Festival Program and Main Directions",
-    },
-    excerpt: {
-      AZ: "Bu xəbərin tam mətni sonra əlavə olunacaq.",
-      EN: "Full article text will be added here later.",
-    },
-    content: {
-      AZ: [
-        "Bu xəbərin tam mətni sonra əlavə olunacaq.",
-        "İkinci abzas da sonra əlavə olunacaq.",
-      ],
-      EN: [
-        "Full article text will be added here later.",
-        "A second paragraph will be added here as well.",
-      ],
-    },
-    date: "15.08.2026",
-    image: news4,
   },
 ];
