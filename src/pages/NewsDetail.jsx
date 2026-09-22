@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { useParams, Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 
@@ -57,7 +58,16 @@ function NewsDetail() {
             </div>
 
             {item.content[language].map((paragraph, i) => (
-              <p key={i}>{paragraph}</p>
+              <Fragment key={i}>
+                <p>{paragraph}</p>
+
+                {/* Mətnin ortasına əlavə şəkil (mənbədə olduğu kimi) */}
+                {item.inlineImage && item.inlineImageAfter === i && (
+                  <div className="news-detail-image news-detail-image-inline">
+                    <img src={item.inlineImage} alt="" />
+                  </div>
+                )}
+              </Fragment>
             ))}
           </div>
         </section>

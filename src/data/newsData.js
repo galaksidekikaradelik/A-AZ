@@ -1,6 +1,6 @@
 import news1 from "../assets/news1.jpg";
 import news2 from "../assets/news2.jpg";
-import news3 from "../assets/news3.jpg";
+import news3Inline from "../assets/news3-inline.jpg";
 
 export const newsItems = [
   {
@@ -9,7 +9,7 @@ export const newsItems = [
       AZ: "AZƏRBAYCANIN İLK SÜNİ İNTELLEKTLƏ ÇƏKİLMİŞ FİLMLƏR FESTİVALI",
       EN: "AIAZ Film Festival 2026 Announced",
     },
-        excerpt: {
+    excerpt: {
       AZ: "Bu il kino aləmində yeni bir başlanğıcın təməli qoyulur – “AIAZ” Beynəlxalq Qısa Filmlər Festivalı ilk dəfə keçirilir. Festivalın məqsədi həm ənənəvi üsullarla çəkilmiş, həm də süni intellekt (AI) texnologiyaları ilə hazırlanmış qısa filmləri bir araya gətirməkdir.",
       EN: "Full article text will be added here later.",
     },
@@ -39,47 +39,67 @@ export const newsItems = [
   {
     id: 2,
     title: {
-      AZ: "Süni intellekt və kino: yeni dövr başlayır",
-      EN: "Artificial Intelligence and Cinema: A New Era Begins",
+      AZ: "Süni İntellekt Və Kinonun Simbiozu: “AIAZ” Festivalı Uğurla Yekunlaşdı!",
+      EN: "The Symbiosis of Artificial Intelligence and Cinema: “AIAZ” Festival Concludes Successfully!",
     },
     excerpt: {
-      AZ: "Bu xəbərin tam mətni sonra əlavə olunacaq.",
-      EN: "Full article text will be added here later.",
+      AZ: "Qafqaz regionunda ilkə imza atan “AIAZ” Beynəlxalq Qısa Filmlər Festivalı 15-16 noyabrda “Salaam Cinema”-da uğurla həyata keçirildi. Festival iki gün ərzində kino sənətində Süni İntellekt (Sİ) dövrünün başlanğıcını qeyd etdi.",
+      EN: "Marking a first in the Caucasus region, the “AIAZ” International Short Film Festival was successfully held on November 15–16 at Salaam Cinema in Baku. Over two days, the festival celebrated the beginning of the AI era in cinema.",
     },
     content: {
       AZ: [
-        "Bu xəbərin tam mətni sonra əlavə olunacaq.",
-        "İkinci abzas da sonra əlavə olunacaq.",
+        "Qafqaz regionunda ilkə imza atan və böyük maraqla qarşılanan “AIAZ” Beynəlxalq Qısa Filmlər Festivalı 15-16 noyabrda “Salaam Cinema”-da uğurla həyata keçirildi. Festival iki gün ərzində kino sənətində Süni İntellekt (Sİ) dövrünün başlanğıcını qeyd etdi və sənət ilə texnologiyanın simbiozunu nümayiş etdirdi.",
+        "Əsas fərqləndirici xüsusiyyət olan süni intellektlə yaradılmış filmlərin insan mühakiməsi ilə qiymətləndirilməsi prosesi iştirakçılar tərəfindən xüsusi maraqla qarşılandı. Film nümayişlərindən əlavə olaraq süni intellekt mütəxəssisi Ümid Salay tərəfindən ustad dərsi, ənənəvi kinoya süni intellekt həlləri gətirən “Jafjab” startapının təqdimatı və mükafatlandırma mərasimi iştirakçılar tərəfindən maraqla qarşılandı.",
+        "Mükafatlandırma mərasimində müsabiqə proqramının ən yaxşıları elan edildi. Qalib layihələr, süni intellektin yaratdığı imkanlardan səmərəli istifadə etməklə yanaşı, həm də yüksək bədii dəyərə malik olduqlarını sübut etdilər.",
+        "“Süni intellektlə hazırlanmış ən yaxşı yerli qısametrajlı film” nominasiyasında Rəvan Muradovun “KhatAI” filmi qalib elan edildi.",
+        "“Süni intellektlə hazırlanmış ən yaxşı beynəlxalq qısametrajlı film” mükafatına İqor Xarlamovun “Tək yol” filmi layiq görüldü.",
+        "Festivalın komandasının qərarı ilə festivalın Xüsusi Mükafatı Aişə Hacıyevanın “Ana yurd” filminə təqdim edildi.",
+        "Ekoloji mövzulara toxunanlar arasında “Ekoloji Təsir Mükafatı” yerli müsabiqədə Ruslan İbrahimlinin “Güzgü: İnsanlığın Əks Tərəfi” filminə, Beynəlxalq müsabiqədə isə Piter Vadoçun “İqlim böhranı” filminə verildi.",
+        "“AIAZ” Film Festivalı Qafqazda kino sənayesi üçün yeni bir səhifə açaraq sənət və texnologiyanın birləşmə potensialını nümayiş etdirdi və bölgədə bu mövzuda aparılan ilk genişmiqyaslı tədbir olaraq yadda qaldı.",
+        "Festivalın dəstəkçiləri sırasında “Eco hub” ekoloji platforması, “Fors” MMC yer alır. Festivalın təsisçisi Murad Şükürlü, direktoru Sahil Məmmədov, vizual tərtibatçısı Mirvüqar Abdulov, kreativ direktoru Məleykə Məmmədova, media üzrə rəhbəri Səməd Ağayevdir.",
       ],
       EN: [
-        "Full article text will be added here later.",
-        "A second paragraph will be added here as well.",
+        "Marking a first in the Caucasus region and drawing great interest, the “AIAZ” International Short Film Festival was successfully held on November 15–16 at Salaam Cinema in Baku. Over two days, the festival celebrated the beginning of the Artificial Intelligence (AI) era in cinema and showcased the creative fusion of art and technology.",
+        "The festival's standout feature was the evaluation of AI-generated films by a human jury, which attracted special attention from participants. In addition to film screenings, the program included a masterclass by AI specialist Ümid Salay, a presentation by the Jafjab startup bringing AI solutions to traditional cinema, and an award ceremony, all of which were highly appreciated by attendees.",
+        "During the awards ceremony, the best projects of the competition program were announced. Winning projects not only demonstrated creative use of AI capabilities but also proved their high artistic value.",
+        "The award for “Best National AI-generated Short Film” went to Ravan Muradov's “KhatAI”.",
+        "The award for “Best International AI-generated Short Film” was given to Igor Harlamov's “One Way”.",
+        "By decision of the festival team, the Special Award was presented to Aişe Haciyeva's “Motherland”.",
+        "Among the works addressing ecological themes, the “Ecological Impact” award in the local competition went to Ruslan Ibrahimli's “Mirror: The Other Side of Humanity”, while in the international category it was awarded to Peter Vadoç's “Climate Crisis”.",
+        "The inaugural “AIAZ” Film Festival opened a new chapter for the film industry in the Caucasus, demonstrating the potential of combining art and technology, and stood out as the first large-scale event of its kind in the region.",
+        "Festival supporters included the ecological platform Eco Hub and the company Fors. The festival was founded by Murad Shukurlu, directed by Sahil Mammadov, with visual design by Mirvugar Abdulov, creative direction by Maleyka Mammadova, and media management by Samed Aghayev.",
       ],
     },
-    date: "28.08.2026",
+    date: "16.11.2025",
     image: news2,
   },
   {
     id: 3,
     title: {
-      AZ: "AIAZ Film Festivalına müraciətlər başladı",
-      EN: "Applications for AIAZ Film Festival Are Now Open",
+      AZ: "Qafqazın və regionun ilk süni intellekt əsaslı film festivalı - “AİAZ”",
+      EN: "The Caucasus and the region's first AI-based film festival - “AIAZ”",
     },
     excerpt: {
-      AZ: "Bu xəbərin tam mətni sonra əlavə olunacaq.",
+      AZ: "“AİAZ” Film Festivalı Qafqazın və regionun ilk süni intellekt əsaslı film festivalıdır. Festivalın təsisçisi Murad Şükürlü AZƏRTAC-a açıqlamasında festivalın gələcəyi və Azərbaycanda bu sahənin inkişafı haqqında danışıb.",
       EN: "Full article text will be added here later.",
     },
     content: {
       AZ: [
-        "Bu xəbərin tam mətni sonra əlavə olunacaq.",
-        "İkinci abzas da sonra əlavə olunacaq.",
+        "“AİAZ” Film Festivalı Qafqazın və regionun ilk süni intellekt əsaslı film festivalıdır. Kino ilə texnologiyanın unikal sintezini təqdim edən bu platforma yaradıcı şəxsləri və innovativ texnologiyaları bir araya gətirərək gələcəyin kino təcrübələrini nümayiş etdirir. İnanıram ki, 5 il sonra A kateqoriyalı film festivallarına süni intellekt kateqoriyası əlavə ediləndə əsas mükafatı azərbaycanlı rejissor qazanacaq. Ölkədə bu istiqamətə maraq həddindən artıq çoxdur. Digər ölkələrlə müqayisədə bizim süni intellekt tərtibatçılarının işləri seçilir və zövqlə tərtib olunduğu görünür.",
+        "Bunu AZƏRTAC-a açıqlamasında “AİAZ” Film Festivalının təsisçisi Murad Şükürlü deyib.",
+        "O bildirib ki, yeni formalaşmağa başlayan bu sahəyə tez adaptasiya olunsa, dünya üzrə ən yaxşı mütəxəssisləri yetişdirmək mümkündür: “Düşünürəm ki, “AİAZ” Film Festivalı bu işdə lokomotiv rolunu oynayaraq marağı olan şəxsləri yönləndirməkdə dəstək olacaq. Festival iştirakçıları həm digər ölkələrdən gələn işlərlə tanış oldular, həm də yerli müəlliflərin istifadə etdiyi üsul və texnikalar barədə məlumatlanaraq təcrübə mübadiləsi apardılar”.",
+        "Murad Şükürlü qeyd edib ki, festivala maraq böyük olub və gələn qonaqların əksəriyyəti növbəti il iştirakçı kimi qatılmaq istədiklərini bildiriblər. Festival çərçivəsində keçirilən panel müzakirə və ustad dərsləri buna yaxşı fürsət yaradıb.",
+        "“Biz bu festivalla kifayətlənmirik. Sahənin qısa müddətdə təkmilləşməsi üçün şəbəkələşmənin əhəmiyyətini anlayırıq. Bu məqsədlə süni intellekt tərtibatçılarının bir araya gəldiyi, təcrübələrini paylaşdığı və təlim kurslarda iştirak etdiyi “ASİS” (Azərbaycan Süni İntellekt Sənətçiləri) platformasını yaradaraq sahə üzrə mütəxəssislərin yetişmə prosesini sürətləndirməyi hədəfləyirik”, - deyə festivalın təsisçisi əlavə edib.",
       ],
       EN: [
         "Full article text will be added here later.",
         "A second paragraph will be added here as well.",
       ],
     },
-    date: "20.08.2026",
-    image: news3,
+    date: "19.11.2025",
+    image: news1,
+    // Mənbədəki kimi, mətnin ortasında (2-ci abzasdan sonra) əlavə şəkil
+    inlineImage: news3Inline,
+    inlineImageAfter: 2,
   },
 ];
