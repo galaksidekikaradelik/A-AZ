@@ -27,10 +27,16 @@ function NewsSection() {
               key={item.id}
             >
               <div className="news-card-image">
-                <img
-                  src={item.image}
-                  alt={item.title[language]}
-                />
+                {item.image ? (
+                  <img
+                    src={item.image}
+                    alt={item.title[language]}
+                  />
+                ) : (
+                  <div className="news-page-card-image-placeholder">
+                    <span>AIAZ</span>
+                  </div>
+                )}
               </div>
 
               <div className="news-card-content">

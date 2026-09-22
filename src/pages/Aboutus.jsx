@@ -54,14 +54,26 @@ function AboutUs() {
 
             <h2>{t.about.eventsIntro}</h2>
 
-            <ul className="about-events">
-              {t.about.events.map((item, i) => (
-                <li key={i}>{item}</li>
-              ))}
-            </ul>  {/*demeli burda festival hissesi silinir onun yerine agenda qoyulacaq, mediadaki kimi 2025-2026 ve s. kimi
-            bele pdf kimi qoyulsun amma... */}
+            <div className="agenda-card">
+              <div className="agenda-card-info">
+                <h3>
+                  {language === "AZ" ? "Festival proqramı" : "Festival programme"}
+                </h3>
+                <p>
+                  {language === "AZ"
+                    ? "AIAZ Film Festivalının tam gündəliyini (tarixlər, saatlar, filmlər) PDF formatında yükləyin."
+                    : "Download the full AIAZ Film Festival agenda (dates, times, films) as a PDF."}
+                </p>
+              </div>
 
-            <p>{t.about.eventsNote}</p>
+              <a
+                className="agenda-download-btn"
+                href="/agenda/aiaz-agenda.pdf"
+                download="AIAZ-Festival-Proqrami.pdf"
+              >
+                {language === "AZ" ? "PDF-i yüklə" : "Download PDF"}
+              </a>
+            </div>
 
             <p>{t.about.speech}</p>
 
@@ -98,4 +110,3 @@ function AboutUs() {
 }
 
 export default AboutUs;
-

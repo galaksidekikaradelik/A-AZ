@@ -1,5 +1,4 @@
 import news1 from "../assets/news1.jpg";
-import news2 from "../assets/news2.jpg";
 import news3Inline from "../assets/news3-inline.jpg";
 
 export const newsItems = [
@@ -33,7 +32,6 @@ export const newsItems = [
         "A second paragraph will be added here as well.",
       ],
     },
-    date: "04.09.2026",
     image: news1,
   },
   {
@@ -70,8 +68,6 @@ export const newsItems = [
         "Festival supporters included the ecological platform Eco Hub and the company Fors. The festival was founded by Murad Shukurlu, directed by Sahil Mammadov, with visual design by Mirvugar Abdulov, creative direction by Maleyka Mammadova, and media management by Samed Aghayev.",
       ],
     },
-    date: "16.11.2025",
-    image: news2,
   },
   {
     id: 3,
@@ -96,9 +92,7 @@ export const newsItems = [
         "A second paragraph will be added here as well.",
       ],
     },
-    date: "19.11.2025",
     image: news1,
-    // Mənbədəki kimi, mətnin ortasında (2-ci abzasdan sonra) əlavə şəkil
     inlineImage: news3Inline,
     inlineImageAfter: 2,
   },

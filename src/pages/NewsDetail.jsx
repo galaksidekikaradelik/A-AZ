@@ -53,9 +53,11 @@ function NewsDetail() {
 
         <section className="news-detail">
           <div className="section-container news-detail-content">
-            <div className="news-detail-image">
-              <img src={item.image} alt={item.title[language]} />
-            </div>
+            {item.image && (
+              <div className="news-detail-image">
+                <img src={item.image} alt={item.title[language]} />
+              </div>
+            )}
 
             {item.content[language].map((paragraph, i) => (
               <Fragment key={i}>
