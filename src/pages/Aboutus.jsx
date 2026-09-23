@@ -52,32 +52,18 @@ function AboutUs() {
               ))}
             </ul>
 
-            <h2>{t.about.eventsIntro}</h2>
+            <h2>{language === "AZ" ? "Proqram" : "Programme"}</h2>
 
-            <div className="agenda-card">
-              <div className="agenda-card-info">
-                <h3>
-                  {language === "AZ" ? "Festival proqramı" : "Festival programme"}
-                </h3>
-                <p>
-                  {language === "AZ"
-                    ? "AIAZ Film Festivalının tam gündəliyini (tarixlər, saatlar, filmlər) PDF formatında yükləyin."
-                    : "Download the full AIAZ Film Festival agenda (dates, times, films) as a PDF."}
-                </p>
-              </div>
-
-              <a
-                className="agenda-download-btn"
-                href="/agenda/aiaz-agenda.pdf"
-                download="AIAZ-Festival-Proqrami.pdf"
-              >
-                {language === "AZ" ? "PDF-i yüklə" : "Download PDF"}
-              </a>
-            </div>
+            <a
+              className="agenda-download-btn"
+              href="/agenda/aiaz-agenda.pdf"
+              download="AIAZ-Festival-Proqrami.pdf"
+            >
+              {language === "AZ" ? "PDF-i yüklə" : "Download PDF"}
+            </a>
 
             <p>{t.about.speech}</p>
 
-            <p className="about-closing">{t.about.closing}</p>
           </div>
         </section>
 
