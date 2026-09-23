@@ -1,3 +1,5 @@
+import { Eye, Download } from "lucide-react";
+
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
@@ -54,17 +56,27 @@ function AboutUs() {
 
             <h2>{language === "AZ" ? "Proqram" : "Programme"}</h2>
 
-            <a
-              className="agenda-download-btn"
-              href="/agenda/aiaz-agenda.pdf"
-              download="AIAZ-Festival-Proqrami.pdf"
-            >
-              {language === "AZ" ? "PDF-i yüklə" : "Download PDF"}
-            </a>
+            <div className="agenda-actions">
+              <a
+                className="agenda-btn agenda-btn-preview"
+                href="/agenda/aiaz-agenda.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Eye size={18} />
+                {language === "AZ" ? "Önizləmə" : "Preview"}
+              </a>
 
-            <p>{t.about.speech}</p>
-
-          </div>
+              <a
+                className="agenda-btn agenda-btn-download"
+                href="/agenda/aiaz-agenda.pdf"
+                download="AIAZ-Festival-Proqrami.pdf"
+              >
+                <Download size={18} />
+                {language === "AZ" ? "PDF-i yüklə" : "Download PDF"}
+              </a>
+            </div>        
+            </div>
         </section>
 
         <section className="team-section">
