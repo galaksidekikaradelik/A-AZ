@@ -72,11 +72,11 @@ export const translations = {
 
       teamTitle: "Komanda üzvləri",
       team: [
+        { name: "Ru Hasanov", role: "Chair of the Board", photo: "Ru Hasanov - Chair of the Board.png" },
+        { name: "Murad Shukurlu", role: "Founder", photo: "Murad Shukurlu - Founder.png" },
+        { name: "Sahil Mammadov", role: "Festival Manager", photo: "Sahil Mammadov - Festival manager.png" },
         { name: "Malayka Mammadova", role: "Partnership Manager", photo: "Malayka Mammadova - Partnership manager.png" },
         { name: "Michael Abdulov", role: "Art Director", photo: "Michael Abdulov - Art director.png" },
-        { name: "Murad Shukurlu", role: "Founder", photo: "Murad Shukurlu - Founder.png" },
-        { name: "Ru Hasanov", role: "Chair of the Board", photo: "Ru Hasanov - Chair of the Board.png" },
-        { name: "Sahil Mammadov", role: "Festival Manager", photo: "Sahil Mammadov - Festival manager.png" },
       ],
     },
 
@@ -207,11 +207,11 @@ export const translations = {
 
       teamTitle: "Team Members",
       team: [
+        { name: "Ru Hasanov", role: "Chair of the Board", photo: "Ru Hasanov - Chair of the Board.png" },
+        { name: "Murad Shukurlu", role: "Founder", photo: "Murad Shukurlu - Founder.png" },
+        { name: "Sahil Mammadov", role: "Festival Manager", photo: "Sahil Mammadov - Festival manager.png" },
         { name: "Malayka Mammadova", role: "Partnership Manager", photo: "Malayka Mammadova - Partnership manager.png" },
         { name: "Michael Abdulov", role: "Art Director", photo: "Michael Abdulov - Art director.png" },
-        { name: "Murad Shukurlu", role: "Founder", photo: "Murad Shukurlu - Founder.png" },
-        { name: "Ru Hasanov", role: "Chair of the Board", photo: "Ru Hasanov - Chair of the Board.png" },
-        { name: "Sahil Mammadov", role: "Festival Manager", photo: "Sahil Mammadov - Festival manager.png" },
       ],
     },
 

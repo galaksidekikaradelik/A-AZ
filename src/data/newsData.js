@@ -1,4 +1,6 @@
 import news1 from "../assets/news1.jpg";
+import news2 from "../assets/2025/foto/_SMY2343.jpg";
+import news2Inline from "../assets/2025/foto/_SMY2500.jpg";
 import news3Inline from "../assets/news3-inline.jpg";
 
 export const newsItems = [
@@ -68,6 +70,10 @@ export const newsItems = [
         "Festival supporters included the ecological platform Eco Hub and the company Fors. The festival was founded by Murad Shukurlu, directed by Sahil Mammadov, with visual design by Mirvugar Abdulov, creative direction by Maleyka Mammadova, and media management by Samed Aghayev.",
       ],
     },
+    image: news2,
+    inlineImage: news2Inline,
+    inlineImageAfter: 3,
+    inlineImageWide: true,
   },
   {
     id: 3,

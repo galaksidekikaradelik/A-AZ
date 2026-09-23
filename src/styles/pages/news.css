@@ -164,3 +164,10 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
+
+.news-detail-image-inline.news-detail-image-inline-wide {
+  aspect-ratio: 16 / 9;
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}

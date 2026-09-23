@@ -65,7 +65,13 @@ function NewsDetail() {
 
                 {/* Mətnin ortasına əlavə şəkil (mənbədə olduğu kimi) */}
                 {item.inlineImage && item.inlineImageAfter === i && (
-                  <div className="news-detail-image news-detail-image-inline">
+                  <div
+                    className={
+                      item.inlineImageWide
+                        ? "news-detail-image news-detail-image-inline news-detail-image-inline-wide"
+                        : "news-detail-image news-detail-image-inline"
+                    }
+                  >
                     <img src={item.inlineImage} alt="" />
                   </div>
                 )}
