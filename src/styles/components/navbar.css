@@ -210,40 +210,22 @@
 }
 
 .filmfreeway-link {
-  height: 40px;
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 0 13px;
-
-  border-radius: 20px;
-  background: var(--color-purple-dark);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-
-  color: #FFFFFF;
   text-decoration: none;
-  font-size: 13px;
-  font-weight: 600;
-
-  transition: all 0.3s ease;
 }
 
 .filmfreeway-link img {
-  width: 21px;
-  height: 21px;
-  object-fit: contain;
+  height: 36px;
+  width: auto;
+  display: block;
   transition: transform 0.3s ease;
 }
 
-.filmfreeway-link:hover {
-  background: var(--color-purple);
-  border-color: rgba(255, 255, 255, 0.25);
-  transform: translateY(-1px);
+.filmfreeway-link:hover img {
+  transform: scale(1.03);
 }
 
-.filmfreeway-link:hover img {
-  transform: scale(1.08);
-}
 
 @media (max-width: 768px) {
   .navbar {

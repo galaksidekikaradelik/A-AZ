@@ -99,14 +99,17 @@ function Navbar() {
         </div>
 
         <div className="navbar-actions">
-          <a
-            href="https://filmfreeway.com/"
+         <a
+            href="https://filmfreeway.com/festivals/79513"
             target="_blank"
             rel="noopener noreferrer"
             className="filmfreeway-link"
-            aria-label="FilmFreeway"
+            aria-label="Submit on FilmFreeway"
           >
-            <span>FilmFreeway</span>
+            <img
+              src="https://public-assets.filmfreeway.com/submission_buttons/v2/sm_submission_btn@2x-purple-gradient.png"
+              alt="Submit on FilmFreeway"
+            />
           </a>
           <button
             className={`theme-toggle ${theme}`}

@@ -1,18 +1,21 @@
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../data/translations";
 
+import partner1Logo from "../assets/partners/auth_logo.png";
+import partner2Logo from "../assets/partners/logo_en.png";
+
 function PartnersSection() {
   const { language } = useLanguage();
   const t = translations[language];
 
   const partners = [
-    "Partner 01",
-    "Partner 02",
-    "Partner 03",
-    "Partner 04",
-    "Partner 05",
-    "Partner 06",
-  ];
+  {
+    logo: partner1Logo,
+  },
+  {
+    logo: partner2Logo,
+  },
+];
 
   return (
     <section id="partners" className="partners-section">
@@ -28,7 +31,11 @@ function PartnersSection() {
           <div className="partners-track">
             {[...partners, ...partners].map((partner, index) => (
               <div className="partner-logo" key={index}>
-                {partner}
+                <img
+                  src={partner.logo}
+                  alt={`Partner ${index + 1}`}
+                  className="partner-logo-image"
+                />
               </div>
             ))}
           </div>
