@@ -3,6 +3,8 @@ import { Eye, Download } from "lucide-react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
+import agendaCover from "../assets/agenda-cover.jpg";
+
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../data/translations";
 
@@ -49,34 +51,47 @@ function AboutUs() {
               {t.about.directions.map((item, i) => (
                 <li key={i}>
                   <strong>{item.title}</strong>
-                  {item.description}
+                  <p>{item.description}</p>
                 </li>
               ))}
             </ul>
 
             <h2>{language === "AZ" ? "Proqram" : "Programme"}</h2>
 
-            <div className="agenda-actions">
-              <a
-                className="agenda-btn agenda-btn-preview"
-                href="/agenda/aiaz-agenda.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Eye size={18} />
-                {language === "AZ" ? "Önizləmə" : "Preview"}
-              </a>
+            <div className="agenda-preview-card">
+              <img
+                className="agenda-preview-image"
+                src={agendaCover}
+                alt={language === "AZ" ? "Festival proqramı" : "Festival programme"}
+              />
 
-              <a
-                className="agenda-btn agenda-btn-download"
-                href="/agenda/aiaz-agenda.pdf"
-                download="AIAZ-Festival-Proqrami.pdf"
-              >
-                <Download size={18} />
-                {language === "AZ" ? "PDF-i yüklə" : "Download PDF"}
-              </a>
-            </div>        
+              <div className="agenda-preview-actions">
+                <a
+                  className="agenda-icon-btn"
+                  href="/agenda/aiaz-agenda.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title={language === "AZ" ? "Önizləmə" : "Preview"}
+                  aria-label={language === "AZ" ? "Önizləmə" : "Preview"}
+                >
+                  <Eye size={18} />
+                </a>
+
+                <a
+                  className="agenda-icon-btn"
+                  href="/agenda/aiaz-agenda.pdf"
+                  download="AIAZ-Festival-Proqrami.pdf"
+                  title={language === "AZ" ? "PDF-i yüklə" : "Download PDF"}
+                  aria-label={language === "AZ" ? "PDF-i yüklə" : "Download PDF"}
+                >
+                  <Download size={18} />
+                </a>
+              </div>
             </div>
+
+            <p>{t.about.speech}</p>
+
+          </div>
         </section>
 
         <section className="team-section">
