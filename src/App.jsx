@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import Festival from "./pages/Festival";
 import News from "./pages/News";
 import NewsDetail from "./pages/NewsDetail";
-import AboutUs from "./pages/AboutUs";
+import AboutUs from "./pages/Aboutus";
 import Jury from "./pages/Jury";
 import Gallery from "./pages/Gallery";
 import MediaYear from "./pages/MediaYear";
