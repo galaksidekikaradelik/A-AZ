@@ -7,12 +7,10 @@ import Footer from "../components/Footer";
 
 import { newsItems } from "../data/newsData";
 import { useLanguage } from "../context/LanguageContext";
-import { translations } from "../data/translations";
 
 function NewsDetail() {
   const { id } = useParams();
-  const { language } = useLanguage();
-  const t = translations[language];
+  const { language, t } = useLanguage();
 
   const item = newsItems.find((n) => String(n.id) === id);
 
@@ -46,7 +44,10 @@ function NewsDetail() {
               {t.news.back}
             </Link>
 
-            <span className="section-label">{item.date}</span>
+            <span className="section-label">
+              {item.date}
+            </span>
+
             <h1>{item.title[language]}</h1>
           </div>
         </section>
@@ -55,7 +56,10 @@ function NewsDetail() {
           <div className="section-container news-detail-content">
             {item.image && (
               <div className="news-detail-image">
-                <img src={item.image} alt={item.title[language]} />
+                <img
+                  src={item.image}
+                  alt={item.title[language]}
+                />
               </div>
             )}
 
@@ -63,18 +67,21 @@ function NewsDetail() {
               <Fragment key={i}>
                 <p>{paragraph}</p>
 
-                {/* Mətnin ortasına əlavə şəkil (mənbədə olduğu kimi) */}
-                {item.inlineImage && item.inlineImageAfter === i && (
-                  <div
-                    className={
-                      item.inlineImageWide
-                        ? "news-detail-image news-detail-image-inline news-detail-image-inline-wide"
-                        : "news-detail-image news-detail-image-inline"
-                    }
-                  >
-                    <img src={item.inlineImage} alt="" />
-                  </div>
-                )}
+                {item.inlineImage &&
+                  item.inlineImageAfter === i && (
+                    <div
+                      className={
+                        item.inlineImageWide
+                          ? "news-detail-image news-detail-image-inline news-detail-image-inline-wide"
+                          : "news-detail-image news-detail-image-inline"
+                      }
+                    >
+                      <img
+                        src={item.inlineImage}
+                        alt=""
+                      />
+                    </div>
+                  )}
               </Fragment>
             ))}
           </div>

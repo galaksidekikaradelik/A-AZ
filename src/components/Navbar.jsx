@@ -5,7 +5,6 @@ import { useLanguage } from "../context/LanguageContext";
 
 import logoLight from "../assets/aiazlogomain.png";
 import logoDark from "../assets/aiazlogoag.png";
-import { Film } from "lucide-react";
 
 function Navbar() {
   const [theme, setTheme] = useState(() => {
@@ -15,7 +14,7 @@ function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [languageOpen, setLanguageOpen] = useState(false);
 
-  const { language, setLanguage } = useLanguage();
+  const { language, setLanguage, t } = useLanguage();
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
@@ -39,7 +38,6 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-
         <Link to="/" className="navbar-logo">
           <img
             src={theme === "dark" ? logoDark : logoLight}
@@ -47,14 +45,18 @@ function Navbar() {
           />
         </Link>
 
-        <div className={`navbar-links ${menuOpen ? "active" : ""}`}>
+        <div
+          className={`navbar-links ${
+            menuOpen ? "active" : ""
+          }`}
+        >
           <NavLink
             to="/"
             end
             className={navLinkClass}
             onClick={() => setMenuOpen(false)}
           >
-            {language === "AZ" ? "Ana səhifə" : "Home"}
+            {t.nav.home}
           </NavLink>
 
           <NavLink
@@ -62,15 +64,7 @@ function Navbar() {
             className={navLinkClass}
             onClick={() => setMenuOpen(false)}
           >
-            Festival
-          </NavLink>
-
-          <NavLink
-            to="/about"
-            className={navLinkClass}
-            onClick={() => setMenuOpen(false)}
-          >
-            {language === "AZ" ? "Haqqımızda" : "About"}
+            {t.nav.festival}
           </NavLink>
 
           <NavLink
@@ -78,7 +72,7 @@ function Navbar() {
             className={navLinkClass}
             onClick={() => setMenuOpen(false)}
           >
-            {language === "AZ" ? "Jüri" : "Jury"}
+            {t.nav.jury}
           </NavLink>
 
           <NavLink
@@ -86,7 +80,7 @@ function Navbar() {
             className={navLinkClass}
             onClick={() => setMenuOpen(false)}
           >
-            {language === "AZ" ? "Xəbərlər" : "News"}
+            {t.nav.news}
           </NavLink>
 
           <NavLink
@@ -94,27 +88,44 @@ function Navbar() {
             className={navLinkClass}
             onClick={() => setMenuOpen(false)}
           >
-            Media
+            {t.nav.gallery}
+          </NavLink>
+
+          <NavLink
+            to="/about"
+            className={navLinkClass}
+            onClick={() => setMenuOpen(false)}
+          >
+            {t.nav.about}
+          </NavLink>
+
+          <NavLink
+            to="/contact"
+            className={navLinkClass}
+            onClick={() => setMenuOpen(false)}
+          >
+            {t.nav.contact}
           </NavLink>
         </div>
 
         <div className="navbar-actions">
-         <a
+          <a
             href="https://filmfreeway.com/festivals/79513"
             target="_blank"
             rel="noopener noreferrer"
             className="filmfreeway-link"
-            aria-label="Submit on FilmFreeway"
+            aria-label={t.nav.submitFilm}
           >
             <img
               src="https://public-assets.filmfreeway.com/submission_buttons/v2/sm_submission_btn@2x-purple-gradient.png"
-              alt="Submit on FilmFreeway"
+              alt={t.nav.submitFilm}
             />
           </a>
+
           <button
             className={`theme-toggle ${theme}`}
             onClick={toggleTheme}
-            aria-label="Change theme"
+            aria-label={t.nav.changeTheme}
           >
             <span className="theme-toggle-circle">
               {theme === "dark" ? (
@@ -128,25 +139,27 @@ function Navbar() {
           <div className="language-switcher">
             <button
               className="language-current"
-              onClick={() => setLanguageOpen(!languageOpen)}
-              aria-label="Change language"
+              onClick={() =>
+                setLanguageOpen((current) => !current)
+              }
+              aria-label={t.nav.changeLanguage}
             >
               <Globe size={16} />
-              <span>{language}</span>
+              <span>{language.toUpperCase()}</span>
             </button>
 
             {languageOpen && (
               <div className="language-dropdown">
                 <button
-                  className={language === "AZ" ? "active" : ""}
-                  onClick={() => changeLanguage("AZ")}
+                  className={language === "az" ? "active" : ""}
+                  onClick={() => changeLanguage("az")}
                 >
                   AZ
                 </button>
 
                 <button
-                  className={language === "EN" ? "active" : ""}
-                  onClick={() => changeLanguage("EN")}
+                  className={language === "en" ? "active" : ""}
+                  onClick={() => changeLanguage("en")}
                 >
                   EN
                 </button>
@@ -156,12 +169,15 @@ function Navbar() {
 
           <button
             className="mobile-menu-button"
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Open menu"
+            onClick={() => setMenuOpen((current) => !current)}
+            aria-label={t.nav.openMenu}
           >
-            {menuOpen ? <X size={24} /> : <Menu size={24} />}
+            {menuOpen ? (
+              <X size={24} />
+            ) : (
+              <Menu size={24} />
+            )}
           </button>
-
         </div>
       </div>
     </nav>

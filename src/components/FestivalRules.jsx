@@ -1,62 +1,71 @@
 import { useReveal } from "../hooks/useReveal";
+import { useLanguage } from "../context/LanguageContext";
 
 function FestivalRules() {
   const [ref, visible] = useReveal();
+  const { t } = useLanguage();
 
   return (
     <section id="festival-rules" className="festival-rules">
       <div
         ref={ref}
-        className={`festival-rules-container reveal ${visible ? "is-visible" : ""}`}
+        className={`festival-rules-container reveal ${
+          visible ? "is-visible" : ""
+        }`}
       >
         <div className="festival-rules-header">
-          <h2>Müsabiqənin qaydaları.</h2>
+          <h2>{t.festivalRules.title}</h2>
 
-          <p>
-            Festivalda iştirak etməzdən əvvəl film təqdimatı
-            və iştirak şərtləri ilə tanış olun.
-          </p>
+          <p>{t.festivalRules.description}</p>
         </div>
 
         <div className="rules-grid">
           <article className="rule-card">
             <span className="mono-tag rule-number">01 / 04</span>
-            <h3>Film tələbləri</h3>
+
+            <h3>{t.festivalRules.rule1.title}</h3>
+
             <ul>
-              <li>Təqdim olunan filmlər son iki ildə istehsal olunmalıdır.</li>
-              <li>Filmlərin müddəti 1 dəqiqədən az, 30 dəqiqədən çox olmamalıdır.</li>
-              <li>Filmlər ingilis dilində .srt formatında altyazı ilə təqdim edilməlidir.</li>
+              {t.festivalRules.rule1.items.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
             </ul>
           </article>
 
           <article className="rule-card">
             <span className="mono-tag rule-number">02 / 04</span>
-            <h3>Təqdimat materialları</h3>
+
+            <h3>{t.festivalRules.rule2.title}</h3>
+
             <ul>
-              <li>Hər bir film üçün treyler və poster təqdim olunmalıdır.</li>
-              <li>Rejissorun tam adı, qısa bioqrafiyası və fotoşəkli əlavə olunmalıdır.</li>
-              <li>Təqdim olunan materiallar festivalın təbliği və təqdimatı üçün istifadə oluna bilər.</li>
+              {t.festivalRules.rule2.items.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
             </ul>
           </article>
 
           <article className="rule-card">
             <span className="mono-tag rule-number">03 / 04</span>
-            <h3>AI filmləri</h3>
+
+            <h3>{t.festivalRules.rule3.title}</h3>
+
             <ul>
-              <li>İstehsal zamanı istifadə olunmuş süni intellekt alətləri təqdim edilməlidir.</li>
-              <li>İstifadə olunan platformalar və modellərin ətraflı siyahısı əlavə olunmalıdır.</li>
-              <li>AI və ənənəvi kateqoriyalar üzrə bir rejissor yalnız bir film təqdim edə bilər.</li>
+              {t.festivalRules.rule3.items.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
             </ul>
           </article>
 
-          <article className="rule-card rule-card--highlight">
+          <article className="rule-card">
             <span className="mono-tag rule-number">04 / 04</span>
-            <h3>Razılıq</h3>
-            <p>
-              Festivalda iştirak üçün film təqdim edən şəxs
-              yuxarıda qeyd olunan bütün şərtlərlə razılaşmış
-              hesab olunur.
-            </p>
+
+            <h3>{t.festivalRules.rule4.title}</h3>
+
+            <ul>
+              {t.festivalRules.rule4.items.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
           </article>
         </div>
       </div>

@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { useLanguage } from "../context/LanguageContext";
-import { translations } from "../data/translations";
 import {
   FaFacebookF,
   FaEnvelope,
@@ -12,8 +11,7 @@ import {
 import FilmFreewayIcon from "./FilmFreewayIcon";
 
 function Footer() {
-  const { language } = useLanguage();
-  const t = translations[language];
+  const { t } = useLanguage();
 
   return (
     <footer className="footer">
@@ -28,68 +26,67 @@ function Footer() {
         </div>
 
         <div className="footer-column">
-            <h3>{t.footer.contact}</h3>
-            
-            <p>
-              
-            </p>
-            <div className="footer-socials">
-               
-                <a
-                href="https://www.facebook.com/aiazff"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-                >
-                <FaFacebookF />
-                </a>
+          <h3>{t.footer.contact}</h3>
 
-                <a
-                href="mailto:aiazfilmfestival@gmail.com"
-                aria-label="Email"
-                >
-                <FaEnvelope />
-                </a>
+          <p></p>
 
-                <a
-                href="tel:+994000000000"
-                aria-label="Phone"
-                >
-                <FaPhone />
-                </a>
+          <div className="footer-socials">
 
-                <a
-                href="https://www.instagram.com/aiazfilmfestival/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                >
-                <FaInstagram />
-                </a>
+            <a
+              href="https://www.facebook.com/aiazff"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+            >
+              <FaFacebookF />
+            </a>
 
-                <a
-                href="https://www.youtube.com/@A%C4%B0AZFilmFestival"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="YouTube"
-                >
-                <FaYoutube />
-                </a>
+            <a
+              href="mailto:aiazfilmfestival@gmail.com"
+              aria-label="Email"
+            >
+              <FaEnvelope />
+            </a>
 
-                <a
-                  href="https://filmfreeway.com/aiazff"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="FilmFreeway"
-                >
-                  <FilmFreewayIcon size={20} />
-                </a>
-            </div>
-            </div>
+            <a
+              href="tel:+994000000000"
+              aria-label="Phone"
+            >
+              <FaPhone />
+            </a>
+
+            <a
+              href="https://www.instagram.com/aiazfilmfestival/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
+              <FaInstagram />
+            </a>
+
+            <a
+              href="https://www.youtube.com/@A%C4%B0AZFilmFestival"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="YouTube"
+            >
+              <FaYoutube />
+            </a>
+
+            <a
+              href="https://filmfreeway.com/aiazff"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="FilmFreeway"
+            >
+              <FilmFreewayIcon size={20} />
+            </a>
+
+          </div>
+        </div>
+
         <div className="footer-column">
-          <h3>
-            {t.footer.links}
-          </h3>
+          <h3>{t.footer.links}</h3>
 
           <Link to="/">
             {t.footer.home}
@@ -115,7 +112,7 @@ function Footer() {
       </div>
 
       <div className="footer-bottom">
-        © 2026 AIAZ Film Festival. All rights reserved.
+        {t.footer.copyright}
       </div>
     </footer>
   );

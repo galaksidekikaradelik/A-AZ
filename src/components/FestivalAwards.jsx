@@ -1,5 +1,5 @@
 import { useReveal } from "../hooks/useReveal";
-
+import { useLanguage } from "../context/LanguageContext";
 
 function AwardMark({ variant }) {
   if (variant === "human") {
@@ -10,6 +10,7 @@ function AwardMark({ variant }) {
       </svg>
     );
   }
+
   return (
     <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
       <rect x="3" y="3" width="10" height="10" stroke="currentColor" strokeWidth="1.4" />
@@ -20,76 +21,86 @@ function AwardMark({ variant }) {
 
 function FestivalAwards() {
   const [ref, visible] = useReveal();
+  const { t } = useLanguage();
 
   return (
     <section className="festival-awards">
       <div
         ref={ref}
-        className={`festival-awards-container reveal ${visible ? "is-visible" : ""}`}
+        className={`festival-awards-container reveal ${
+          visible ? "is-visible" : ""
+        }`}
       >
         <div className="festival-awards-header">
+          <h2>{t.festivalAwards.title}</h2>
 
-          <h2>Gələcəyin mükafatları.</h2>
-
-          <p>
-            AIAZ unikal ikili qiymətləndirmə sistemi ilə
-            insan münsiflər heyətini və süni intellekti
-            eyni festivalda bir araya gətirir.
-          </p>
+          <p>{t.festivalAwards.description}</p>
         </div>
 
         <div className="awards-competition">
-          <span className="mono-tag awards-competition-tag">YERLİ MÜSABİQƏ</span>
+          <span className="mono-tag awards-competition-tag">
+            {t.festivalAwards.localCompetition}
+          </span>
 
           <div className="awards-row">
             <article className="award-card award-card--human">
               <AwardMark variant="human" />
-              <span className="mono-tag award-jury">İnsan jüri tərəfindən</span>
-              <h3>Qızıl Çip</h3>
-              <p>Ən yaxşı AI ilə hazırlanmış Azərbaycan qısametrajlı bədii filmə.</p>
-              <div className="award-prize">
-                <span>Mükafat</span>
-                <strong>0.00100 BTC</strong>
-              </div>
+
+              <span className="mono-tag award-jury">
+                {t.festivalAwards.humanJury}
+              </span>
+
+              <h3>{t.festivalAwards.localHumanAward.title}</h3>
+
+              <p>{t.festivalAwards.localHumanAward.description}</p>
+
             </article>
 
             <article className="award-card award-card--ai">
               <AwardMark variant="ai" />
-              <span className="mono-tag award-jury">AIAZ süni intellekti tərəfindən</span>
-              <h3>Platin Neyron</h3>
-              <p>Ənənəvi üsulla çəkilmiş Azərbaycan qısametrajlı filminə.</p>
-              <div className="award-prize">
-                <span>Qiymətləndirmə</span>
-                <strong>AI JURY</strong>
-              </div>
+
+              <span className="mono-tag award-jury">
+                {t.festivalAwards.aiJury}
+              </span>
+
+              <h3>{t.festivalAwards.localAiAward.title}</h3>
+
+              <p>{t.festivalAwards.localAiAward.description}</p>
+
             </article>
           </div>
         </div>
 
         <div className="awards-competition">
-          <span className="mono-tag awards-competition-tag">BEYNƏLXALQ MÜSABİQƏ</span>
+          <span className="mono-tag awards-competition-tag">
+            {t.festivalAwards.internationalCompetition}
+          </span>
 
           <div className="awards-row">
             <article className="award-card award-card--human">
               <AwardMark variant="human" />
-              <span className="mono-tag award-jury">İnsan jüri tərəfindən</span>
-              <h3>Qızıl Prompt</h3>
-              <p>Ən yaxşı AI ilə hazırlanmış beynəlxalq qısametrajlı filmə.</p>
-              <div className="award-prize">
-                <span>Mükafat</span>
-                <strong>0.00100 BTC</strong>
-              </div>
+
+              <span className="mono-tag award-jury">
+                {t.festivalAwards.humanJury}
+              </span>
+
+              <h3>{t.festivalAwards.internationalHumanAward.title}</h3>
+
+              <p>{t.festivalAwards.internationalHumanAward.description}</p>
+
             </article>
 
             <article className="award-card award-card--ai">
               <AwardMark variant="ai" />
-              <span className="mono-tag award-jury">AIAZ süni intellekti tərəfindən</span>
-              <h3>Quantum Frame</h3>
-              <p>Ənənəvi beynəlxalq qısametrajlı filmə.</p>
-              <div className="award-prize">
-                <span>Qiymətləndirmə</span>
-                <strong>AI JURY</strong>
-              </div>
+
+              <span className="mono-tag award-jury">
+                {t.festivalAwards.aiJury}
+              </span>
+
+              <h3>{t.festivalAwards.internationalAiAward.title}</h3>
+
+              <p>{t.festivalAwards.internationalAiAward.description}</p>
+              
             </article>
           </div>
         </div>

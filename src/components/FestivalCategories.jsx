@@ -1,61 +1,98 @@
 import { useReveal } from "../hooks/useReveal";
+import { useLanguage } from "../context/LanguageContext";
 
 function FestivalCategories() {
   const [ref, visible] = useReveal();
+  const { t } = useLanguage();
 
   return (
     <section className="festival-categories">
       <div
         ref={ref}
-        className={`festival-categories-container reveal ${visible ? "is-visible" : ""}`}
+        className={`festival-categories-container reveal ${
+          visible ? "is-visible" : ""
+        }`}
       >
         <div className="festival-categories-header">
-          <h2>İki yanaşma. Bir festival.</h2>
+          <h2>{t.festivalCategories.title}</h2>
 
-          <p>
-            AIAZ insan yaradıcılığı ilə süni intellekt
-            arasında unikal qiymətləndirmə sistemi yaradır.
-          </p>
+          <p>{t.festivalCategories.description}</p>
         </div>
 
         <div className="festival-category-grid">
           <article className="festival-category-card festival-category-card--human">
-            <span className="mono-tag category-tag">HUMAN JURY</span>
+            <span className="mono-tag category-tag">
+              {t.festivalCategories.human.tag}
+            </span>
 
-            <svg className="category-mark" width="34" height="34" viewBox="0 0 34 34" fill="none">
-              <circle cx="17" cy="17" r="15" stroke="currentColor" strokeWidth="1.4" />
+            <svg
+              className="category-mark"
+              width="34"
+              height="34"
+              viewBox="0 0 34 34"
+              fill="none"
+            >
+              <circle
+                cx="17"
+                cy="17"
+                r="15"
+                stroke="currentColor"
+                strokeWidth="1.4"
+              />
               <circle cx="17" cy="17" r="4" fill="currentColor" />
             </svg>
 
-            <h3>İnsan Jürisi</h3>
-            <span className="category-subtitle">AI ilə yaradılmış filmlər</span>
+            <h3>{t.festivalCategories.human.title}</h3>
 
-            <p>
-              Süni intellektlə hazırlanmış filmlər kino
-              tənqidçiləri, rejissorlar və sənət
-              mütəxəssislərindən ibarət insan jüri
-              tərəfindən qiymətləndirilir.
-            </p>
+            <span className="category-subtitle">
+              {t.festivalCategories.human.subtitle}
+            </span>
+
+            <p>{t.festivalCategories.human.description}</p>
           </article>
 
           <article className="festival-category-card festival-category-card--ai">
-            <span className="mono-tag category-tag">AI JURY — AIAZ</span>
+            <span className="mono-tag category-tag">
+              {t.festivalCategories.ai.tag}
+            </span>
 
-            <svg className="category-mark" width="34" height="34" viewBox="0 0 34 34" fill="none">
-              <rect x="3" y="3" width="12" height="12" stroke="currentColor" strokeWidth="1.4" />
-              <rect x="19" y="19" width="12" height="12" stroke="currentColor" strokeWidth="1.4" />
-              <path d="M15 9H19M9 15V19" stroke="currentColor" strokeWidth="1.4" />
+            <svg
+              className="category-mark"
+              width="34"
+              height="34"
+              viewBox="0 0 34 34"
+              fill="none"
+            >
+              <rect
+                x="3"
+                y="3"
+                width="12"
+                height="12"
+                stroke="currentColor"
+                strokeWidth="1.4"
+              />
+              <rect
+                x="19"
+                y="19"
+                width="12"
+                height="12"
+                stroke="currentColor"
+                strokeWidth="1.4"
+              />
+              <path
+                d="M15 9H19M9 15V19"
+                stroke="currentColor"
+                strokeWidth="1.4"
+              />
             </svg>
 
-            <h3>AIAZ Süni İntellekti</h3>
-            <span className="category-subtitle">Ənənəvi filmlər</span>
+            <h3>{t.festivalCategories.ai.title}</h3>
 
-            <p>
-              Ənənəvi üsullarla çəkilmiş filmlər Azərbaycan
-              kinosuna dərindən bələd olan xüsusi
-              təlimlənmiş AIAZ süni intellekti tərəfindən
-              dəyərləndirilir.
-            </p>
+            <span className="category-subtitle">
+              {t.festivalCategories.ai.subtitle}
+            </span>
+
+            <p>{t.festivalCategories.ai.description}</p>
           </article>
         </div>
       </div>

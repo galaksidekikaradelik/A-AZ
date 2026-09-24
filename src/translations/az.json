@@ -1,0 +1,290 @@
+{
+  "nav": {
+    "home": "Ana səhifə",
+    "news": "Xəbərlər",
+    "festival": "Festival",
+    "gallery": "Media",
+    "jury": "Jüri",
+    "about": "Haqqımızda",
+    "contact": "Əlaqə",
+    "submitFilm": "FilmFreeway üzərindən müraciət et",
+    "changeTheme": "Temanı dəyiş",
+    "changeLanguage": "Dili dəyiş",
+"openMenu": "Menyunu aç"
+  },
+  "hero": {
+    "title": "AI FILM FESTIVAL",
+    "line1": "Süni zəka",
+    "line2": "və kinonun",
+    "line3": "kəsişdiyi",
+    "line4": "məkan"
+    },
+  "film": {
+    "label": "AIAZ FILM FESTIVAL",
+    "title": "Süni intellektlə hekayəni yenidən qur!    ",
+    "description": "AIAZ ənənəvi kino ilə süni intellekti bir araya gətirən qısametrajlı film festivalıdır. AI ilə yaradılmış və ənənəvi üsulla çəkilmiş filmlər fərqli jüri sistemləri tərəfindən qiymətləndirilir.",
+    "awards": "İKİ FƏRQLİ BAXIŞ. BİR FESTİVAL.",
+    "award1": "AI ilə yaradılmış filmlər — İnsan Münsiflər Heyəti tərəfindən qiymətləndirilir.",
+    "award2": " Ənənəvi üsulla çəkilmiş filmlər — AIAZ Süni İntellekt Münsiflər Heyəti tərəfindən qiymətləndirilir.",
+    "award3": "Yerli və beynəlxalq müsabiqə — fərqli kateqoriyalar və AIAZ mükafatları.",
+    "details": "Ətraflı",
+    "apply": "Müraciət et"
+  },
+  "news": {
+    "label": "AIAZ NEWS",
+    "title": "Xəbərlər",
+    "read": "Oxu →",
+    "more": "Daha çoxuna bax",
+    "back": "Xəbərlərə qayıt",
+    "notFound": "Xəbər tapılmadı"
+  },
+  "about": {
+    "label": "AIAZ HAQQINDA",
+    "title": "Haqqımızda",
+
+    "intro": [
+        "AIAZ Beynəlxalq Qısa Filmlər Festivalı Qafqazda süni intellekt və kinonun kəsişməsinə həsr olunmuş ilk festivaldır. 2025-ci ildə yaradılmış və Bakıda keçirilən bu festival, texnologiya ilə yaradıcılığı bir araya gətirən unikal bir platformadır.",
+        "AIAZ həm Artificial Intelligence Azerbaijan (Azərbaycan Süni İntellekti), həm də festivalın süni intellekt əsaslı jüri sisteminin adıdır. Bu, insan yaradıcılığı ilə maşın düşüncəsinin simbiyozunu ifadə edir."
+    ],
+
+    "directionsIntro": "Festival iki əsas istiqamətdə keçirilir:",
+
+    "directions": [
+        {
+        "title": "Süni intellektlə yaradılmış filmlər",
+        "description": "kino tənqidçiləri, rejissorlar və sənət mütəxəssislərindən ibarət insan jüri tərəfindən qiymətləndirilir."
+        },
+        {
+        "title": "Ənənəvi, insan tərəfindən çəkilmiş filmlər",
+        "description": "xüsusi təlimlənmiş, Azərbaycan kinosuna dərin bələdliyi olan AIAZ süni intellekti tərəfindən dəyərləndirilir."
+        }
+    ],
+
+    "quote": "🎥 AIAZ bir festivaldan daha çoxdur — bu, sənət və texnologiyanın canlı dialoqudur. Yaradıcılıq, eksperiment və süni intellektin estetik zövqü ilə formalaşan festival yeni dövrün kinobaxışını formalaşdırır.",
+
+    "eventsIntro": "Festivalda:",
+
+    "events": [
+        "Qısa filmlərin nümayişi",
+        "Süni intellektlə aparılan canlı müsahibələr və təqdimatlar",
+        "Beynəlxalq ustad dərsləri və diskussiyalar"
+    ],
+
+    "eventsNote": "Onlayn və oflayn tədbirlər keçiriləcək.",
+
+    "speech": "🎤 Festivalın açılış nitqi AIAZ tərəfindən təqdim olunur və süni intellekt kinoşünaslarla canlı dialoqa girir.",
+
+    "closing": "AIAZ – gələcəyin kinofestivalı bu gündən başlayır. İnsan, maşın və hekayə bir arada.",
+
+    "program": "Proqram",
+    "programAlt": "Festival proqramı",
+    "preview": "Önizləmə",
+    "download": "PDF-i yüklə",
+    "programPdfName": "AIAZ-Festival-Proqrami.pdf",
+
+    "teamTitle": "Komanda üzvləri",
+
+    "team": [
+        {
+        "name": "Ru Hasanov",
+        "role": "Chair of the Board",
+        "photo": "Ru Hasanov - Chair of the Board.png"
+        },
+        {
+        "name": "Murad Shukurlu",
+        "role": "Founder",
+        "photo": "Murad Shukurlu - Founder.png"
+        },
+        {
+        "name": "Sahil Mammadov",
+        "role": "Festival Manager",
+        "photo": "Sahil Mammadov - Festival manager.png"
+        },
+        {
+        "name": "Malayka Mammadova",
+        "role": "Partnership Manager",
+        "photo": "Malayka Mammadova - Partnership manager.png"
+        },
+        {
+        "name": "Michael Abdulov",
+        "role": "Art Director",
+        "photo": "Michael Abdulov - Art director.png"
+        }
+    ]
+    },
+  "jury": {
+    "label": "Münsiflər",
+    "title": "Münsiflər heyəti",
+    "international": {
+      "title": "Beynəlxalq müsabiqə",
+      "members": [
+        { "name": "Ad Soyad", "role": "Vəzifə" },
+        { "name": "Ad Soyad", "role": "Vəzifə" },
+        { "name": "Ad Soyad", "role": "Vəzifə" }
+      ]
+    },
+    "local": {
+      "title": "Yerli müsabiqə",
+      "members": [
+        { "name": "Ad Soyad", "role": "Vəzifə" },
+        { "name": "Ad Soyad", "role": "Vəzifə" },
+        { "name": "Ad Soyad", "role": "Vəzifə" }
+      ]
+    }
+  },
+  "gallery": {
+    "label": "AIAZ MEDIA",
+    "title": "Media",
+    "videosTitle": "Videolar",
+    "photos": "Fotolar",
+    "videos": "Videolar",
+    "comingSoon": "Tezliklə",
+    "winnerVideo": "Qalib videosu",
+    "mediaPreparing": "Bu il üçün media hazırlanır.",
+    "noPhotos": "Bu il üçün foto yoxdur.",
+    "openImage": "Şəkli aç",
+    "close": "Bağla",
+    "previousImage": "Əvvəlki şəkil",
+    "nextImage": "Növbəti şəkil",
+    "galleryImage": "Qalereya şəkli"
+    },
+  "winners": {
+    "label": "AIAZ QALİBLƏRİ",
+    "title": "Qaliblər",
+    "watch": "Videoya bax"
+  },
+  "partners": {
+    "label": "AIAZ",
+    "title": "Tərəfdaşlar"
+  },
+  "footer": {
+    "description": "AIAZ Film Festival süni intellekt və kino sənətinin bir araya gəldiyi beynəlxalq film festivalıdır.",
+    "contact": "Əlaqə",
+    "links": "Keçidlər",
+    "home": "Ana səhifə",
+    "news": "Xəbərlər",
+    "festival": "Festival haqqında",
+    "gallery": "Media",
+    "film": "Film Tərtib Et",
+    "copyright": "© 2026 AIAZ Film Festival. Bütün hüquqlar qorunur."
+  },
+  "festivalAwards": {
+        "title": "Gələcəyin mükafatları.",
+        "description": "AIAZ unikal ikili qiymətləndirmə sistemi ilə insan münsiflər heyətini və süni intellekti eyni festivalda bir araya gətirir.",
+
+        "localCompetition": "YERLİ MÜSABİQƏ",
+        "internationalCompetition": "BEYNƏLXALQ MÜSABİQƏ",
+
+        "humanJury": "İnsan jüri tərəfindən",
+        "aiJury": "AIAZ süni intellekti tərəfindən",
+
+        "prize": "Mükafat",
+        "evaluation": "Qiymətləndirmə",
+
+        "localHumanAward": {
+            "title": "Qızıl Çip",
+            "description": "Ən yaxşı AI ilə hazırlanmış Azərbaycan qısametrajlı bədii filmə."
+        },
+
+        "localAiAward": {
+            "title": "Platin Neyron",
+            "description": "Ənənəvi üsulla çəkilmiş Azərbaycan qısametrajlı filminə."
+        },
+
+        "internationalHumanAward": {
+            "title": "Qızıl Prompt",
+            "description": "Ən yaxşı AI ilə hazırlanmış beynəlxalq qısametrajlı filmə."
+        },
+
+        "internationalAiAward": {
+            "title": "Quantum Frame",
+            "description": "Ənənəvi beynəlxalq qısametrajlı filmə."
+        }
+        },
+        "festivalCategories": {
+    "title": "İki yanaşma. Bir festival.",
+    "description": "AIAZ insan yaradıcılığı ilə süni intellekt arasında unikal qiymətləndirmə sistemi yaradır.",
+
+    "human": {
+        "tag": "HUMAN JURY",
+        "title": "İnsan Jürisi",
+        "subtitle": "AI ilə yaradılmış filmlər",
+        "description": "Süni intellektlə hazırlanmış filmlər kino tənqidçiləri, rejissorlar və sənət mütəxəssislərindən ibarət insan jüri tərəfindən qiymətləndirilir."
+    },
+
+    "ai": {
+        "tag": "AI JURY — AIAZ",
+        "title": "AIAZ Süni İntellekti",
+        "subtitle": "Ənənəvi filmlər",
+        "description": "Ənənəvi üsullarla çəkilmiş filmlər Azərbaycan kinosuna dərindən bələd olan xüsusi təlimlənmiş AIAZ süni intellekti tərəfindən dəyərləndirilir."
+    }
+    },
+    "festivalHero": {
+        "titleLine1": "Beynəlxalq",
+        "titleLine2": "Qısa Film",
+        "titleLine3": "Festivalı",
+
+        "description": "Qafqazda süni intellekt və kinonun kəsişməsinə həsr olunmuş ilk beynəlxalq film festivalı.",
+
+        "apply": "Müraciət et",
+        "rules": "Qaydalar"
+    },
+    "festivalRules": {
+        "title": "Müsabiqənin qaydaları.",
+        "description": "Festivalda iştirak etməzdən əvvəl film təqdimatı və iştirak şərtləri ilə tanış olun.",
+
+        "rule1": {
+            "title": "Film tələbləri",
+            "items": [
+            "Festival qısametrajlı filmlər üçün nəzərdə tutulub.",
+            "Filmin müddəti 30 dəqiqədən çox olmamalıdır.",
+            "AI ilə yaradılmış və ənənəvi üsulla çəkilmiş filmlər müvafiq müsabiqə istiqaməti üzrə qəbul edilir.",
+            "Xarici dildə olan filmlər ingilis dilində subtitrlərlə təqdim edilməlidir."
+            ]
+        },
+
+        "rule2": {
+            "title": "Təqdimat materialları",
+            "items": [
+            "Hər film üçün treyler, poster və film haqqında qısa məlumat təqdim edilməlidir.",
+            "Rejissorun tam adı, qısa bioqrafiyası və fotosu müraciətə əlavə olunmalıdır.",
+            "Təqdim edilən materiallardan festival proqramının, kataloqunun və kommunikasiya materiallarının hazırlanmasında istifadə oluna bilər."
+            ]
+        },
+
+        "rule3": {
+            "title": "AI filmləri",
+            "items": [
+            "AI ilə yaradılmış filmlər peşəkar İnsan Münsiflər Heyəti tərəfindən qiymətləndirilir.",
+            "Ənənəvi üsulla çəkilmiş filmlər AIAZ Süni İntellekt Münsiflər Heyəti tərəfindən qiymətləndirilir.",
+            "AI ilə yaradılmış filmlərdə istifadə edilən əsas AI alətləri və platformaları müraciət zamanı göstərilməlidir.",
+            "Filmlər yerli və beynəlxalq müsabiqə istiqamətləri üzrə qiymətləndirilir."
+            ]
+        },
+
+        "rule4": {
+            "title": "AI filmləri",
+            "items": [
+            "Film təqdim edən şəxs filmin nümayişi üçün tələb olunan müəllif və istifadə hüquqlarına malik olmalıdır.",
+            "Seçilmiş filmlər festival proqramı çərçivəsində fiziki və ya onlayn formatda nümayiş oluna bilər.",
+            "Müraciətin təqdim edilməsi iştirakçının festivalın qaydaları və şərtləri ilə razılaşması hesab olunur."
+            ]
+        }
+    },
+    "contact": {
+        "informationTitle": "Əlaqə məlumatları",
+        "addressLabel": "ÜNVAN",
+        "address": "Azərbaycan Süni İntellekt Film Festivalı",
+        "city": "Bakı, Azərbaycan",
+        "emailLabel": "E-POÇT",
+        "partnershipsLabel": "TƏRƏFDAŞLIQLAR",
+        "mediaLabel": "MEDİA VƏ MƏTBUAT",
+        "messageTitle": "Mesaj göndər",
+        "fullName": "AD SOYAD",
+        "email": "E-POÇT",
+        "subject": "MÖVZU",
+        "message": "MESAJ",
+        "sendMessage": "Mesaj göndər"
+    }
+  
+}

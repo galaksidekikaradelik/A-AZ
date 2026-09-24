@@ -1,27 +1,31 @@
 import { createContext, useContext, useState } from "react";
 
+import az from "../translations/az.json";
+import en from "../translations/en.json";
+
+const translations = {
+  az,
+  en,
+};
+
 const LanguageContext = createContext();
 
-export function LanguageProvider({ children }) {
-  const [language, setLanguage] = useState("AZ");
+export const LanguageProvider = ({ children }) => {
+  const [language, setLanguage] = useState("az");
 
-  const toggleLanguage = () => {
-    setLanguage(language === "AZ" ? "EN" : "AZ");
-  };
+  const t = translations[language];
 
   return (
     <LanguageContext.Provider
       value={{
         language,
         setLanguage,
-        toggleLanguage,
+        t,
       }}
     >
       {children}
     </LanguageContext.Provider>
   );
-}
+};
 
-export function useLanguage() {
-  return useContext(LanguageContext);
-}
+export const useLanguage = () => useContext(LanguageContext);

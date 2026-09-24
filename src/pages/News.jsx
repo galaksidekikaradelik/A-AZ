@@ -5,11 +5,9 @@ import Footer from "../components/Footer";
 
 import { newsItems } from "../data/newsData";
 import { useLanguage } from "../context/LanguageContext";
-import { translations } from "../data/translations";
 
 function News() {
-  const { language } = useLanguage();
-  const t = translations[language];
+  const { language, t } = useLanguage();
 
   return (
     <>
@@ -33,7 +31,10 @@ function News() {
                 >
                   <div className="news-page-card-image">
                     {item.image ? (
-                      <img src={item.image} alt={item.title[language]} />
+                      <img
+                        src={item.image}
+                        alt={item.title[language]}
+                      />
                     ) : (
                       <div className="news-page-card-image-placeholder">
                         <span>AIAZ</span>
@@ -42,8 +43,12 @@ function News() {
                   </div>
 
                   <div className="news-page-card-content">
-                    <span className="news-date">{item.date}</span>
+                    <span className="news-date">
+                      {item.date}
+                    </span>
+
                     <h2>{item.title[language]}</h2>
+
                     <p>{item.excerpt[language]}</p>
                   </div>
                 </Link>

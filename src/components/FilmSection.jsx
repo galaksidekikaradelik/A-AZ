@@ -1,12 +1,9 @@
 import aiazImage from "../assets/aiaz.png";
 import aiaz2Image from "../assets/aiaz2.png";
 import { useLanguage } from "../context/LanguageContext";
-import { translations } from "../data/translations";
-
 
 function FilmSection() {
-  const { language } = useLanguage();
-  const t = translations[language];
+  const { t } = useLanguage();
 
   return (
     <section id="film" className="film-section">

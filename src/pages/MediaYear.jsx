@@ -12,35 +12,44 @@ import Footer from "../components/Footer";
 import Winners from "../components/Winners";
 
 import { useLanguage } from "../context/LanguageContext";
-import { translations } from "../data/translations";
 
-const photoFiles = import.meta.glob("../assets/*/foto/*.{jpg,jpeg,png,webp}", {
-  eager: true,
-  query: "?url",
-  import: "default",
-});
+const photoFiles = import.meta.glob(
+  "../assets/*/foto/*.{jpg,jpeg,png,webp}",
+  {
+    eager: true,
+    query: "?url",
+    import: "default",
+  }
+);
 
 function MediaYear() {
   const { year } = useParams();
-  const { language } = useLanguage();
-  const t = translations[language];
+  const { t } = useLanguage();
 
   const [activeIndex, setActiveIndex] = useState(null);
 
   const images = Object.entries(photoFiles)
-    .filter(([path]) => path.includes(`../assets/${year}/foto/`))
+    .filter(([path]) =>
+      path.includes(`../assets/${year}/foto/`)
+    )
     .map(([, src]) => src);
 
   const hasWinners = year === "2025";
 
-  const closeLightbox = () => setActiveIndex(null);
+  const closeLightbox = () => {
+    setActiveIndex(null);
+  };
 
   const showPrev = () => {
-    setActiveIndex((i) => (i === 0 ? images.length - 1 : i - 1));
+    setActiveIndex((i) =>
+      i === 0 ? images.length - 1 : i - 1
+    );
   };
 
   const showNext = () => {
-    setActiveIndex((i) => (i === images.length - 1 ? 0 : i + 1));
+    setActiveIndex((i) =>
+      i === images.length - 1 ? 0 : i + 1
+    );
   };
 
   useEffect(() => {
@@ -55,7 +64,10 @@ function MediaYear() {
     window.addEventListener("keydown", handleKeyDown);
 
     return () => {
-      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener(
+        "keydown",
+        handleKeyDown
+      );
     };
   }, [activeIndex]);
 
@@ -71,7 +83,10 @@ function MediaYear() {
               <span>{t.gallery.title}</span>
             </Link>
 
-            <span className="section-label">AIAZ</span>
+            <span className="section-label">
+              AIAZ
+            </span>
+
             <h1>{year}</h1>
           </div>
         </section>
@@ -79,7 +94,7 @@ function MediaYear() {
         <section className="gallery-page">
           <div className="section-container">
             <h2 className="media-section-title">
-              {language === "AZ" ? "Fotolar" : "Photos"}
+              {t.gallery.photos}
             </h2>
 
             {images.length > 0 ? (
@@ -89,18 +104,19 @@ function MediaYear() {
                     className="gallery-item"
                     key={src}
                     onClick={() => setActiveIndex(i)}
-                    aria-label={`Open image ${i + 1}`}
+                    aria-label={`${t.gallery.openImage} ${
+                      i + 1
+                    }`}
                   >
-                    <img src={src} alt={`AIAZ ${year} ${i + 1}`} />
+                    <img
+                      src={src}
+                      alt={`AIAZ ${year} ${i + 1}`}
+                    />
                   </button>
                 ))}
               </div>
             ) : (
-              <p>
-                {language === "AZ"
-                  ? "Bu il üçün foto yoxdur."
-                  : "There are no photos for this year."}
-              </p>
+              <p>{t.gallery.noPhotos}</p>
             )}
           </div>
         </section>
@@ -115,11 +131,14 @@ function MediaYear() {
       </main>
 
       {activeIndex !== null && (
-        <div className="lightbox" onClick={closeLightbox}>
+        <div
+          className="lightbox"
+          onClick={closeLightbox}
+        >
           <button
             className="lightbox-close"
             onClick={closeLightbox}
-            aria-label="Close"
+            aria-label={t.gallery.close}
           >
             <X size={28} />
           </button>
@@ -130,14 +149,16 @@ function MediaYear() {
               e.stopPropagation();
               showPrev();
             }}
-            aria-label="Previous image"
+            aria-label={t.gallery.previousImage}
           >
             <ChevronLeft size={32} />
           </button>
 
           <img
             src={images[activeIndex]}
-            alt={`AIAZ ${year} ${activeIndex + 1}`}
+            alt={`${t.gallery.galleryImage} ${
+              activeIndex + 1
+            }`}
             onClick={(e) => e.stopPropagation()}
           />
 
@@ -147,7 +168,7 @@ function MediaYear() {
               e.stopPropagation();
               showNext();
             }}
-            aria-label="Next image"
+            aria-label={t.gallery.nextImage}
           >
             <ChevronRight size={32} />
           </button>

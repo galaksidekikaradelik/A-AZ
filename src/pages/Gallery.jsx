@@ -1,13 +1,16 @@
 import { useEffect, useState } from "react";
-import { PlayCircle, X, ChevronLeft, ChevronRight } from "lucide-react";
+import {
+  PlayCircle,
+  X,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Winners from "../components/Winners";
 
 import { useLanguage } from "../context/LanguageContext";
-import { translations } from "../data/translations";
-
 
 const mediaFiles = import.meta.glob(
   "../assets/*/{foto,video}/*.{jpg,jpeg,png,webp,mp4,webm,mov}",
@@ -20,15 +23,16 @@ const mediaFiles = import.meta.glob(
 
 const getYearMedia = (year, type) => {
   return Object.entries(mediaFiles)
-    .filter(([path]) => path.includes(`../assets/${year}/${type}/`))
+    .filter(([path]) =>
+      path.includes(`../assets/${year}/${type}/`)
+    )
     .map(([, src]) => src);
 };
 
 const years = [2025, 2026].sort((a, b) => b - a);
 
 function Gallery() {
-  const { language } = useLanguage();
-  const t = translations[language];
+  const { t } = useLanguage();
 
   const [activeYear, setActiveYear] = useState(years[0]);
   const [activeIndex, setActiveIndex] = useState(null);
@@ -36,7 +40,6 @@ function Gallery() {
 
   const photos = getYearMedia(activeYear, "foto");
   const hasWinners = activeYear === 2025;
-
 
   const openLightbox = (images, index) => {
     setActiveImages(images);
@@ -49,11 +52,15 @@ function Gallery() {
   };
 
   const showPrev = () => {
-    setActiveIndex((i) => (i === 0 ? activeImages.length - 1 : i - 1));
+    setActiveIndex((i) =>
+      i === 0 ? activeImages.length - 1 : i - 1
+    );
   };
 
   const showNext = () => {
-    setActiveIndex((i) => (i === activeImages.length - 1 ? 0 : i + 1));
+    setActiveIndex((i) =>
+      i === activeImages.length - 1 ? 0 : i + 1
+    );
   };
 
   useEffect(() => {
@@ -101,11 +108,14 @@ function Gallery() {
               ))}
             </div>
 
-            <div className="media-tab-content" key={activeYear}>
+            <div
+              className="media-tab-content"
+              key={activeYear}
+            >
               {photos.length > 0 && (
                 <div className="media-content-section">
                   <h2 className="media-section-title">
-                    {language === "AZ" ? "Fotolar" : "Photos"}
+                    {t.gallery.photos}
                   </h2>
 
                   <div className="gallery-grid">
@@ -113,10 +123,17 @@ function Gallery() {
                       <button
                         className="gallery-item"
                         key={src}
-                        onClick={() => openLightbox(photos, i)}
-                        aria-label={`Open image ${i + 1}`}
+                        onClick={() =>
+                          openLightbox(photos, i)
+                        }
+                        aria-label={`${t.gallery.openImage} ${
+                          i + 1
+                        }`}
                       >
-                        <img src={src} alt={`AIAZ ${activeYear} ${i + 1}`} />
+                        <img
+                          src={src}
+                          alt={`AIAZ ${activeYear} ${i + 1}`}
+                        />
                       </button>
                     ))}
                   </div>
@@ -128,7 +145,7 @@ function Gallery() {
               ) : (
                 <div className="media-content-section">
                   <h2 className="media-section-title">
-                    {language === "AZ" ? "Videolar" : "Videos"}
+                    {t.gallery.videos}
                   </h2>
 
                   <div className="videos-grid">
@@ -137,13 +154,10 @@ function Gallery() {
 
                       <div className="video-card-text">
                         <span className="video-category">
-                          {language === "AZ" ? "Tezliklə" : "Coming soon"}
+                          {t.gallery.comingSoon}
                         </span>
-                        <h3>
-                          {language === "AZ"
-                            ? "Qalib videosu"
-                            : "Winner video"}
-                        </h3>
+
+                        <h3>{t.gallery.winnerVideo}</h3>
                       </div>
                     </div>
                   </div>
@@ -152,9 +166,7 @@ function Gallery() {
 
               {photos.length === 0 && !hasWinners && (
                 <p className="media-empty">
-                  {language === "AZ"
-                    ? "Bu il üçün media hazırlanır."
-                    : "Media for this year is being prepared."}
+                  {t.gallery.mediaPreparing}
                 </p>
               )}
             </div>
@@ -163,11 +175,14 @@ function Gallery() {
       </main>
 
       {activeIndex !== null && (
-        <div className="lightbox" onClick={closeLightbox}>
+        <div
+          className="lightbox"
+          onClick={closeLightbox}
+        >
           <button
             className="lightbox-close"
             onClick={closeLightbox}
-            aria-label="Close"
+            aria-label={t.gallery.close}
           >
             <X size={28} />
           </button>
@@ -178,14 +193,16 @@ function Gallery() {
               e.stopPropagation();
               showPrev();
             }}
-            aria-label="Previous image"
+            aria-label={t.gallery.previousImage}
           >
             <ChevronLeft size={32} />
           </button>
 
           <img
             src={activeImages[activeIndex]}
-            alt={`Gallery ${activeIndex + 1}`}
+            alt={`${t.gallery.galleryImage} ${
+              activeIndex + 1
+            }`}
             onClick={(e) => e.stopPropagation()}
           />
 
@@ -195,7 +212,7 @@ function Gallery() {
               e.stopPropagation();
               showNext();
             }}
-            aria-label="Next image"
+            aria-label={t.gallery.nextImage}
           >
             <ChevronRight size={32} />
           </button>

@@ -6,7 +6,6 @@ import Footer from "../components/Footer";
 import agendaCover from "../assets/agenda-cover.jpg";
 
 import { useLanguage } from "../context/LanguageContext";
-import { translations } from "../data/translations";
 
 const teamPhotoFiles = import.meta.glob("../assets/team/*.{jpg,jpeg,png,webp}", {
   eager: true,
@@ -16,16 +15,18 @@ const teamPhotoFiles = import.meta.glob("../assets/team/*.{jpg,jpeg,png,webp}", 
 
 const getTeamPhoto = (name) => {
   if (!name) return null;
+
   const match = Object.entries(teamPhotoFiles).find(([path]) => {
     const fileName = path.split("/").pop();
+
     return fileName.toLowerCase().startsWith(name.toLowerCase());
   });
+
   return match ? match[1] : null;
 };
 
 function AboutUs() {
-  const { language } = useLanguage();
-  const t = translations[language];
+  const { language, t } = useLanguage();
 
   return (
     <>
@@ -56,13 +57,13 @@ function AboutUs() {
               ))}
             </ul>
 
-            <h2>{language === "AZ" ? "Proqram" : "Programme"}</h2>
+            <h2>{t.about.program}</h2>
 
             <div className="agenda-preview-card">
               <img
                 className="agenda-preview-image"
                 src={agendaCover}
-                alt={language === "AZ" ? "Festival proqramı" : "Festival programme"}
+                alt={t.about.programAlt}
               />
 
               <div className="agenda-preview-actions">
@@ -71,8 +72,8 @@ function AboutUs() {
                   href="/agenda/aiaz-agenda.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  title={language === "AZ" ? "Önizləmə" : "Preview"}
-                  aria-label={language === "AZ" ? "Önizləmə" : "Preview"}
+                  title={t.about.preview}
+                  aria-label={t.about.preview}
                 >
                   <Eye size={18} />
                 </a>
@@ -80,9 +81,9 @@ function AboutUs() {
                 <a
                   className="agenda-icon-btn"
                   href="/agenda/aiaz-agenda.pdf"
-                  download="AIAZ-Festival-Proqrami.pdf"
-                  title={language === "AZ" ? "PDF-i yüklə" : "Download PDF"}
-                  aria-label={language === "AZ" ? "PDF-i yüklə" : "Download PDF"}
+                  download={t.about.programPdfName}
+                  title={t.about.download}
+                  aria-label={t.about.download}
                 >
                   <Download size={18} />
                 </a>
@@ -90,7 +91,6 @@ function AboutUs() {
             </div>
 
             <p>{t.about.speech}</p>
-
           </div>
         </section>
 
@@ -105,8 +105,11 @@ function AboutUs() {
                 return (
                   <div className="team-card" key={i}>
                     <div className="team-card-photo">
-                      {photoSrc && <img src={photoSrc} alt={member.name} />}
+                      {photoSrc && (
+                        <img src={photoSrc} alt={member.name} />
+                      )}
                     </div>
+
                     <h3>{member.name}</h3>
                     <span>{member.role}</span>
                   </div>

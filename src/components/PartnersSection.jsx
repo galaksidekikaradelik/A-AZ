@@ -1,21 +1,19 @@
 import { useLanguage } from "../context/LanguageContext";
-import { translations } from "../data/translations";
 
 import partner1Logo from "../assets/partners/auth_logo.png";
 import partner2Logo from "../assets/partners/logo_en.png";
 
 function PartnersSection() {
-  const { language } = useLanguage();
-  const t = translations[language];
+  const { t } = useLanguage();
 
   const partners = [
-  {
-    logo: partner1Logo,
-  },
-  {
-    logo: partner2Logo,
-  },
-];
+    {
+      logo: partner1Logo,
+    },
+    {
+      logo: partner2Logo,
+    },
+  ];
 
   return (
     <section id="partners" className="partners-section">

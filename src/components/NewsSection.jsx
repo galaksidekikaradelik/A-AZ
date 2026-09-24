@@ -1,10 +1,8 @@
 import { useLanguage } from "../context/LanguageContext";
-import { translations } from "../data/translations";
 import { newsItems } from "../data/newsData";
 
 function NewsSection() {
-  const { language } = useLanguage();
-  const t = translations[language];
+  const { language, t } = useLanguage();
 
   // Əsas səhifədə yalnız ilk 3 xəbər göstərilir
   const news = newsItems.slice(0, 3);

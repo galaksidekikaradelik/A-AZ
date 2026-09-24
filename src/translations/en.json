@@ -1,0 +1,283 @@
+{
+  "nav": {
+    "home": "Home",
+    "news": "News",
+    "festival": "Festival",
+    "gallery": "Media",
+    "jury": "Jury",
+    "about": "About",
+    "contact": "Contact",
+    "submitFilm": "Submit via FilmFreeway",
+    "changeTheme": "Change theme",
+    "changeLanguage": "Change language",
+    "openMenu": "Open menu"
+  },
+  "hero": {
+    "title": "AI FILM FESTIVAL",
+    "line1": "Where",
+    "line2": "Artificial Intelligence",
+    "line3": "Meets",
+    "line4": "Cinema"
+    },
+  "film": {
+    "label": "AIAZ FILM FESTIVAL",
+    "title": "Reimagine Storytelling with Artificial Intelligence!",
+    "description": "AIAZ is an international short film festival bringing together traditional cinema and artificial intelligence. AI-generated and traditionally produced films are evaluated through two distinct jury systems, creating a unique dialogue between human perspective and machine intelligence.",
+    "awards": "TWO PERSPECTIVES. ONE FESTIVAL.",
+    "award1": "AI-Generated Films — evaluated by a professional Human Jury.",
+    "award2": "Traditionally Produced Films — evaluated by AIAZ, the festival’s Artificial Intelligence Jury.",
+    "award3": "National & International Competitions — featuring distinct categories and signature AIAZ awards.",
+    "details": "Details",
+    "apply": "Apply now"
+  },
+  "news": {
+    "label": "AIAZ NEWS",
+    "title": "News",
+    "read": "Read →",
+    "more": "View more",
+    "back": "Back to News",
+    "notFound": "Article not found"
+  },
+  "about": {
+    "label": "ABOUT AIAZ",
+    "title": "About Us",
+
+    "intro": [
+        "The AIAZ International Short Film Festival is the first festival in the Caucasus dedicated to the intersection of artificial intelligence and cinema. Founded in 2025 and held in Baku, it is a unique platform that brings technology and creativity together.",
+        "AIAZ is both Artificial Intelligence Azerbaijan and the name of the festival's AI-based jury system. It expresses the symbiosis of human creativity and machine thinking."
+    ],
+
+    "directionsIntro": "The festival is held in two main directions:",
+
+    "directions": [
+        {
+        "title": "Films created with artificial intelligence",
+        "description": "are evaluated by a human jury made up of film critics, directors and art experts."
+        },
+        {
+        "title": "Traditional, human-made films",
+        "description": "are evaluated by the AIAZ artificial intelligence, which is specially trained and has deep knowledge of Azerbaijani cinema."
+        }
+    ],
+
+    "quote": "🎥 AIAZ is more than a festival — it is a living dialogue between art and technology. Shaped by creativity, experimentation and the aesthetic taste of artificial intelligence, the festival shapes the film outlook of a new era.",
+
+    "eventsIntro": "The festival will feature:",
+
+    "events": [
+        "Screenings of short films",
+        "Live interviews and presentations conducted with artificial intelligence",
+        "International masterclasses and discussions"
+    ],
+
+    "eventsNote": "Both online and offline events will be held.",
+
+    "speech": "🎤 The festival's opening speech is delivered by AIAZ, and the artificial intelligence enters into a live dialogue with film scholars.",
+
+    "closing": "AIAZ – the film festival of the future starts today. Human, machine and story together.",
+
+    "program": "Programme",
+    "programAlt": "Festival programme",
+    "preview": "Preview",
+    "download": "Download PDF",
+    "programPdfName": "AIAZ-Festival-Programme.pdf",
+
+    "teamTitle": "Team Members",
+
+    "team": [
+        {
+        "name": "Ru Hasanov",
+        "role": "Chair of the Board",
+        "photo": "Ru Hasanov - Chair of the Board.png"
+        },
+        {
+        "name": "Murad Shukurlu",
+        "role": "Founder",
+        "photo": "Murad Shukurlu - Founder.png"
+        },
+        {
+        "name": "Sahil Mammadov",
+        "role": "Festival Manager",
+        "photo": "Sahil Mammadov - Festival manager.png"
+        },
+        {
+        "name": "Malayka Mammadova",
+        "role": "Partnership Manager",
+        "photo": "Malayka Mammadova - Partnership manager.png"
+        },
+        {
+        "name": "Michael Abdulov",
+        "role": "Art Director",
+        "photo": "Michael Abdulov - Art director.png"
+        }
+    ]
+    },
+  "jury": {
+    "label": "AIAZ JURY",
+    "title": "Jury",
+    "international": {
+      "title": "International Competition",
+      "members": [
+        { "name": "Full Name", "role": "Jury Member" },
+        { "name": "Full Name", "role": "Jury Member" },
+        { "name": "Full Name", "role": "Jury Member" }
+      ]
+    },
+    "local": {
+      "title": "Local Competition",
+      "members": [
+        { "name": "Full Name", "role": "Jury Member" },
+        { "name": "Full Name", "role": "Jury Member" },
+        { "name": "Full Name", "role": "Jury Member" }
+      ]
+    }
+  },
+  "gallery": {
+    "label": "AIAZ MEDIA",
+    "title": "Media",
+    "videosTitle": "Videos",
+    "photos": "Photos",
+    "videos": "Videos",
+    "comingSoon": "Coming soon",
+    "winnerVideo": "Winner video",
+    "mediaPreparing": "Media for this year is being prepared.",
+    "noPhotos": "There are no photos for this year.",
+    "openImage": "Open image",
+    "close": "Close",
+    "previousImage": "Previous image",
+    "nextImage": "Next image",
+    "galleryImage": "Gallery image"
+    },
+  "winners": {
+    "label": "AIAZ WINNERS",
+    "title": "Winners",
+    "watch": "Watch video"
+  },
+  "partners": {
+    "label": "AIAZ",
+    "title": "Partners"
+  },
+  "footer": {
+    "description": "AIAZ Film Festival is an international film festival bringing together artificial intelligence and the art of cinema.",
+    "contact": "Contact",
+    "links": "Links",
+    "home": "Home",
+    "news": "News",
+    "festival": "About Festival",
+    "gallery": "Media",
+    "film": "Create a Film",
+    "copyright": "© 2026 AIAZ Film Festival. All rights reserved."
+  },
+  "festivalAwards": {
+    "title": "Awards of the Future.",
+    "description": "AIAZ brings together a human jury and artificial intelligence within the same festival through its unique dual evaluation system.",
+
+    "localCompetition": "LOCAL COMPETITION",
+    "internationalCompetition": "INTERNATIONAL COMPETITION",
+
+    "humanJury": "By Human Jury",
+    "aiJury": "By AIAZ Artificial Intelligence",
+
+    "prize": "Prize",
+    "evaluation": "Evaluation",
+
+    "localHumanAward": {
+        "title": "Golden Chip",
+        "description": "For the best AI-generated Azerbaijani short fiction film."
+    },
+
+    "localAiAward": {
+        "title": "Platinum Neuron",
+        "description": "For a traditionally produced Azerbaijani short film."
+    },
+
+    "internationalHumanAward": {
+        "title": "Golden Prompt",
+        "description": "For the best AI-generated international short film."
+    },
+
+    "internationalAiAward": {
+        "title": "Quantum Frame",
+        "description": "For a traditional international short film."
+    }
+    },
+    "festivalCategories": {
+        "title": "Two Approaches. One Festival.",
+        "description": "AIAZ creates a unique evaluation system between human creativity and artificial intelligence.",
+
+        "human": {
+            "tag": "HUMAN JURY",
+            "title": "Human Jury",
+            "subtitle": "AI-Generated Films",
+            "description": "Films created using artificial intelligence are evaluated by a human jury consisting of film critics, directors, and art professionals."
+        },
+
+        "ai": {
+            "tag": "AI JURY — AIAZ",
+            "title": "AIAZ Artificial Intelligence",
+            "subtitle": "Traditional Films",
+            "description": "Traditionally produced films are evaluated by the specially trained AIAZ artificial intelligence, which has deep knowledge of Azerbaijani cinema."
+        }
+    },
+    "festivalHero": {
+        "titleLine1": "International",
+        "titleLine2": "Short Film",
+        "titleLine3": "Festival",
+
+        "description": "The first international film festival in the Caucasus dedicated to the intersection of artificial intelligence and cinema.",
+
+        "apply": "Apply Now",
+        "rules": "Rules"
+    },
+    "festivalRules": {
+        "title": "Competition Rules.",
+        "description": "Before participating in the festival, please review the submission requirements and participation conditions.",
+
+        "rule1": {
+            "title": "Film Requirements",
+            "items": [
+            "Submitted films must have been produced within the last two years.",
+            "Films must be no shorter than 1 minute and no longer than 30 minutes.",
+            "Films must be submitted with English subtitles in .srt format."
+            ]
+        },
+
+        "rule2": {
+            "title": "Submission Materials",
+            "items": [
+            "A trailer and poster must be provided for each film.",
+            "The director's full name, short biography, and photo must be included.",
+            "Submitted materials may be used for festival promotion and presentation purposes."
+            ]
+        },
+
+        "rule3": {
+            "title": "AI Films",
+            "items": [
+            "The artificial intelligence tools used during production must be disclosed.",
+            "A detailed list of the platforms and models used must be provided.",
+            "A director may submit only one film in AI and traditional categories."
+            ]
+        },
+
+        "rule4": {
+            "title": "Agreement",
+            "description": "Any person submitting a film to the festival is considered to have agreed to all of the conditions stated above."
+        }
+    },
+    "contact": {
+        "informationTitle": "Contact Information",
+        "addressLabel": "ADDRESS",
+        "address": "Azerbaijan Artificial Intelligence Film Festival",
+        "city": "Baku, Azerbaijan",
+        "emailLabel": "E-MAIL",
+        "partnershipsLabel": "PARTNERSHIPS",
+        "mediaLabel": "MEDIA & PRESS",
+        "messageTitle": "Send a Message",
+        "fullName": "FULL NAME",
+        "email": "E-MAIL",
+        "subject": "SUBJECT",
+        "message": "MESSAGE",
+        "sendMessage": "Send Message"
+    }
+}

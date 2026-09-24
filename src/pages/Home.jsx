@@ -8,11 +8,14 @@ import NewsSection from "../components/NewsSection";
 import PartnersSection from "../components/PartnersSection";
 import Footer from "../components/Footer";
 
+import { useLanguage } from "../context/LanguageContext";
+
 import heroVideo from "../assets/Humanoid_robot_animation_sequence_202609071511.mp4";
 
 gsap.registerPlugin(ScrollTrigger);
 
 function Home() {
+  const { t } = useLanguage();
   const videoRef = useRef(null);
 
   useEffect(() => {
@@ -57,7 +60,7 @@ function Home() {
         x: 0,
         opacity: 1,
         duration: 1,
-        stagger: 0.8, // hər sətir əvvəlkindən sonra başlayır
+        stagger: 0.8,
         ease: "power2.out",
       });
 
@@ -78,17 +81,21 @@ function Home() {
           if (progress >= 1 - endHold) {
             targetTime = video.duration - 0.05;
           } else {
-            targetTime = (progress / (1 - endHold)) * video.duration;
+            targetTime =
+              (progress / (1 - endHold)) * video.duration;
           }
 
           // TEXT
-          // Sətirlər scroll-un 5%-dən 60%-nə qədər ardıcıl gəlir
           const textStart = 0.05;
           const textEnd = 0.6;
 
-          let textProgress = (progress - textStart) / (textEnd - textStart);
+          let textProgress =
+            (progress - textStart) / (textEnd - textStart);
 
-          textProgress = Math.max(0, Math.min(1, textProgress));
+          textProgress = Math.max(
+            0,
+            Math.min(1, textProgress)
+          );
 
           textAnimation.progress(textProgress);
         },
@@ -115,7 +122,9 @@ function Home() {
     if (video.readyState >= 1) {
       init();
     } else {
-      video.addEventListener("loadedmetadata", init, { once: true });
+      video.addEventListener("loadedmetadata", init, {
+        once: true,
+      });
     }
 
     return () => {
@@ -144,10 +153,21 @@ function Home() {
 
           <div className="hero-content">
             <h1 className="hero-title">
-              <span className="hero-line">Süni zəka</span>
-              <span className="hero-line">və kinonun</span>
-              <span className="hero-line">kəsişdiyi</span>
-              <span className="hero-line">məkan</span>
+              <span className="hero-line">
+                {t.hero.line1}
+              </span>
+
+              <span className="hero-line">
+                {t.hero.line2}
+              </span>
+
+              <span className="hero-line">
+                {t.hero.line3}
+              </span>
+
+              <span className="hero-line">
+                {t.hero.line4}
+              </span>
             </h1>
           </div>
         </section>
