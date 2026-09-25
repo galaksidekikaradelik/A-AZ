@@ -17,61 +17,23 @@ gsap.registerPlugin(ScrollTrigger);
 
 function Home() {
   const { t } = useLanguage();
-
   const desktopVideoRef = useRef(null);
   const mobileVideoRef = useRef(null);
 
   useEffect(() => {
-    const mq = window.matchMedia("(max-width: 768px)");
-    const video = mq.matches
-      ? mobileVideoRef.current
-      : desktopVideoRef.current;
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+    const video = isMobile ? mobileVideoRef.current : desktopVideoRef.current;
 
     if (!video) return;
 
     let cleanup;
-    let cancelled = false;
-
-    // Mobil brauzerlərdə (xüsusən iOS) video "unlock" edilməyibsə
-    // readyState 2-dən yuxarı qalxmır və currentTime təsir etmir.
-    // Səssiz play + dərhal pause bunu aktivləşdirir.
-    const unlockVideo = () =>
-      new Promise((resolve) => {
-        video.muted = true;
-        const p = video.play();
-
-        const finish = () => {
-          video.pause();
-          resolve();
-        };
-
-        if (p && typeof p.then === "function") {
-          p.then(finish).catch(() => resolve());
-        } else {
-          finish();
-        }
-      });
-
-    const waitForData = () =>
-      new Promise((resolve) => {
-        if (video.readyState >= 2) {
-          resolve();
-          return;
-        }
-        const onData = () => {
-          video.removeEventListener("loadeddata", onData);
-          resolve();
-        };
-        video.addEventListener("loadeddata", onData, { once: true });
-        // Bəzi mobil brauzerlərdə preload aktivləşdirmək üçün load() lazımdır
-        video.load();
-      });
 
     const initVideoScroll = () => {
       let targetTime = 0;
       let currentTime = 0;
       let raf;
 
+      // VIDEO: scroll-a görə hamar irəli/geri
       const animateVideo = () => {
         currentTime += (targetTime - currentTime) * 0.08;
 
@@ -79,9 +41,7 @@ function Home() {
           currentTime = targetTime;
         }
 
-        // readyState >= 1 (HAVE_METADATA) kifayətdir; 2-ni gözləmək
-        // mobil videonu "donmuş" göstərirdi
-        if (video.readyState >= 1 && !Number.isNaN(video.duration)) {
+        if (video.readyState >= 2) {
           video.currentTime = currentTime;
         }
 
@@ -90,6 +50,7 @@ function Home() {
 
       animateVideo();
 
+      // HERO TEXT: hər sətir ayrı-ayrı gəlir
       const lines = gsap.utils.toArray(".hero-line");
 
       gsap.set(lines, {
@@ -107,21 +68,30 @@ function Home() {
         ease: "power2.out",
       });
 
-      // Mobil address bar üzündən innerHeight tez-tez dəyişdiyi üçün
-      // visualViewport varsa onu üstün tuturuq
-      const getViewportHeight = () =>
-        window.visualViewport?.height || window.innerHeight;
-
+      // HERO SCROLL
       const trigger = ScrollTrigger.create({
         trigger: ".hero",
         start: "top top",
-        end: () => "+=" + getViewportHeight() * 2,
+        end: () => "+=" + window.innerHeight * 2,
         pin: true,
         scrub: true,
-        anticipatePin: 1,
 
         onUpdate: (self) => {
           const progress = self.progress;
+
+          console.log(
+            "progress:",
+            progress.toFixed(3),
+            "duration:",
+            video.duration,
+            "current:",
+            video.currentTime,
+            "readyState:",
+            video.readyState
+          );
+
+          // VIDEO
+          if (!video.duration || Number.isNaN(video.duration)) return;
 
           const endHold = 0.08;
 
@@ -131,6 +101,7 @@ function Home() {
             targetTime = (progress / (1 - endHold)) * video.duration;
           }
 
+          // TEXT
           const textStart = 0.05;
           const textEnd = 0.6;
 
@@ -147,29 +118,34 @@ function Home() {
       };
 
       window.addEventListener("resize", handleResize);
-      window.visualViewport?.addEventListener("resize", handleResize);
 
       return () => {
         cancelAnimationFrame(raf);
         trigger.kill();
         textAnimation.kill();
-
         window.removeEventListener("resize", handleResize);
-        window.visualViewport?.removeEventListener("resize", handleResize);
       };
     };
 
     const init = async () => {
-      await unlockVideo();
-      await waitForData();
-      if (cancelled) return;
+      try {
+        await video.play();
+        video.pause();
+      } catch (e) {
+        console.log("[hero-video] play/pause unlock xətası:", e);
+      }
+
       cleanup = initVideoScroll();
     };
 
-    init();
+    if (video.readyState >= 1) {
+      init();
+    } else {
+      video.addEventListener("loadedmetadata", init, { once: true });
+    }
 
     return () => {
-      cancelled = true;
+      video.removeEventListener("loadedmetadata", init);
       cleanup?.();
     };
   }, []);
@@ -194,6 +170,7 @@ function Home() {
             ref={mobileVideoRef}
             className="hero-video mobile-video"
             muted
+            autoPlay
             playsInline
             preload="auto"
           >
@@ -205,8 +182,11 @@ function Home() {
           <div className="hero-content">
             <h1 className="hero-title">
               <span className="hero-line">{t.hero.line1}</span>
+
               <span className="hero-line">{t.hero.line2}</span>
+
               <span className="hero-line">{t.hero.line3}</span>
+
               <span className="hero-line">{t.hero.line4}</span>
             </h1>
           </div>

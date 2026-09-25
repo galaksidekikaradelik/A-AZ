@@ -133,7 +133,6 @@
     font-size: clamp(2rem, 9vw, 3.5rem);
   }
 
-  /* mobil breakpoint-də video-ları dəyiş */
   .desktop-video {
     display: none;
   }
