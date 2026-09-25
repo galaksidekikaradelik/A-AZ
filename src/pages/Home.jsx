@@ -15,138 +15,175 @@ import heroMobileVideo from "../assets/hero-mobile.mp4";
 
 gsap.registerPlugin(ScrollTrigger);
 
+// Bir video elementi üçün pin + scrub + mətn animasiyasını qurur.
+// Cleanup funksiyası qaytarır.
+function initVideoScroll(video) {
+  let targetTime = 0;
+  let currentTime = 0;
+  let raf;
+
+  const animateVideo = () => {
+    currentTime += (targetTime - currentTime) * 0.08;
+
+    if (Math.abs(targetTime - currentTime) < 0.001) {
+      currentTime = targetTime;
+    }
+
+    if (video.readyState >= 2) {
+      video.currentTime = currentTime;
+    }
+
+    raf = requestAnimationFrame(animateVideo);
+  };
+
+  animateVideo();
+
+  const lines = gsap.utils.toArray(".hero-line");
+
+  gsap.set(lines, {
+    x: -120,
+    opacity: 0,
+  });
+
+  const textAnimation = gsap.timeline({ paused: true });
+
+  textAnimation.to(lines, {
+    x: 0,
+    opacity: 1,
+    duration: 1,
+    stagger: 0.8,
+    ease: "power2.out",
+  });
+
+  const trigger = ScrollTrigger.create({
+    trigger: ".hero",
+    start: "top top",
+    end: () => "+=" + window.innerHeight * 2,
+    pin: true,
+    scrub: true,
+
+    onUpdate: (self) => {
+      const progress = self.progress;
+
+      const endHold = 0.08;
+
+      if (progress >= 1 - endHold) {
+        targetTime = video.duration - 0.05;
+      } else {
+        targetTime = (progress / (1 - endHold)) * video.duration;
+      }
+
+      const textStart = 0.05;
+      const textEnd = 0.6;
+
+      let textProgress = (progress - textStart) / (textEnd - textStart);
+
+      textProgress = Math.max(0, Math.min(1, textProgress));
+
+      textAnimation.progress(textProgress);
+    },
+  });
+
+  const handleResize = () => {
+    ScrollTrigger.refresh();
+  };
+
+  window.addEventListener("resize", handleResize);
+
+  return () => {
+    cancelAnimationFrame(raf);
+    trigger.kill();
+    textAnimation.kill();
+    window.removeEventListener("resize", handleResize);
+  };
+}
+
 function Home() {
   const { t } = useLanguage();
   const desktopVideoRef = useRef(null);
   const mobileVideoRef = useRef(null);
 
   useEffect(() => {
-    const isMobile = window.matchMedia("(max-width: 768px)").matches;
-    const video = isMobile ? mobileVideoRef.current : desktopVideoRef.current;
-
-    if (!video) return;
+    const mq = window.matchMedia("(max-width: 768px)");
 
     let cleanup;
+    let cancelled = false;
+    let activeVideo = null;
 
-    const initVideoScroll = () => {
-      let targetTime = 0;
-      let currentTime = 0;
-      let raf;
+    const teardown = () => {
+      cleanup?.();
+      cleanup = undefined;
 
-      // VIDEO: scroll-a görə hamar irəli/geri
-      const animateVideo = () => {
-        currentTime += (targetTime - currentTime) * 0.08;
-
-        if (Math.abs(targetTime - currentTime) < 0.001) {
-          currentTime = targetTime;
-        }
-
-        if (video.readyState >= 2) {
-          video.currentTime = currentTime;
-        }
-
-        raf = requestAnimationFrame(animateVideo);
-      };
-
-      animateVideo();
-
-      // HERO TEXT: hər sətir ayrı-ayrı gəlir
-      const lines = gsap.utils.toArray(".hero-line");
-
-      gsap.set(lines, {
-        x: -120,
-        opacity: 0,
-      });
-
-      const textAnimation = gsap.timeline({ paused: true });
-
-      textAnimation.to(lines, {
-        x: 0,
-        opacity: 1,
-        duration: 1,
-        stagger: 0.8,
-        ease: "power2.out",
-      });
-
-      // HERO SCROLL
-      const trigger = ScrollTrigger.create({
-        trigger: ".hero",
-        start: "top top",
-        end: () => "+=" + window.innerHeight * 2,
-        pin: true,
-        scrub: true,
-
-        onUpdate: (self) => {
-          const progress = self.progress;
-
-          console.log(
-            "progress:",
-            progress.toFixed(3),
-            "duration:",
-            video.duration,
-            "current:",
-            video.currentTime,
-            "readyState:",
-            video.readyState
-          );
-
-          // VIDEO
-          if (!video.duration || Number.isNaN(video.duration)) return;
-
-          const endHold = 0.08;
-
-          if (progress >= 1 - endHold) {
-            targetTime = video.duration - 0.05;
-          } else {
-            targetTime = (progress / (1 - endHold)) * video.duration;
-          }
-
-          // TEXT
-          const textStart = 0.05;
-          const textEnd = 0.6;
-
-          let textProgress = (progress - textStart) / (textEnd - textStart);
-
-          textProgress = Math.max(0, Math.min(1, textProgress));
-
-          textAnimation.progress(textProgress);
-        },
-      });
-
-      const handleResize = () => {
-        ScrollTrigger.refresh();
-      };
-
-      window.addEventListener("resize", handleResize);
-
-      return () => {
-        cancelAnimationFrame(raf);
-        trigger.kill();
-        textAnimation.kill();
-        window.removeEventListener("resize", handleResize);
-      };
+      // Söndürülən video-nu təmiz vəziyyətə qaytar ki, digərinə
+      // keçəndə köhnə oynatma vəziyyəti qalmasın.
+      if (activeVideo) {
+        activeVideo.pause();
+      }
+      activeVideo = null;
     };
 
-    const init = async () => {
+    const setupVideo = async (video) => {
+      if (!video) return;
+
       try {
         await video.play();
-        video.pause();
       } catch (e) {
-        console.log("[hero-video] play/pause unlock xətası:", e);
+        console.log("[hero-video] play() xətası:", e);
+      } finally {
+        video.pause();
+        video.currentTime = 0;
       }
 
-      cleanup = initVideoScroll();
+      if (cancelled) return;
+
+      activeVideo = video;
+      cleanup = initVideoScroll(video);
     };
 
-    if (video.readyState >= 1) {
-      init();
+    const startForCurrentBreakpoint = () => {
+      teardown();
+
+      const video = mq.matches
+        ? mobileVideoRef.current
+        : desktopVideoRef.current;
+
+      if (!video) return;
+
+      if (video.readyState >= 1) {
+        setupVideo(video);
+      } else {
+        const onLoaded = () => setupVideo(video);
+        video.addEventListener("loadedmetadata", onLoaded, { once: true });
+      }
+    };
+
+    startForCurrentBreakpoint();
+
+    // Breakpoint dəyişəndə (desktop↔mobil) köhnə instansiyanı söndürüb
+    // düzgün video üçün yenidən qur. Bu, əvvəlki bug-ı düzəldir: köhnə
+    // kodda video seçimi yalnız mount zamanı edilirdi, resize zamanı
+    // JS köhnə (artıq gizli) video-nu idarə etməyə davam edirdi və
+    // görünən video donmuş qalırdı.
+    const handleBreakpointChange = () => {
+      startForCurrentBreakpoint();
+    };
+
+    if (mq.addEventListener) {
+      mq.addEventListener("change", handleBreakpointChange);
     } else {
-      video.addEventListener("loadedmetadata", init, { once: true });
+      // Safari-nin köhnə versiyaları üçün fallback
+      mq.addListener(handleBreakpointChange);
     }
 
     return () => {
-      video.removeEventListener("loadedmetadata", init);
-      cleanup?.();
+      cancelled = true;
+      teardown();
+
+      if (mq.removeEventListener) {
+        mq.removeEventListener("change", handleBreakpointChange);
+      } else {
+        mq.removeListener(handleBreakpointChange);
+      }
     };
   }, []);
 
@@ -170,7 +207,6 @@ function Home() {
             ref={mobileVideoRef}
             className="hero-video mobile-video"
             muted
-            autoPlay
             playsInline
             preload="auto"
           >
