@@ -10,26 +10,68 @@ import Footer from "../components/Footer";
 
 import { useLanguage } from "../context/LanguageContext";
 
-import heroVideo from "../assets/Humanoid_robot_animation_sequence_202609071511.mp4";
+import heroDesktopVideo from "../assets/hero-desktop.mp4";
+import heroMobileVideo from "../assets/hero-mobile.mp4";
 
 gsap.registerPlugin(ScrollTrigger);
 
 function Home() {
   const { t } = useLanguage();
-  const videoRef = useRef(null);
+
+  const desktopVideoRef = useRef(null);
+  const mobileVideoRef = useRef(null);
 
   useEffect(() => {
-    const video = videoRef.current;
+    const mq = window.matchMedia("(max-width: 768px)");
+    const video = mq.matches
+      ? mobileVideoRef.current
+      : desktopVideoRef.current;
+
     if (!video) return;
 
     let cleanup;
+    let cancelled = false;
+
+    // Mobil brauzerlərdə (xüsusən iOS) video "unlock" edilməyibsə
+    // readyState 2-dən yuxarı qalxmır və currentTime təsir etmir.
+    // Səssiz play + dərhal pause bunu aktivləşdirir.
+    const unlockVideo = () =>
+      new Promise((resolve) => {
+        video.muted = true;
+        const p = video.play();
+
+        const finish = () => {
+          video.pause();
+          resolve();
+        };
+
+        if (p && typeof p.then === "function") {
+          p.then(finish).catch(() => resolve());
+        } else {
+          finish();
+        }
+      });
+
+    const waitForData = () =>
+      new Promise((resolve) => {
+        if (video.readyState >= 2) {
+          resolve();
+          return;
+        }
+        const onData = () => {
+          video.removeEventListener("loadeddata", onData);
+          resolve();
+        };
+        video.addEventListener("loadeddata", onData, { once: true });
+        // Bəzi mobil brauzerlərdə preload aktivləşdirmək üçün load() lazımdır
+        video.load();
+      });
 
     const initVideoScroll = () => {
       let targetTime = 0;
       let currentTime = 0;
       let raf;
 
-      // VIDEO: scroll-a görə hamar irəli/geri
       const animateVideo = () => {
         currentTime += (targetTime - currentTime) * 0.08;
 
@@ -37,7 +79,9 @@ function Home() {
           currentTime = targetTime;
         }
 
-        if (video.readyState >= 2) {
+        // readyState >= 1 (HAVE_METADATA) kifayətdir; 2-ni gözləmək
+        // mobil videonu "donmuş" göstərirdi
+        if (video.readyState >= 1 && !Number.isNaN(video.duration)) {
           video.currentTime = currentTime;
         }
 
@@ -46,7 +90,6 @@ function Home() {
 
       animateVideo();
 
-      // HERO TEXT: hər sətir ayrı-ayrı gəlir
       const lines = gsap.utils.toArray(".hero-line");
 
       gsap.set(lines, {
@@ -64,38 +107,36 @@ function Home() {
         ease: "power2.out",
       });
 
-      // HERO SCROLL
+      // Mobil address bar üzündən innerHeight tez-tez dəyişdiyi üçün
+      // visualViewport varsa onu üstün tuturuq
+      const getViewportHeight = () =>
+        window.visualViewport?.height || window.innerHeight;
+
       const trigger = ScrollTrigger.create({
         trigger: ".hero",
         start: "top top",
-        end: () => "+=" + window.innerHeight * 2,
+        end: () => "+=" + getViewportHeight() * 2,
         pin: true,
         scrub: true,
+        anticipatePin: 1,
 
         onUpdate: (self) => {
           const progress = self.progress;
 
-          // VIDEO
           const endHold = 0.08;
 
           if (progress >= 1 - endHold) {
             targetTime = video.duration - 0.05;
           } else {
-            targetTime =
-              (progress / (1 - endHold)) * video.duration;
+            targetTime = (progress / (1 - endHold)) * video.duration;
           }
 
-          // TEXT
           const textStart = 0.05;
           const textEnd = 0.6;
 
-          let textProgress =
-            (progress - textStart) / (textEnd - textStart);
+          let textProgress = (progress - textStart) / (textEnd - textStart);
 
-          textProgress = Math.max(
-            0,
-            Math.min(1, textProgress)
-          );
+          textProgress = Math.max(0, Math.min(1, textProgress));
 
           textAnimation.progress(textProgress);
         },
@@ -106,29 +147,29 @@ function Home() {
       };
 
       window.addEventListener("resize", handleResize);
+      window.visualViewport?.addEventListener("resize", handleResize);
 
       return () => {
         cancelAnimationFrame(raf);
         trigger.kill();
         textAnimation.kill();
+
         window.removeEventListener("resize", handleResize);
+        window.visualViewport?.removeEventListener("resize", handleResize);
       };
     };
 
-    const init = () => {
+    const init = async () => {
+      await unlockVideo();
+      await waitForData();
+      if (cancelled) return;
       cleanup = initVideoScroll();
     };
 
-    if (video.readyState >= 1) {
-      init();
-    } else {
-      video.addEventListener("loadedmetadata", init, {
-        once: true,
-      });
-    }
+    init();
 
     return () => {
-      video.removeEventListener("loadedmetadata", init);
+      cancelled = true;
       cleanup?.();
     };
   }, []);
@@ -140,34 +181,33 @@ function Home() {
       <main>
         <section id="home" className="hero">
           <video
-            ref={videoRef}
-            className="hero-video"
+            ref={desktopVideoRef}
+            className="hero-video desktop-video"
             muted
             playsInline
             preload="auto"
           >
-            <source src={heroVideo} type="video/mp4" />
+            <source src={heroDesktopVideo} type="video/mp4" />
+          </video>
+
+          <video
+            ref={mobileVideoRef}
+            className="hero-video mobile-video"
+            muted
+            playsInline
+            preload="auto"
+          >
+            <source src={heroMobileVideo} type="video/mp4" />
           </video>
 
           <div className="hero-overlay" />
 
           <div className="hero-content">
             <h1 className="hero-title">
-              <span className="hero-line">
-                {t.hero.line1}
-              </span>
-
-              <span className="hero-line">
-                {t.hero.line2}
-              </span>
-
-              <span className="hero-line">
-                {t.hero.line3}
-              </span>
-
-              <span className="hero-line">
-                {t.hero.line4}
-              </span>
+              <span className="hero-line">{t.hero.line1}</span>
+              <span className="hero-line">{t.hero.line2}</span>
+              <span className="hero-line">{t.hero.line3}</span>
+              <span className="hero-line">{t.hero.line4}</span>
             </h1>
           </div>
         </section>

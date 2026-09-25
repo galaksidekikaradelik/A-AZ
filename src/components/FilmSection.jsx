@@ -1,5 +1,5 @@
-import aiazImage from "../assets/aiaz.png";
-import aiaz2Image from "../assets/aiaz2.png";
+import aiazImage from "../assets/2025/foto/_SMY2339.jpg";
+import aiaz2Image from "../assets/2025/foto/_SMY2346.jpg";
 import { useLanguage } from "../context/LanguageContext";
 
 function FilmSection() {
