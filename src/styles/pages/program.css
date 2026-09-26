@@ -1,0 +1,81 @@
+.program-page {
+  padding: 80px 0;
+}
+
+.agenda-preview-card {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.agenda-preview-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.agenda-preview-actions {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  gap: 10px;
+}
+
+.agenda-icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.agenda-icon-btn:hover {
+  background: var(--color-purple);
+  transform: translateY(-2px);
+}
+
+.program-description {
+  max-width: 760px;
+  margin: 0 auto 32px;
+  text-align: center;
+}
+
+.program-description p {
+  color: var(--color-text-dim);
+  line-height: 1.8;
+}
+
+.year-switcher {
+  display: inline-flex;
+  padding: 6px;
+  border-radius: 999px;
+  background: rgba(171, 97, 209, 0.15);
+  border: 1px solid rgba(171, 97, 209, 0.25);
+  margin-bottom: 48px;
+}
+
+.year-switcher button {
+  border: 0;
+  background: transparent;
+  color: #d7b4ff;
+  padding: 14px 32px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.year-switcher button.active {
+  background: #ab61d1;
+  color: #fff;
+}

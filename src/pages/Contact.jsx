@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 import {
   MapPin,
   Mail,
-  Handshake,
+  Phone,
 } from "lucide-react";
 
 import { useLanguage } from "../context/LanguageContext";
@@ -30,9 +30,7 @@ const Contact = () => {
                 <span>{t.contact.addressLabel}</span>
 
                 <p>
-                  Azerbaijan Artificial Intelligence Film Festival
-                  <br />
-                  Baku, Azerbaijan
+                  Moskva 9, Yasamal, Bakı, AZ1012
                 </p>
               </div>
             </div>
@@ -45,33 +43,23 @@ const Contact = () => {
               <div>
                 <span>{t.contact.emailLabel}</span>
 
-                <p>info@aiazff.org</p>
+                <p>info@aiazff.com</p>
               </div>
             </div>
-
             <div className="contact-item">
               <div className="contact-icon">
-                <Handshake size={20} />
-              </div>
-
-              <div>
-                <span>{t.contact.partnershipsLabel}</span>
-
-                <p>partnerships@aiazff.org</p>
-              </div>
-            </div>
-
-            <div className="contact-item">
-              <div className="contact-icon">
-                <Mail size={20} />
+                <Phone size={20} />
               </div>
 
               <div>
                 <span>{t.contact.mediaLabel}</span>
 
-                <p>media@aiazff.org</p>
+                <p>+994 50 351 40 24</p>
               </div>
             </div>
+            
+
+            
           </div>
 
           <div className="contact-right">

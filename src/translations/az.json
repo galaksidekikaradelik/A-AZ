@@ -7,10 +7,14 @@
     "jury": "Jüri",
     "about": "Haqqımızda",
     "contact": "Əlaqə",
+
+    "aboutFestival": "Festival haqqında",
+    "program": "Proqram",
+
     "submitFilm": "FilmFreeway üzərindən müraciət et",
     "changeTheme": "Temanı dəyiş",
     "changeLanguage": "Dili dəyiş",
-"openMenu": "Menyunu aç"
+    "openMenu": "Menyunu aç"
   },
   "hero": {
     "title": "AI FILM FESTIVAL",
@@ -278,7 +282,7 @@
         "city": "Bakı, Azərbaycan",
         "emailLabel": "E-POÇT",
         "partnershipsLabel": "TƏRƏFDAŞLIQLAR",
-        "mediaLabel": "MEDİA VƏ MƏTBUAT",
+        "mediaLabel": "TELEFON",
         "messageTitle": "Mesaj göndər",
         "fullName": "AD SOYAD",
         "email": "E-POÇT",

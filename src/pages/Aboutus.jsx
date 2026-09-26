@@ -57,40 +57,7 @@ function AboutUs() {
               ))}
             </ul>
 
-            <h2>{t.about.program}</h2>
-
-            <div className="agenda-preview-card">
-              <img
-                className="agenda-preview-image"
-                src={agendaCover}
-                alt={t.about.programAlt}
-              />
-
-              <div className="agenda-preview-actions">
-                <a
-                  className="agenda-icon-btn"
-                  href="/agenda/aiaz-agenda.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  title={t.about.preview}
-                  aria-label={t.about.preview}
-                >
-                  <Eye size={18} />
-                </a>
-
-                <a
-                  className="agenda-icon-btn"
-                  href="/agenda/aiaz-agenda.pdf"
-                  download={t.about.programPdfName}
-                  title={t.about.download}
-                  aria-label={t.about.download}
-                >
-                  <Download size={18} />
-                </a>
-              </div>
-            </div>
-
-            <p>{t.about.speech}</p>
+            
           </div>
         </section>
 

@@ -8,11 +8,12 @@ import AboutUs from "./pages/Aboutus";
 import Jury from "./pages/Jury";
 import Gallery from "./pages/Gallery";
 import MediaYear from "./pages/MediaYear";
+import Contact from "./pages/Contact";
+import Program from "./pages/Program";
 
 import GrainOverlay from "./components/GrainOverlay";
 import FilmStripEdges from "./components/FilmStripEdges";
 import ScrollToTop from "./components/ScrollToTop";
-import Contact from "./pages/Contact";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path="/about" element={<AboutUs />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/jury" element={<Jury />} />
+        <Route path="/program" element={<Program />} />
 
         <Route path="/media" element={<Gallery />} />
         <Route path="/media/:year" element={<MediaYear />} />

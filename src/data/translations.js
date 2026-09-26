@@ -3,8 +3,17 @@ export const translations = {
     nav: {
       home: "Ana səhifə",
       news: "Xəbərlər",
-      festival: "Festival haqqında",
+      festival: "Festival",
+      aboutFestival: "Haqqında",
+      jury: "Jüri",
+      program: "Proqram",
       gallery: "Media",
+      about: "Haqqımızda",
+      contact: "Əlaqə",
+      submitFilm: "Filmini göndər",
+      changeTheme: "Temanı dəyiş",
+      changeLanguage: "Dili dəyiş",
+      openMenu: "Menyunu aç",
     },
 
     hero: {
@@ -135,8 +144,9 @@ export const translations = {
     nav: {
       home: "Home",
       news: "News",
-      festival: "About Festival",
+      festival: "Festival",
       gallery: "Media",
+      aboutFestival: "About"
     },
 
     hero: {

@@ -1,6 +1,13 @@
 import { useState, useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
-import { Moon, Sun, Menu, X, Globe } from "lucide-react";
+import {
+  Moon,
+  Sun,
+  Menu,
+  X,
+  Globe,
+  ChevronDown,
+} from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 
 import logoLight from "../assets/aiazlogomain.png";
@@ -13,6 +20,7 @@ function Navbar() {
 
   const [menuOpen, setMenuOpen] = useState(false);
   const [languageOpen, setLanguageOpen] = useState(false);
+  const [festivalOpen, setFestivalOpen] = useState(false);
 
   const { language, setLanguage, t } = useLanguage();
 
@@ -32,83 +40,135 @@ function Navbar() {
     setLanguageOpen(false);
   };
 
+  const closeMenu = () => {
+    setMenuOpen(false);
+    setFestivalOpen(false);
+  };
+
   const navLinkClass = ({ isActive }) =>
     isActive ? "active" : undefined;
 
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <Link to="/" className="navbar-logo">
+
+        {/* LOGO */}
+        <Link
+          to="/"
+          className="navbar-logo"
+          onClick={closeMenu}
+        >
           <img
             src={theme === "dark" ? logoDark : logoLight}
             alt="AIAZ"
           />
         </Link>
 
+        {/* NAVIGATION */}
         <div
           className={`navbar-links ${
             menuOpen ? "active" : ""
           }`}
         >
+          {/* HOME */}
           <NavLink
             to="/"
             end
             className={navLinkClass}
-            onClick={() => setMenuOpen(false)}
+            onClick={closeMenu}
           >
             {t.nav.home}
           </NavLink>
 
-          <NavLink
-            to="/festival"
-            className={navLinkClass}
-            onClick={() => setMenuOpen(false)}
+          {/* FESTIVAL DROPDOWN */}
+          <div
+            className={`navbar-dropdown ${
+              festivalOpen ? "open" : ""
+            }`}
           >
-            {t.nav.festival}
-          </NavLink>
+            <button
+              type="button"
+              className="navbar-dropdown-trigger"
+              onClick={() =>
+                setFestivalOpen((current) => !current)
+              }
+              aria-expanded={festivalOpen}
+            >
+              <span>{t.nav.festival}</span>
+              <ChevronDown size={15} />
+            </button>
 
-          <NavLink
-            to="/jury"
-            className={navLinkClass}
-            onClick={() => setMenuOpen(false)}
-          >
-            {t.nav.jury}
-          </NavLink>
+            <div className="navbar-dropdown-menu">
+              {/* FESTIVAL ABOUT */}
+              <NavLink
+                to="/festival"
+                className={navLinkClass}
+                onClick={closeMenu}
+              >
+                {t.nav.aboutFestival}
+              </NavLink>
 
+              {/* JURY */}
+              <NavLink
+                to="/jury"
+                className={navLinkClass}
+                onClick={closeMenu}
+              >
+                {t.nav.jury}
+              </NavLink>
+
+              {/* PROGRAM */}
+              <NavLink
+                to="/program"
+                className={navLinkClass}
+                onClick={closeMenu}
+              >
+                {t.nav.program}
+              </NavLink>
+            </div>
+          </div>
+
+          {/* NEWS */}
           <NavLink
             to="/news"
             className={navLinkClass}
-            onClick={() => setMenuOpen(false)}
+            onClick={closeMenu}
           >
             {t.nav.news}
           </NavLink>
 
+          {/* MEDIA */}
           <NavLink
             to="/media"
             className={navLinkClass}
-            onClick={() => setMenuOpen(false)}
+            onClick={closeMenu}
           >
             {t.nav.gallery}
           </NavLink>
 
+          {/* ABOUT — BU AYRICA QALIR */}
           <NavLink
             to="/about"
             className={navLinkClass}
-            onClick={() => setMenuOpen(false)}
+            onClick={closeMenu}
           >
             {t.nav.about}
           </NavLink>
 
+          {/* CONTACT */}
           <NavLink
             to="/contact"
             className={navLinkClass}
-            onClick={() => setMenuOpen(false)}
+            onClick={closeMenu}
           >
             {t.nav.contact}
           </NavLink>
         </div>
 
+        {/* ACTIONS */}
         <div className="navbar-actions">
+
+          {/* FILMFREEWAY */}
           <a
             href="https://filmfreeway.com/festivals/79513"
             target="_blank"
@@ -122,6 +182,7 @@ function Navbar() {
             />
           </a>
 
+          {/* THEME */}
           <button
             className={`theme-toggle ${theme}`}
             onClick={toggleTheme}
@@ -136,8 +197,10 @@ function Navbar() {
             </span>
           </button>
 
+          {/* LANGUAGE */}
           <div className="language-switcher">
             <button
+              type="button"
               className="language-current"
               onClick={() =>
                 setLanguageOpen((current) => !current)
@@ -151,14 +214,20 @@ function Navbar() {
             {languageOpen && (
               <div className="language-dropdown">
                 <button
-                  className={language === "az" ? "active" : ""}
+                  type="button"
+                  className={
+                    language === "az" ? "active" : ""
+                  }
                   onClick={() => changeLanguage("az")}
                 >
                   AZ
                 </button>
 
                 <button
-                  className={language === "en" ? "active" : ""}
+                  type="button"
+                  className={
+                    language === "en" ? "active" : ""
+                  }
                   onClick={() => changeLanguage("en")}
                 >
                   EN
@@ -167,9 +236,13 @@ function Navbar() {
             )}
           </div>
 
+          {/* MOBILE MENU */}
           <button
+            type="button"
             className="mobile-menu-button"
-            onClick={() => setMenuOpen((current) => !current)}
+            onClick={() =>
+              setMenuOpen((current) => !current)
+            }
             aria-label={t.nav.openMenu}
           >
             {menuOpen ? (

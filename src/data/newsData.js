@@ -7,27 +7,20 @@ export const newsItems = [
   {
     id: 1,
     title: {
-      az: "AZƏRBAYCANIN İLK SÜNİ İNTELLEKTLƏ ÇƏKİLMİŞ FİLMLƏR FESTİVALI",
-      en: "AIAZ Film Festival 2026 Announced",
+      az: "Qafqazın və regionun ilk süni intellekt əsaslı film festivalı - “AİAZ”",
+      en: "The Caucasus and the region's first AI-based film festival - “AIAZ”",
     },
     excerpt: {
-      az: "Bu il kino aləmində yeni bir başlanğıcın təməli qoyulur – “AIAZ” Beynəlxalq Qısa Filmlər Festivalı ilk dəfə keçirilir. Festivalın məqsədi həm ənənəvi üsullarla çəkilmiş, həm də süni intellekt (AI) texnologiyaları ilə hazırlanmış qısa filmləri bir araya gətirməkdir.",
+      az: "“AİAZ” Film Festivalı Qafqazın və regionun ilk süni intellekt əsaslı film festivalıdır. Festivalın təsisçisi Murad Şükürlü AZƏRTAC-a açıqlamasında festivalın gələcəyi və Azərbaycanda bu sahənin inkişafı haqqında danışıb.",
       en: "Full article text will be added here later.",
     },
     content: {
       az: [
-        "Bu il kino aləmində yeni bir başlanğıcın təməli qoyulur – “AIAZ” Beynəlxalq Qısa Filmlər Festivalı ilk dəfə keçirilir. Festivalın məqsədi həm ənənəvi üsullarla çəkilmiş, həm də süni intellekt (AI) texnologiyaları ilə hazırlanmış qısa filmləri bir araya gətirərək tamaşaçılara və mütəxəssislərə yeni yaradıcılıq nəfəsi təqdim etməkdir.",
-        "AIAZ öz debüt ilində milli məzmunda yeni dalğa yaratmağı hədəfləyir. Festivalın əsas məqsədi yeni və yerli süni intellekt sənətçilərini dünyaya çıxarmaq, onların işlərini beynəlxalq auditoriyaya təqdim etməkdir. AIAZ yalnız festival olaraq deyil, həm də süni intellekti yaradıcılıqla birləşdirən platforma və yaradıcılıq emalatxanası kimi nəzərdə tutulur.",
-        "Müraciətlərin son qəbul tarixi – oktyabr ayının 15-dir. İştirakçılar filmlərini yalnız FilmFreeway platforması üzərindən təqdim edə bilərlər.",
-        "Festivalın kateqoriyaları",
-        "• Süni intellekt (AI) ilə hazırlanmış filmlər",
-        "• Ənənəvi üsullarla çəkilmiş filmlər",
-        "Hər iki istiqamətdə filmlər “Milli” və “Beynəlxalq” bölmələrdə qiymətləndiriləcək.",
-        "İştirak şərtləri",
-        "• Festivalda iştirak tamamilə pulsuzdur.",
-        "• Yaş və janr məhdudiyyəti yoxdur.",
-        "Festivalın təsisçisi Murad Şükürlü, direktoru Sahil Məmmədov, art direktoru Mirvüqar Abdulov, kreativ direktoru Məleykə Məmmədovadır.",
-        "“AIAZ” Beynəlxalq Qısa Filmlər Festivalı – qısa filmlərin səsini dünya auditoriyasına çatdırmaq üçün yeni bir platformadır.",
+        "“AİAZ” Film Festivalı Qafqazın və regionun ilk süni intellekt əsaslı film festivalıdır. Kino ilə texnologiyanın unikal sintezini təqdim edən bu platforma yaradıcı şəxsləri və innovativ texnologiyaları bir araya gətirərək gələcəyin kino təcrübələrini nümayiş etdirir. İnanıram ki, 5 il sonra A kateqoriyalı film festivallarına süni intellekt kateqoriyası əlavə ediləndə əsas mükafatı azərbaycanlı rejissor qazanacaq. Ölkədə bu istiqamətə maraq həddindən artıq çoxdur. Digər ölkələrlə müqayisədə bizim süni intellekt tərtibatçılarının işləri seçilir və zövqlə tərtib olunduğu görünür.",
+        "Bunu AZƏRTAC-a açıqlamasında “AİAZ” Film Festivalının təsisçisi Murad Şükürlü deyib.",
+        "O bildirib ki, yeni formalaşmağa başlayan bu sahəyə tez adaptasiya olunsa, dünya üzrə ən yaxşı mütəxəssisləri yetişdirmək mümkündür: “Düşünürəm ki, “AİAZ” Film Festivalı bu işdə lokomotiv rolunu oynayaraq marağı olan şəxsləri yönləndirməkdə dəstək olacaq. Festival iştirakçıları həm digər ölkələrdən gələn işlərlə tanış oldular, həm də yerli müəlliflərin istifadə etdiyi üsul və texnikalar barədə məlumatlanaraq təcrübə mübadiləsi apardılar”.",
+        "Murad Şükürlü qeyd edib ki, festivala maraq böyük olub və gələn qonaqların əksəriyyəti növbəti il iştirakçı kimi qatılmaq istədiklərini bildiriblər. Festival çərçivəsində keçirilən panel müzakirə və ustad dərsləri buna yaxşı fürsət yaradıb.",
+        "“Biz bu festivalla kifayətlənmirik. Sahənin qısa müddətdə təkmilləşməsi üçün şəbəkələşmənin əhəmiyyətini anlayırıq. Bu məqsədlə süni intellekt tərtibatçılarının bir araya gəldiyi, təcrübələrini paylaşdığı və təlim kurslarda iştirak etdiyi “ASİS” (Azərbaycan Süni İntellekt Sənətçiləri) platformasını yaradaraq sahə üzrə mütəxəssislərin yetişmə prosesini sürətləndirməyi hədəfləyirik”, - deyə festivalın təsisçisi əlavə edib.",
       ],
       en: [
         "Full article text will be added here later.",
@@ -35,6 +28,9 @@ export const newsItems = [
       ],
     },
     image: news1,
+    inlineImage: news3Inline,
+    inlineImageAfter: 2,
+    
   },
   {
     id: 2,
@@ -78,20 +74,27 @@ export const newsItems = [
   {
     id: 3,
     title: {
-      az: "Qafqazın və regionun ilk süni intellekt əsaslı film festivalı - “AİAZ”",
-      en: "The Caucasus and the region's first AI-based film festival - “AIAZ”",
+      az: "AZƏRBAYCANIN İLK SÜNİ İNTELLEKTLƏ ÇƏKİLMİŞ FİLMLƏR FESTİVALI",
+      en: "AIAZ Film Festival 2026 Announced",
     },
     excerpt: {
-      az: "“AİAZ” Film Festivalı Qafqazın və regionun ilk süni intellekt əsaslı film festivalıdır. Festivalın təsisçisi Murad Şükürlü AZƏRTAC-a açıqlamasında festivalın gələcəyi və Azərbaycanda bu sahənin inkişafı haqqında danışıb.",
+      az: "Bu il kino aləmində yeni bir başlanğıcın təməli qoyulur – “AIAZ” Beynəlxalq Qısa Filmlər Festivalı ilk dəfə keçirilir. Festivalın məqsədi həm ənənəvi üsullarla çəkilmiş, həm də süni intellekt (AI) texnologiyaları ilə hazırlanmış qısa filmləri bir araya gətirməkdir.",
       en: "Full article text will be added here later.",
     },
     content: {
       az: [
-        "“AİAZ” Film Festivalı Qafqazın və regionun ilk süni intellekt əsaslı film festivalıdır. Kino ilə texnologiyanın unikal sintezini təqdim edən bu platforma yaradıcı şəxsləri və innovativ texnologiyaları bir araya gətirərək gələcəyin kino təcrübələrini nümayiş etdirir. İnanıram ki, 5 il sonra A kateqoriyalı film festivallarına süni intellekt kateqoriyası əlavə ediləndə əsas mükafatı azərbaycanlı rejissor qazanacaq. Ölkədə bu istiqamətə maraq həddindən artıq çoxdur. Digər ölkələrlə müqayisədə bizim süni intellekt tərtibatçılarının işləri seçilir və zövqlə tərtib olunduğu görünür.",
-        "Bunu AZƏRTAC-a açıqlamasında “AİAZ” Film Festivalının təsisçisi Murad Şükürlü deyib.",
-        "O bildirib ki, yeni formalaşmağa başlayan bu sahəyə tez adaptasiya olunsa, dünya üzrə ən yaxşı mütəxəssisləri yetişdirmək mümkündür: “Düşünürəm ki, “AİAZ” Film Festivalı bu işdə lokomotiv rolunu oynayaraq marağı olan şəxsləri yönləndirməkdə dəstək olacaq. Festival iştirakçıları həm digər ölkələrdən gələn işlərlə tanış oldular, həm də yerli müəlliflərin istifadə etdiyi üsul və texnikalar barədə məlumatlanaraq təcrübə mübadiləsi apardılar”.",
-        "Murad Şükürlü qeyd edib ki, festivala maraq böyük olub və gələn qonaqların əksəriyyəti növbəti il iştirakçı kimi qatılmaq istədiklərini bildiriblər. Festival çərçivəsində keçirilən panel müzakirə və ustad dərsləri buna yaxşı fürsət yaradıb.",
-        "“Biz bu festivalla kifayətlənmirik. Sahənin qısa müddətdə təkmilləşməsi üçün şəbəkələşmənin əhəmiyyətini anlayırıq. Bu məqsədlə süni intellekt tərtibatçılarının bir araya gəldiyi, təcrübələrini paylaşdığı və təlim kurslarda iştirak etdiyi “ASİS” (Azərbaycan Süni İntellekt Sənətçiləri) platformasını yaradaraq sahə üzrə mütəxəssislərin yetişmə prosesini sürətləndirməyi hədəfləyirik”, - deyə festivalın təsisçisi əlavə edib.",
+        "Bu il kino aləmində yeni bir başlanğıcın təməli qoyulur – “AIAZ” Beynəlxalq Qısa Filmlər Festivalı ilk dəfə keçirilir. Festivalın məqsədi həm ənənəvi üsullarla çəkilmiş, həm də süni intellekt (AI) texnologiyaları ilə hazırlanmış qısa filmləri bir araya gətirərək tamaşaçılara və mütəxəssislərə yeni yaradıcılıq nəfəsi təqdim etməkdir.",
+        "AIAZ öz debüt ilində milli məzmunda yeni dalğa yaratmağı hədəfləyir. Festivalın əsas məqsədi yeni və yerli süni intellekt sənətçilərini dünyaya çıxarmaq, onların işlərini beynəlxalq auditoriyaya təqdim etməkdir. AIAZ yalnız festival olaraq deyil, həm də süni intellekti yaradıcılıqla birləşdirən platforma və yaradıcılıq emalatxanası kimi nəzərdə tutulur.",
+        "Müraciətlərin son qəbul tarixi – oktyabr ayının 15-dir. İştirakçılar filmlərini yalnız FilmFreeway platforması üzərindən təqdim edə bilərlər.",
+        "Festivalın kateqoriyaları",
+        "• Süni intellekt (AI) ilə hazırlanmış filmlər",
+        "• Ənənəvi üsullarla çəkilmiş filmlər",
+        "Hər iki istiqamətdə filmlər “Milli” və “Beynəlxalq” bölmələrdə qiymətləndiriləcək.",
+        "İştirak şərtləri",
+        "• Festivalda iştirak tamamilə pulsuzdur.",
+        "• Yaş və janr məhdudiyyəti yoxdur.",
+        "Festivalın təsisçisi Murad Şükürlü, direktoru Sahil Məmmədov, art direktoru Mirvüqar Abdulov, kreativ direktoru Məleykə Məmmədovadır.",
+        "“AIAZ” Beynəlxalq Qısa Filmlər Festivalı – qısa filmlərin səsini dünya auditoriyasına çatdırmaq üçün yeni bir platformadır.",
       ],
       en: [
         "Full article text will be added here later.",
@@ -99,7 +102,7 @@ export const newsItems = [
       ],
     },
     image: news1,
-    inlineImage: news3Inline,
-    inlineImageAfter: 2,
   },
 ];
+
+
