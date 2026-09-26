@@ -7,6 +7,7 @@ import {
   X,
   Globe,
   ChevronDown,
+  ExternalLink,
 } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 
@@ -43,6 +44,7 @@ function Navbar() {
   const closeMenu = () => {
     setMenuOpen(false);
     setFestivalOpen(false);
+    setLanguageOpen(false);
   };
 
   const navLinkClass = ({ isActive }) =>
@@ -64,23 +66,19 @@ function Navbar() {
           />
         </Link>
 
-        {/* NAVIGATION */}
-        <div
-          className={`navbar-links ${
-            menuOpen ? "active" : ""
-          }`}
-        >
+        {/* DESKTOP NAVIGATION */}
+        <div className="navbar-links">
+
           {/* HOME */}
           <NavLink
             to="/"
             end
             className={navLinkClass}
-            onClick={closeMenu}
           >
             {t.nav.home}
           </NavLink>
 
-          {/* FESTIVAL DROPDOWN */}
+          {/* FESTIVAL */}
           <div
             className={`navbar-dropdown ${
               festivalOpen ? "open" : ""
@@ -99,29 +97,23 @@ function Navbar() {
             </button>
 
             <div className="navbar-dropdown-menu">
-              {/* FESTIVAL ABOUT */}
               <NavLink
                 to="/festival"
                 className={navLinkClass}
-                onClick={closeMenu}
               >
                 {t.nav.aboutFestival}
               </NavLink>
 
-              {/* JURY */}
               <NavLink
                 to="/jury"
                 className={navLinkClass}
-                onClick={closeMenu}
               >
                 {t.nav.jury}
               </NavLink>
 
-              {/* PROGRAM */}
               <NavLink
                 to="/program"
                 className={navLinkClass}
-                onClick={closeMenu}
               >
                 {t.nav.program}
               </NavLink>
@@ -132,7 +124,6 @@ function Navbar() {
           <NavLink
             to="/news"
             className={navLinkClass}
-            onClick={closeMenu}
           >
             {t.nav.news}
           </NavLink>
@@ -141,16 +132,14 @@ function Navbar() {
           <NavLink
             to="/media"
             className={navLinkClass}
-            onClick={closeMenu}
           >
             {t.nav.gallery}
           </NavLink>
 
-          {/* ABOUT — BU AYRICA QALIR */}
+          {/* ABOUT */}
           <NavLink
             to="/about"
             className={navLinkClass}
-            onClick={closeMenu}
           >
             {t.nav.about}
           </NavLink>
@@ -159,13 +148,12 @@ function Navbar() {
           <NavLink
             to="/contact"
             className={navLinkClass}
-            onClick={closeMenu}
           >
             {t.nav.contact}
           </NavLink>
         </div>
 
-        {/* ACTIONS */}
+        {/* DESKTOP ACTIONS */}
         <div className="navbar-actions">
 
           {/* FILMFREEWAY */}
@@ -184,6 +172,7 @@ function Navbar() {
 
           {/* THEME */}
           <button
+            type="button"
             className={`theme-toggle ${theme}`}
             onClick={toggleTheme}
             aria-label={t.nav.changeTheme}
@@ -215,9 +204,7 @@ function Navbar() {
               <div className="language-dropdown">
                 <button
                   type="button"
-                  className={
-                    language === "az" ? "active" : ""
-                  }
+                  className={language === "az" ? "active" : ""}
                   onClick={() => changeLanguage("az")}
                 >
                   AZ
@@ -225,9 +212,7 @@ function Navbar() {
 
                 <button
                   type="button"
-                  className={
-                    language === "en" ? "active" : ""
-                  }
+                  className={language === "en" ? "active" : ""}
                   onClick={() => changeLanguage("en")}
                 >
                   EN
@@ -236,7 +221,7 @@ function Navbar() {
             )}
           </div>
 
-          {/* MOBILE MENU */}
+          {/* MOBILE MENU BUTTON */}
           <button
             type="button"
             className="mobile-menu-button"
@@ -244,6 +229,7 @@ function Navbar() {
               setMenuOpen((current) => !current)
             }
             aria-label={t.nav.openMenu}
+            aria-expanded={menuOpen}
           >
             {menuOpen ? (
               <X size={24} />
@@ -251,6 +237,177 @@ function Navbar() {
               <Menu size={24} />
             )}
           </button>
+        </div>
+      </div>
+
+      {/* MOBILE MENU */}
+      <div
+        className={`mobile-menu ${
+          menuOpen ? "is-open" : ""
+        }`}
+      >
+        <div className="mobile-menu-inner">
+
+          {/* MOBILE NAVIGATION */}
+          <div className="mobile-nav">
+
+            <NavLink
+              to="/"
+              end
+              className={navLinkClass}
+              onClick={closeMenu}
+            >
+              <span>01</span>
+              {t.nav.home}
+            </NavLink>
+
+            {/* FESTIVAL */}
+            <div className="mobile-festival">
+              <button
+                type="button"
+                className={`mobile-festival-trigger ${
+                  festivalOpen ? "open" : ""
+                }`}
+                onClick={() =>
+                  setFestivalOpen((current) => !current)
+                }
+                aria-expanded={festivalOpen}
+              >
+                <span>
+                  <small>02</small>
+                  {t.nav.festival}
+                </span>
+
+                <ChevronDown size={20} />
+              </button>
+
+              <div
+                className={`mobile-festival-menu ${
+                  festivalOpen ? "is-open" : ""
+                }`}
+              >
+                <NavLink
+                  to="/festival"
+                  onClick={closeMenu}
+                >
+                  {t.nav.aboutFestival}
+                </NavLink>
+
+                <NavLink
+                  to="/jury"
+                  onClick={closeMenu}
+                >
+                  {t.nav.jury}
+                </NavLink>
+
+                <NavLink
+                  to="/program"
+                  onClick={closeMenu}
+                >
+                  {t.nav.program}
+                </NavLink>
+              </div>
+            </div>
+
+            <NavLink
+              to="/news"
+              className={navLinkClass}
+              onClick={closeMenu}
+            >
+              <span>03</span>
+              {t.nav.news}
+            </NavLink>
+
+            <NavLink
+              to="/media"
+              className={navLinkClass}
+              onClick={closeMenu}
+            >
+              <span>04</span>
+              {t.nav.gallery}
+            </NavLink>
+
+            <NavLink
+              to="/about"
+              className={navLinkClass}
+              onClick={closeMenu}
+            >
+              <span>05</span>
+              {t.nav.about}
+            </NavLink>
+
+            <NavLink
+              to="/contact"
+              className={navLinkClass}
+              onClick={closeMenu}
+            >
+              <span>06</span>
+              {t.nav.contact}
+            </NavLink>
+          </div>
+
+          {/* MOBILE ACTIONS */}
+          <div className="mobile-menu-actions">
+
+            {/* FILMFREEWAY */}
+            <a
+              href="https://filmfreeway.com/festivals/79513"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mobile-filmfreeway"
+            >
+              <span>{t.nav.submitFilm}</span>
+              <ExternalLink size={17} />
+            </a>
+
+            {/* CONTROLS */}
+            <div className="mobile-controls">
+
+              {/* LANGUAGE */}
+              <div className="mobile-language">
+                <Globe size={17} />
+
+                <button
+                  type="button"
+                  className={language === "az" ? "active" : ""}
+                  onClick={() => changeLanguage("az")}
+                >
+                  AZ
+                </button>
+
+                <span>/</span>
+
+                <button
+                  type="button"
+                  className={language === "en" ? "active" : ""}
+                  onClick={() => changeLanguage("en")}
+                >
+                  EN
+                </button>
+              </div>
+
+              {/* THEME */}
+              <button
+                type="button"
+                className="mobile-theme"
+                onClick={toggleTheme}
+              >
+                {theme === "dark" ? (
+                  <>
+                    <Moon size={17} />
+                    <span>Dark</span>
+                  </>
+                ) : (
+                  <>
+                    <Sun size={17} />
+                    <span>Light</span>
+                  </>
+                )}
+              </button>
+
+            </div>
+          </div>
+
         </div>
       </div>
     </nav>

@@ -33,8 +33,9 @@
   backdrop-filter: blur(4px);
   color: #fff;
   text-decoration: none;
-
-  transition: background var(--transition-fast), transform var(--transition-fast);
+  transition:
+    background var(--transition-fast),
+    transform var(--transition-fast);
 }
 
 .agenda-icon-btn:hover {

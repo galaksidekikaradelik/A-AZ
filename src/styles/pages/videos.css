@@ -25,11 +25,9 @@
   display: flex;
   align-items: flex-start;
   gap: 16px;
-
   padding: 32px;
   background: var(--color-bg);
   color: var(--color-text);
-
   transition: background var(--transition-normal);
 }
 
@@ -60,18 +58,8 @@
   line-height: 1.3;
 }
 
-@media (max-width: 900px) {
-  .videos-grid {
-    grid-template-columns: 1fr;
-  }
-}
 
-@media (max-width: 600px) {
-  .video-card {
-    padding: 24px;
-  }
-}
-
+/* ================= PLACEHOLDER ================= */
 
 .video-card.is-placeholder {
   cursor: default;
@@ -91,3 +79,4 @@
 .video-card.is-placeholder .video-category {
   color: var(--color-text-dim);
 }
+

@@ -1,5 +1,6 @@
-
-/* ================= NAVBAR ================= */
+/* =========================================================
+   NAVBAR
+   ========================================================= */
 
 .navbar {
   position: fixed;
@@ -8,7 +9,7 @@
   width: 100%;
   z-index: 1000;
 
-  padding: 10px 0 0 0;
+  padding: 10px 0 0;
 
   background: var(--navbar-bg);
   border-bottom: 1px solid var(--border-color);
@@ -20,7 +21,9 @@
 }
 
 
-/* ================= NAVBAR CONTAINER ================= */
+/* =========================================================
+   NAVBAR CONTAINER
+   ========================================================= */
 
 .navbar-container {
   width: 92%;
@@ -33,23 +36,26 @@
 }
 
 
-/* ================= LOGO ================= */
+/* =========================================================
+   LOGO
+   ========================================================= */
 
 .navbar-logo {
+  display: block;
   max-width: 80px;
   height: auto;
-
-  display: block;
 }
 
 .navbar-logo img {
+  display: block;
   width: 100%;
   height: auto;
-  display: block;
 }
 
 
-/* ================= NAV LINKS ================= */
+/* =========================================================
+   DESKTOP NAVIGATION
+   ========================================================= */
 
 .navbar-links {
   display: flex;
@@ -77,7 +83,6 @@
   content: "";
 
   position: absolute;
-
   left: 0;
   right: 0;
   bottom: -2px;
@@ -117,7 +122,9 @@
 }
 
 
-/* ================= FESTIVAL DROPDOWN ================= */
+/* =========================================================
+   FESTIVAL DROPDOWN
+   ========================================================= */
 
 .navbar-dropdown {
   position: relative;
@@ -127,7 +134,7 @@
 }
 
 
-/* Festival button */
+/* Trigger */
 
 .navbar-dropdown-trigger {
   position: relative;
@@ -137,13 +144,12 @@
 
   gap: 5px;
 
-  padding: 0 0 4px 0;
+  padding: 0 0 4px;
 
   border: none;
   outline: none;
 
   background: transparent;
-
   color: var(--text-color);
 
   font-family: var(--font-display);
@@ -172,22 +178,19 @@
 }
 
 
-/* Dropdown menu */
+/* Dropdown */
 
 .navbar-dropdown-menu {
   position: absolute;
-
   top: calc(100% + 18px);
   left: 50%;
 
   transform: translateX(-50%) translateY(-8px);
 
   min-width: 170px;
-
   padding: 8px;
 
   background: var(--color-surface);
-
   border: 1px solid var(--color-border);
   border-radius: 10px;
 
@@ -203,9 +206,6 @@
     visibility 0.25s ease;
 }
 
-
-/* Open */
-
 .navbar-dropdown.open .navbar-dropdown-menu {
   opacity: 1;
   visibility: visible;
@@ -219,13 +219,11 @@
 
 .navbar-dropdown-menu a {
   display: block;
-
   width: 100%;
 
   padding: 11px 13px;
 
   color: var(--text-color);
-
   text-decoration: none;
 
   font-size: 13px;
@@ -239,7 +237,7 @@
 }
 
 
-/* Disable normal navbar underline inside dropdown */
+/* Remove navbar underline */
 
 .navbar-dropdown-menu a::after {
   display: none;
@@ -259,12 +257,13 @@
 .navbar-dropdown-menu a.active {
   background: rgba(171, 97, 209, 0.12);
   color: var(--color-purple);
-
   font-weight: 700;
 }
 
 
-/* ================= NAVBAR ACTIONS ================= */
+/* =========================================================
+   NAVBAR ACTIONS
+   ========================================================= */
 
 .navbar-actions {
   display: flex;
@@ -273,7 +272,9 @@
 }
 
 
-/* ================= THEME TOGGLE ================= */
+/* =========================================================
+   THEME TOGGLE
+   ========================================================= */
 
 .theme-toggle {
   width: 52px;
@@ -308,7 +309,7 @@
 
   border-radius: 50%;
 
-  background: white;
+  background: #fff;
   color: var(--color-dark);
 
   display: flex;
@@ -319,7 +320,9 @@
 }
 
 
-/* ================= LANGUAGE ================= */
+/* =========================================================
+   LANGUAGE
+   ========================================================= */
 
 .language-switcher {
   position: relative;
@@ -365,7 +368,6 @@
   right: 0;
 
   min-width: 75px;
-
   padding: 6px;
 
   background: var(--color-surface);
@@ -378,13 +380,11 @@
 
 .language-dropdown button {
   display: block;
-
   width: 100%;
 
   padding: 9px 12px;
 
   border: none;
-
   background: transparent;
 
   color: var(--color-text);
@@ -399,12 +399,14 @@
 
   cursor: pointer;
 
-  transition: 0.2s ease;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
 }
 
 .language-dropdown button:hover {
   background: var(--color-purple);
-  color: #ffffff;
+  color: #fff;
 }
 
 .language-dropdown button.active {
@@ -412,7 +414,9 @@
 }
 
 
-/* ================= FILMFREEWAY ================= */
+/* =========================================================
+   FILMFREEWAY
+   ========================================================= */
 
 .filmfreeway-link {
   display: flex;
@@ -422,10 +426,10 @@
 }
 
 .filmfreeway-link img {
+  display: block;
+
   height: 36px;
   width: auto;
-
-  display: block;
 
   transition: transform 0.3s ease;
 }
@@ -435,152 +439,51 @@
 }
 
 
-/* ================= MOBILE MENU BUTTON ================= */
+/* =========================================================
+   MOBILE MENU BUTTON
+   ========================================================= */
 
 .mobile-menu-button {
   display: none;
 
-  border: none;
-  background: transparent;
+  align-items: center;
+  justify-content: center;
 
+  width: 42px;
+  height: 42px;
+
+  padding: 0;
+
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+
+  background: transparent;
   color: var(--text-color);
 
   cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .mobile-menu-button:hover {
+  background: var(--color-surface);
+  border-color: var(--color-border-strong);
   color: var(--color-purple);
 }
 
-
-/* ========================================================= */
-/* ======================= MOBILE ========================== */
-/* ========================================================= */
-
-@media (max-width: 768px) {
-
-  .navbar {
-    padding: 16px 0;
-  }
-
-
-  /* NAVIGATION */
-
-  .navbar-links {
-    display: none;
-
-    position: absolute;
-
-    top: 70px;
-    left: 0;
-
-    width: 100%;
-
-    padding: 30px 24px;
-
-    flex-direction: column;
-    align-items: center;
-
-    gap: 25px;
-
-    background: var(--background-color);
-
-    border-top: 1px solid rgba(171, 97, 209, 0.2);
-  }
-
-  .navbar-links.active {
-    display: flex;
-  }
-
-
-  /* Normal links */
-
-  .navbar-links > a {
-    font-size: 15px;
-  }
-
-
-  /* ================= FESTIVAL MOBILE ================= */
-
-  .navbar-dropdown {
-    width: 100%;
-
-    flex-direction: column;
-  }
-
-  .navbar-dropdown-trigger {
-    width: 100%;
-
-    justify-content: center;
-
-    font-size: 15px;
-  }
-
-
-  /* Dropdown */
-
-  .navbar-dropdown-menu {
-    position: static;
-
-    width: 100%;
-    min-width: 0;
-
-    margin-top: 12px;
-
-    padding: 6px;
-
-    transform: none;
-
-    box-shadow: none;
-
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-
-    max-height: 0;
-
-    overflow: hidden;
-
-    transition:
-      opacity 0.25s ease,
-      max-height 0.3s ease,
-      visibility 0.25s ease;
-  }
-
-  .navbar-dropdown.open .navbar-dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-
-    max-height: 200px;
-
-    transform: none;
-  }
-
-
-  /* Dropdown links */
-
-  .navbar-dropdown-menu a {
-    text-align: center;
-
-    padding: 10px;
-  }
-
-
-  /* ================= LANGUAGE ================= */
-
-  .language-switcher {
-    display: none;
-  }
-
-
-  /* ================= MOBILE BUTTON ================= */
-
-  .mobile-menu-button {
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-  }
+.mobile-menu-button:active {
+  transform: scale(0.94);
 }
 
+
+/* =========================================================
+   MOBILE MENU
+   ========================================================= */
+
+.mobile-menu {
+  display: none;
+}

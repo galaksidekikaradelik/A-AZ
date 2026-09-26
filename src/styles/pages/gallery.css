@@ -15,7 +15,7 @@
 
 .section-label {
   display: inline-block;
-font-family: var(--font-display);
+  font-family: var(--font-display);
   font-size: 13px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -76,7 +76,9 @@ font-family: var(--font-display);
   font-size: 15px;
   font-weight: 600;
   color: var(--color-text-dim);
-  transition: color var(--transition-fast), background var(--transition-normal),
+  transition:
+    color var(--transition-fast),
+    background var(--transition-normal),
     box-shadow var(--transition-normal);
 }
 
@@ -86,7 +88,7 @@ font-family: var(--font-display);
 
 .media-tab.is-active {
   color: #fff;
-  background: var(--color-purple) ;
+  background: var(--color-purple);
   box-shadow: var(--shadow-sm);
 }
 
@@ -99,6 +101,7 @@ font-family: var(--font-display);
     opacity: 0;
     transform: translateY(8px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -191,7 +194,8 @@ font-family: var(--font-display);
   border: 1px solid var(--color-border);
   color: var(--color-text);
   text-decoration: none;
-  transition: border-color var(--transition-fast),
+  transition:
+    border-color var(--transition-fast),
     transform var(--transition-fast);
 }
 
@@ -213,7 +217,7 @@ font-family: var(--font-display);
 }
 
 .video-category {
-font-family: var(--font-display);
+  font-family: var(--font-display);
   font-size: 11px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -247,6 +251,7 @@ font-family: var(--font-display);
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -308,44 +313,4 @@ font-family: var(--font-display);
 
 .lightbox-next {
   right: 24px;
-}
-
-@media (max-width: 640px) {
-  .page-header {
-    padding: 100px 0 40px;
-  }
-
-  .media-tabs {
-    gap: 2px;
-    padding: 4px;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .media-tab {
-    padding: 8px 16px;
-    font-size: 14px;
-    white-space: nowrap;
-  }
-
-  .gallery-grid {
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    gap: 10px;
-  }
-
-  .lightbox {
-    padding: 16px;
-  }
-
-  .lightbox-nav {
-    width: 42px;
-    height: 42px;
-  }
-
-  .lightbox-prev {
-    left: 10px;
-  }
-
-  .lightbox-next {
-    right: 10px;
-  }
 }

@@ -1,3 +1,4 @@
+
 .team-section {
   padding: 0 0 120px;
   background: var(--color-bg);
@@ -23,9 +24,10 @@
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   text-align: center;
-
-  transition: border-color var(--transition-fast),
-    transform var(--transition-fast), box-shadow var(--transition-fast);
+  transition:
+    border-color var(--transition-fast),
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
 }
 
 .team-card:hover {
@@ -68,14 +70,3 @@
   color: var(--color-text-dim);
 }
 
-@media (max-width: 900px) {
-  .team-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 560px) {
-  .team-grid {
-    grid-template-columns: 1fr;
-  }
-}
